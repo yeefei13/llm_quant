@@ -1,0 +1,725 @@
+{'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': json, 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': pytorch_ddp, 'ddp_comm_hook': none, 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': never, 'zero_sharding': none, 'fp16': '${common.fp16}', 'memory_efficient_fp16': '${common.memory_efficient_fp16}', 'tpu': '${common.tpu}', 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 32, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': '${dataset.max_tokens}', 'batch_size_valid': '${dataset.batch_size}', 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': '${dataset.grouped_shuffling}', 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 10, 'max_update': 20935, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [1e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': '${common.model_parallel_size}'}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': '${distributed_training.distributed_world_size}'}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/SST-2-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': '${criterion.regression_target}', 'classification_head_name': '${criterion.classification_head_name}', 'seed': '${common.seed}', 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': '${common.tpu}', 'lr': '${optimization.lr}'}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 1256, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': '${optimization.max_update}', 'lr': '${optimization.lr}'}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}}
+[2024-03-04 01:58:37,530][fairseq_cli.train][INFO] - {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 32, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 4400, 'batch_size_valid': 32, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 10, 'max_update': 20935, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [1e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/SST-2-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': False, 'classification_head_name': 'sentence_classification_head', 'seed': 1, 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [1e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 1256, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 20935.0, 'lr': [1e-05]}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'job_logging_cfg': {'version': 1, 'formatters': {'simple': {'format': '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}, 'file': {'class': 'logging.FileHandler', 'formatter': 'simple', 'filename': 'hydra_train.log'}}, 'root': {'level': 'INFO', 'handlers': ['console', 'file']}, 'disable_existing_loggers': False}}
+[2024-03-04 01:58:37,578][fairseq.tasks.sentence_prediction][INFO] - [input] dictionary: 50265 types
+[2024-03-04 01:58:37,584][fairseq.tasks.sentence_prediction][INFO] - [label] dictionary: 9 types
+[2024-03-04 01:58:39,919][fairseq_cli.train][INFO] - RobertaModel(
+  (encoder): RobertaEncoder(
+    (sentence_encoder): TransformerEncoder(
+      (dropout_module): FairseqDropout()
+      (embed_tokens): Embedding(50265, 768, padding_idx=1)
+      (embed_positions): LearnedPositionalEmbedding(514, 768, padding_idx=1)
+      (layernorm_embedding): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0-11): 12 x TransformerEncoderLayerBase(
+          (self_attn): MultiheadAttention(
+            (quantize_input): QuantMeasure()
+            (dropout_module): FairseqDropout()
+            (k_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+            (v_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+            (q_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+            (out_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+          )
+          (self_attn_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (fc1): QLinear(
+            in_features=768, out_features=3072, bias=True
+            (linear): Linear(in_features=768, out_features=3072, bias=True)
+            (quantize_input): QuantMeasure()
+          )
+          (fc2): QLinear(
+            in_features=3072, out_features=768, bias=True
+            (linear): Linear(in_features=3072, out_features=768, bias=True)
+            (quantize_input): QuantMeasure()
+          )
+          (final_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (lm_head): RobertaLMHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (classification_heads): ModuleDict(
+    (sentence_classification_head): RobertaClassificationHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (dropout): Dropout(p=0.0, inplace=False)
+      (out_proj): Linear(in_features=768, out_features=2, bias=True)
+    )
+  )
+)
+[2024-03-04 01:58:39,922][fairseq_cli.train][INFO] - task: SentencePredictionTask
+[2024-03-04 01:58:39,923][fairseq_cli.train][INFO] - model: RobertaModel
+[2024-03-04 01:58:39,924][fairseq_cli.train][INFO] - criterion: SentencePredictionCriterion
+[2024-03-04 01:58:39,926][fairseq_cli.train][INFO] - num. shared model params: 210,306,395 (num. trained: 210,306,395)
+[2024-03-04 01:58:39,927][fairseq_cli.train][INFO] - num. expert model params: 0 (num. trained: 0)
+[2024-03-04 01:58:39,966][fairseq.data.data_utils][INFO] - loaded 872 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/SST-2-bin/input0/valid
+[2024-03-04 01:58:39,991][fairseq.data.data_utils][INFO] - loaded 872 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/SST-2-bin/label/valid
+[2024-03-04 01:58:39,992][fairseq.tasks.sentence_prediction][INFO] - Loaded valid with #samples: 872
+layerls name encoder.sentence_encoder.embed_tokens.weight
+layerls name encoder.sentence_encoder.embed_positions.weight
+layerls name encoder.sentence_encoder.layernorm_embedding.weight
+layerls name encoder.sentence_encoder.layernorm_embedding.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.0.fc1.weight
+layerls name encoder.sentence_encoder.layers.0.fc1.bias
+layerls name encoder.sentence_encoder.layers.0.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.0.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.0.fc2.weight
+layerls name encoder.sentence_encoder.layers.0.fc2.bias
+layerls name encoder.sentence_encoder.layers.0.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.0.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.0.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.0.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.1.fc1.weight
+layerls name encoder.sentence_encoder.layers.1.fc1.bias
+layerls name encoder.sentence_encoder.layers.1.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.1.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.1.fc2.weight
+layerls name encoder.sentence_encoder.layers.1.fc2.bias
+layerls name encoder.sentence_encoder.layers.1.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.1.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.1.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.1.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.2.fc1.weight
+layerls name encoder.sentence_encoder.layers.2.fc1.bias
+layerls name encoder.sentence_encoder.layers.2.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.2.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.2.fc2.weight
+layerls name encoder.sentence_encoder.layers.2.fc2.bias
+layerls name encoder.sentence_encoder.layers.2.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.2.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.2.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.2.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.3.fc1.weight
+layerls name encoder.sentence_encoder.layers.3.fc1.bias
+layerls name encoder.sentence_encoder.layers.3.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.3.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.3.fc2.weight
+layerls name encoder.sentence_encoder.layers.3.fc2.bias
+layerls name encoder.sentence_encoder.layers.3.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.3.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.3.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.3.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.4.fc1.weight
+layerls name encoder.sentence_encoder.layers.4.fc1.bias
+layerls name encoder.sentence_encoder.layers.4.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.4.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.4.fc2.weight
+layerls name encoder.sentence_encoder.layers.4.fc2.bias
+layerls name encoder.sentence_encoder.layers.4.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.4.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.4.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.4.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.5.fc1.weight
+layerls name encoder.sentence_encoder.layers.5.fc1.bias
+layerls name encoder.sentence_encoder.layers.5.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.5.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.5.fc2.weight
+layerls name encoder.sentence_encoder.layers.5.fc2.bias
+layerls name encoder.sentence_encoder.layers.5.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.5.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.5.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.5.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.6.fc1.weight
+layerls name encoder.sentence_encoder.layers.6.fc1.bias
+layerls name encoder.sentence_encoder.layers.6.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.6.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.6.fc2.weight
+layerls name encoder.sentence_encoder.layers.6.fc2.bias
+layerls name encoder.sentence_encoder.layers.6.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.6.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.6.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.6.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.7.fc1.weight
+layerls name encoder.sentence_encoder.layers.7.fc1.bias
+layerls name encoder.sentence_encoder.layers.7.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.7.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.7.fc2.weight
+layerls name encoder.sentence_encoder.layers.7.fc2.bias
+layerls name encoder.sentence_encoder.layers.7.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.7.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.7.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.7.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.8.fc1.weight
+layerls name encoder.sentence_encoder.layers.8.fc1.bias
+layerls name encoder.sentence_encoder.layers.8.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.8.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.8.fc2.weight
+layerls name encoder.sentence_encoder.layers.8.fc2.bias
+layerls name encoder.sentence_encoder.layers.8.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.8.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.8.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.8.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.9.fc1.weight
+layerls name encoder.sentence_encoder.layers.9.fc1.bias
+layerls name encoder.sentence_encoder.layers.9.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.9.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.9.fc2.weight
+layerls name encoder.sentence_encoder.layers.9.fc2.bias
+layerls name encoder.sentence_encoder.layers.9.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.9.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.9.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.9.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.10.fc1.weight
+layerls name encoder.sentence_encoder.layers.10.fc1.bias
+layerls name encoder.sentence_encoder.layers.10.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.10.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.10.fc2.weight
+layerls name encoder.sentence_encoder.layers.10.fc2.bias
+layerls name encoder.sentence_encoder.layers.10.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.10.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.10.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.10.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.11.fc1.weight
+layerls name encoder.sentence_encoder.layers.11.fc1.bias
+layerls name encoder.sentence_encoder.layers.11.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.11.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.11.fc2.weight
+layerls name encoder.sentence_encoder.layers.11.fc2.bias
+layerls name encoder.sentence_encoder.layers.11.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.11.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.11.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.11.final_layer_norm.bias
+layerls name encoder.lm_head.bias
+layerls name encoder.lm_head.dense.weight
+layerls name encoder.lm_head.dense.bias
+layerls name encoder.lm_head.layer_norm.weight
+layerls name encoder.lm_head.layer_norm.bias
+layerls name classification_heads.sentence_classification_head.dense.weight
+layerls name classification_heads.sentence_classification_head.dense.bias
+layerls name classification_heads.sentence_classification_head.out_proj.weight
+layerls name classification_heads.sentence_classification_head.out_proj.bias
+MY TRAINER CONFIG! {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 32, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 4400, 'batch_size_valid': 32, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 10, 'max_update': 20935, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [1e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1, 'max_positions': 512, 'encoder_layers': 12, 'encoder_embed_dim': 768, 'encoder_ffn_embed_dim': 3072, 'encoder_attention_heads': 12, 'activation_dropout': 0.0, 'pooler_dropout': 0.0, 'max_source_positions': 512, 'no_token_positional_embeddings': False, 'encoder_learned_pos': True, 'layernorm_embedding': True, 'no_scale_embedding': True, 'activation_fn': 'gelu', 'encoder_normalize_before': False, 'pooler_activation_fn': 'tanh', 'untie_weights_roberta': False, 'adaptive_input': False, 'encoder_layerdrop': 0.0, 'encoder_layers_to_keep': None, 'quant_noise_pq': 0, 'quant_noise_pq_block_size': 8, 'quant_noise_scalar': 0, 'spectral_norm_classification_head': False}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/SST-2-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': False, 'classification_head_name': 'sentence_classification_head', 'seed': 1, 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [1e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 1256, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 20935.0, 'lr': [1e-05]}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'job_logging_cfg': {'version': 1, 'formatters': {'simple': {'format': '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}, 'file': {'class': 'logging.FileHandler', 'formatter': 'simple', 'filename': 'hydra_train.log'}}, 'root': {'level': 'INFO', 'handlers': ['console', 'file']}, 'disable_existing_loggers': False}}
+MY MODEL!
+[2024-03-04 01:58:40,404][fairseq.trainer][INFO] - detected shared parameter: encoder.sentence_encoder.embed_tokens.weight <- encoder.lm_head.weight
+[2024-03-04 01:58:40,405][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-04 01:58:40,406][fairseq.utils][INFO] - rank   0: capabilities =  8.6  ; total memory = 16.000 GB ; name = NVIDIA GeForce RTX 3080 Ti Laptop GPU   
+[2024-03-04 01:58:40,406][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-04 01:58:40,407][fairseq_cli.train][INFO] - training on 1 devices (GPUs/TPUs)
+[2024-03-04 01:58:40,408][fairseq_cli.train][INFO] - max tokens per device = 4400 and max sentences per device = 32
+[2024-03-04 01:58:40,409][fairseq.trainer][INFO] - Preparing to load checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt
+[2024-03-04 01:58:47,962][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.weight
+[2024-03-04 01:58:47,963][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.bias
+[2024-03-04 01:58:47,964][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.weight
+[2024-03-04 01:58:47,964][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.bias
+[2024-03-04 01:58:48,039][fairseq.optim.adam][INFO] - using FusedAdam
+[2024-03-04 01:58:48,451][fairseq.trainer][INFO] - Loaded checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt (epoch 1 @ 0 updates)
+[2024-03-04 01:58:48,452][fairseq.trainer][INFO] - loading train data for epoch 1
+[2024-03-04 01:58:48,476][fairseq.data.data_utils][INFO] - loaded 67,349 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/SST-2-bin/input0/train
+[2024-03-04 01:58:48,518][fairseq.data.data_utils][INFO] - loaded 67,349 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/SST-2-bin/label/train
+[2024-03-04 01:58:48,520][fairseq.tasks.sentence_prediction][INFO] - Loaded train with #samples: 67349
+[2024-03-04 01:58:48,522][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 01:58:48,523][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-04 01:58:48,524][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-04 01:58:48,525][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+[2024-03-04 01:58:48,676][fairseq_cli.train][INFO] - begin dry-run validation on "valid" subset
+[2024-03-04 01:58:48,678][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 01:58:48,679][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-04 01:58:48,680][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-04 01:58:48,680][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+[2024-03-04 01:58:48,904][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 01:58:48,909][fairseq.trainer][INFO] - begin training epoch 1
+[2024-03-04 01:58:48,911][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 01:59:01,631][train_inner][INFO] - {"epoch": 1, "update": 0.095, "loss": "0", "nll_loss": "0", "accuracy": "47.2", "wps": "7200.2", "ups": "16.88", "wpb": "426.9", "bsz": "32", "num_updates": "200", "lr": "1.59236e-06", "gnorm": "0", "loss_scale": "8", "train_wall": "12", "gb_free": "15.5", "wall": "21"}
+[2024-03-04 01:59:12,455][train_inner][INFO] - {"epoch": 1, "update": 0.19, "loss": "0", "nll_loss": "0", "accuracy": "48", "wps": "7893.9", "ups": "18.48", "wpb": "427.2", "bsz": "32", "num_updates": "400", "lr": "3.18471e-06", "gnorm": "0", "loss_scale": "32", "train_wall": "11", "gb_free": "15.5", "wall": "32"}
+[2024-03-04 01:59:26,245][train_inner][INFO] - {"epoch": 1, "update": 0.285, "loss": "0", "nll_loss": "0", "accuracy": "47.4", "wps": "6282.2", "ups": "14.5", "wpb": "433.1", "bsz": "32", "num_updates": "600", "lr": "4.77707e-06", "gnorm": "0", "loss_scale": "64", "train_wall": "13", "gb_free": "15.5", "wall": "46"}
+[2024-03-04 01:59:39,239][train_inner][INFO] - {"epoch": 1, "update": 0.38, "loss": "0", "nll_loss": "0", "accuracy": "48.3", "wps": "6554.8", "ups": "15.39", "wpb": "425.8", "bsz": "31.9", "num_updates": "800", "lr": "6.36943e-06", "gnorm": "0", "loss_scale": "256", "train_wall": "13", "gb_free": "15.5", "wall": "59"}
+[2024-03-04 01:59:59,178][train_inner][INFO] - {"epoch": 1, "update": 0.475, "loss": "0", "nll_loss": "0", "accuracy": "47.7", "wps": "4294.5", "ups": "10.03", "wpb": "428.1", "bsz": "32", "num_updates": "1000", "lr": "7.96178e-06", "gnorm": "0", "loss_scale": "512", "train_wall": "20", "gb_free": "15.5", "wall": "79"}
+[2024-03-04 02:00:20,246][train_inner][INFO] - {"epoch": 1, "update": 0.57, "loss": "0", "nll_loss": "0", "accuracy": "49.9", "wps": "4049.8", "ups": "9.49", "wpb": "426.6", "bsz": "32", "num_updates": "1200", "lr": "9.55414e-06", "gnorm": "0", "loss_scale": "2048", "train_wall": "21", "gb_free": "15.5", "wall": "100"}
+[2024-03-04 02:00:42,003][train_inner][INFO] - {"epoch": 1, "update": 0.665, "loss": "0", "nll_loss": "0", "accuracy": "48.4", "wps": "3971.7", "ups": "9.19", "wpb": "432", "bsz": "32", "num_updates": "1400", "lr": "9.92683e-06", "gnorm": "0", "loss_scale": "4096", "train_wall": "21", "gb_free": "15.5", "wall": "122"}
+[2024-03-04 02:01:03,145][train_inner][INFO] - {"epoch": 1, "update": 0.76, "loss": "0", "nll_loss": "0", "accuracy": "47.2", "wps": "4027.6", "ups": "9.46", "wpb": "425.7", "bsz": "32", "num_updates": "1600", "lr": "9.82519e-06", "gnorm": "0", "loss_scale": "16384", "train_wall": "21", "gb_free": "15.5", "wall": "143"}
+[2024-03-04 02:01:25,897][train_inner][INFO] - {"epoch": 1, "update": 0.855, "loss": "0", "nll_loss": "0", "accuracy": "47.5", "wps": "3741.4", "ups": "8.79", "wpb": "425.6", "bsz": "32", "num_updates": "1800", "lr": "9.72356e-06", "gnorm": "0", "loss_scale": "65536", "train_wall": "22", "gb_free": "15.5", "wall": "165"}
+[2024-03-04 02:01:48,847][train_inner][INFO] - {"epoch": 1, "update": 0.95, "loss": "0", "nll_loss": "0", "accuracy": "46.2", "wps": "3687.2", "ups": "8.72", "wpb": "423.1", "bsz": "32", "num_updates": "2000", "lr": "9.62193e-06", "gnorm": "0", "loss_scale": "131072", "train_wall": "22", "gb_free": "15.5", "wall": "188"}
+[2024-03-04 02:02:01,056][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:02:01,058][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:02:03,713][valid][INFO] - {"epoch": 1, "valid_loss": "0.996", "valid_nll_loss": "0.04", "valid_accuracy": "50.8", "valid_wps": "8301.5", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "2105"}
+[2024-03-04 02:02:03,717][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 1 @ 2105 updates
+[2024-03-04 02:02:03,719][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_best.pt
+[2024-03-04 02:02:06,600][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_best.pt
+[2024-03-04 02:02:58,515][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 1 @ 2105 updates, score 50.8) (writing took 54.79777985100009 seconds)
+[2024-03-04 02:02:58,516][fairseq_cli.train][INFO] - end of epoch 1 (average epoch stats below)
+[2024-03-04 02:02:58,520][train][INFO] - {"epoch": 1, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "47.8", "train_wps": "3616.2", "train_ups": "8.46", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "2105", "train_lr": "9.56858e-06", "train_gnorm": "0", "train_loss_scale": "262144", "train_train_wall": "188", "train_gb_free": "15.5", "train_wall": "258"}
+[2024-03-04 02:02:58,526][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:02:58,531][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 02:02:58,535][fairseq.trainer][INFO] - begin training epoch 2
+[2024-03-04 02:02:58,536][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 02:03:09,639][train_inner][INFO] - {"epoch": 2, "update": 1.045, "loss": "0", "nll_loss": "0", "accuracy": "47.6", "wps": "1061.5", "ups": "2.48", "wpb": "428.8", "bsz": "32", "num_updates": "2200", "lr": "9.5203e-06", "gnorm": "0", "loss_scale": "524288", "train_wall": "23", "gb_free": "15.5", "wall": "269"}
+[2024-03-04 02:03:32,864][train_inner][INFO] - {"epoch": 2, "update": 1.14, "loss": "0", "nll_loss": "0", "accuracy": "47.6", "wps": "3678", "ups": "8.61", "wpb": "427.1", "bsz": "32", "num_updates": "2400", "lr": "9.41867e-06", "gnorm": "0", "loss_scale": "1.04858e+06", "train_wall": "23", "gb_free": "15.5", "wall": "292"}
+[2024-03-04 02:04:06,004][train_inner][INFO] - {"epoch": 2, "update": 1.235, "loss": "0", "nll_loss": "0", "accuracy": "47.9", "wps": "2581.5", "ups": "6.04", "wpb": "427.7", "bsz": "32", "num_updates": "2600", "lr": "9.31704e-06", "gnorm": "0", "loss_scale": "4.1943e+06", "train_wall": "33", "gb_free": "15.5", "wall": "326"}
+[2024-03-04 02:04:30,654][train_inner][INFO] - {"epoch": 2, "update": 1.33, "loss": "0", "nll_loss": "0", "accuracy": "48.9", "wps": "3484.4", "ups": "8.11", "wpb": "429.4", "bsz": "31.9", "num_updates": "2800", "lr": "9.21541e-06", "gnorm": "0", "loss_scale": "8.38861e+06", "train_wall": "24", "gb_free": "15.5", "wall": "350"}
+[2024-03-04 02:04:54,704][train_inner][INFO] - {"epoch": 2, "update": 1.425, "loss": "0", "nll_loss": "0", "accuracy": "47.3", "wps": "3584.8", "ups": "8.32", "wpb": "431.1", "bsz": "32", "num_updates": "3000", "lr": "9.11378e-06", "gnorm": "0", "loss_scale": "3.35544e+07", "train_wall": "23", "gb_free": "15.5", "wall": "374"}
+[2024-03-04 02:05:16,861][train_inner][INFO] - {"epoch": 2, "update": 1.52, "loss": "0", "nll_loss": "0", "accuracy": "47.6", "wps": "3861.9", "ups": "9.03", "wpb": "427.8", "bsz": "32", "num_updates": "3200", "lr": "9.01214e-06", "gnorm": "0", "loss_scale": "1.34218e+08", "train_wall": "22", "gb_free": "15.5", "wall": "396"}
+[2024-03-04 02:05:39,514][train_inner][INFO] - {"epoch": 2, "update": 1.615, "loss": "0", "nll_loss": "0", "accuracy": "48.3", "wps": "3759", "ups": "8.83", "wpb": "425.8", "bsz": "32", "num_updates": "3400", "lr": "8.91051e-06", "gnorm": "0", "loss_scale": "2.68435e+08", "train_wall": "22", "gb_free": "15.5", "wall": "419"}
+[2024-03-04 02:06:00,506][train_inner][INFO] - {"epoch": 2, "update": 1.71, "loss": "0", "nll_loss": "0", "accuracy": "47.8", "wps": "4057.6", "ups": "9.53", "wpb": "425.9", "bsz": "32", "num_updates": "3600", "lr": "8.80888e-06", "gnorm": "0", "loss_scale": "1.07374e+09", "train_wall": "21", "gb_free": "15.5", "wall": "440"}
+[2024-03-04 02:06:23,612][train_inner][INFO] - {"epoch": 2, "update": 1.805, "loss": "0", "nll_loss": "0", "accuracy": "48.9", "wps": "3685.3", "ups": "8.66", "wpb": "425.7", "bsz": "32", "num_updates": "3800", "lr": "8.70725e-06", "gnorm": "0", "loss_scale": "2.14748e+09", "train_wall": "23", "gb_free": "15.5", "wall": "463"}
+[2024-03-04 02:06:44,651][train_inner][INFO] - {"epoch": 2, "update": 1.9, "loss": "0", "nll_loss": "0", "accuracy": "48.3", "wps": "4097.5", "ups": "9.51", "wpb": "431", "bsz": "32", "num_updates": "4000", "lr": "8.60562e-06", "gnorm": "0", "loss_scale": "8.58993e+09", "train_wall": "21", "gb_free": "15.5", "wall": "484"}
+[2024-03-04 02:07:01,482][train_inner][INFO] - {"epoch": 2, "update": 1.995, "loss": "0", "nll_loss": "0", "accuracy": "47.8", "wps": "4997.5", "ups": "11.88", "wpb": "420.6", "bsz": "32", "num_updates": "4200", "lr": "8.50399e-06", "gnorm": "0", "loss_scale": "1.71799e+10", "train_wall": "16", "gb_free": "15.5", "wall": "501"}
+[2024-03-04 02:07:02,303][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:07:02,305][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:07:03,808][valid][INFO] - {"epoch": 2, "valid_loss": "0.995", "valid_nll_loss": "0.04", "valid_accuracy": "51.3", "valid_wps": "14945.2", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "4210", "valid_best_accuracy": "51.3"}
+[2024-03-04 02:07:03,812][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 2 @ 4210 updates
+[2024-03-04 02:07:03,814][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_best.pt
+[2024-03-04 02:07:06,357][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_best.pt
+[2024-03-04 02:07:54,088][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 2 @ 4210 updates, score 51.3) (writing took 50.27562867300003 seconds)
+[2024-03-04 02:07:54,089][fairseq_cli.train][INFO] - end of epoch 2 (average epoch stats below)
+[2024-03-04 02:07:54,093][train][INFO] - {"epoch": 2, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "48", "train_wps": "3044.1", "train_ups": "7.12", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "4210", "train_lr": "8.49891e-06", "train_gnorm": "0", "train_loss_scale": "1.71799e+10", "train_train_wall": "239", "train_gb_free": "15.5", "train_wall": "554"}
+[2024-03-04 02:07:54,095][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:07:54,100][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 02:07:54,103][fairseq.trainer][INFO] - begin training epoch 3
+[2024-03-04 02:07:54,105][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 02:08:23,327][train_inner][INFO] - {"epoch": 3, "update": 2.09, "loss": "0", "nll_loss": "0", "accuracy": "47.8", "wps": "1054.6", "ups": "2.44", "wpb": "431.6", "bsz": "32", "num_updates": "4400", "lr": "8.40236e-06", "gnorm": "0", "loss_scale": "6.87195e+10", "train_wall": "30", "gb_free": "15.5", "wall": "583"}
+[2024-03-04 02:08:54,458][train_inner][INFO] - {"epoch": 3, "update": 2.185, "loss": "0", "nll_loss": "0", "accuracy": "48.6", "wps": "2732.4", "ups": "6.42", "wpb": "425.3", "bsz": "32", "num_updates": "4600", "lr": "8.30073e-06", "gnorm": "0", "loss_scale": "1.37439e+11", "train_wall": "31", "gb_free": "15.5", "wall": "614"}
+[2024-03-04 02:09:27,040][train_inner][INFO] - {"epoch": 3, "update": 2.28, "loss": "0", "nll_loss": "0", "accuracy": "48.6", "wps": "2618.7", "ups": "6.14", "wpb": "426.6", "bsz": "32", "num_updates": "4800", "lr": "8.1991e-06", "gnorm": "0", "loss_scale": "5.49756e+11", "train_wall": "32", "gb_free": "15.5", "wall": "647"}
+[2024-03-04 02:09:57,998][train_inner][INFO] - {"epoch": 3, "update": 2.375, "loss": "0", "nll_loss": "0", "accuracy": "47.9", "wps": "2788.8", "ups": "6.46", "wpb": "431.6", "bsz": "32", "num_updates": "5000", "lr": "8.09746e-06", "gnorm": "0", "loss_scale": "2.19902e+12", "train_wall": "30", "gb_free": "15.5", "wall": "678"}
+[2024-03-04 02:10:29,149][train_inner][INFO] - {"epoch": 3, "update": 2.47, "loss": "0", "nll_loss": "0", "accuracy": "48.2", "wps": "2725.7", "ups": "6.42", "wpb": "424.5", "bsz": "31.9", "num_updates": "5200", "lr": "7.99583e-06", "gnorm": "0", "loss_scale": "4.39805e+12", "train_wall": "31", "gb_free": "15.5", "wall": "709"}
+[2024-03-04 02:10:57,402][train_inner][INFO] - {"epoch": 3, "update": 2.565, "loss": "0", "nll_loss": "0", "accuracy": "47.5", "wps": "3064.1", "ups": "7.08", "wpb": "432.8", "bsz": "32", "num_updates": "5400", "lr": "7.8942e-06", "gnorm": "0", "loss_scale": "1.75922e+13", "train_wall": "28", "gb_free": "15.5", "wall": "737"}
+[2024-03-04 02:11:20,883][train_inner][INFO] - {"epoch": 3, "update": 2.66, "loss": "0", "nll_loss": "0", "accuracy": "46.8", "wps": "3622.4", "ups": "8.52", "wpb": "425.3", "bsz": "32", "num_updates": "5600", "lr": "7.79257e-06", "gnorm": "0", "loss_scale": "3.51844e+13", "train_wall": "23", "gb_free": "15.5", "wall": "760"}
+[2024-03-04 02:11:43,455][train_inner][INFO] - {"epoch": 3, "update": 2.755, "loss": "0", "nll_loss": "0", "accuracy": "48.7", "wps": "3731.2", "ups": "8.86", "wpb": "421.1", "bsz": "32", "num_updates": "5800", "lr": "7.69094e-06", "gnorm": "0", "loss_scale": "1.40737e+14", "train_wall": "22", "gb_free": "15.5", "wall": "783"}
+[2024-03-04 02:12:05,788][train_inner][INFO] - {"epoch": 3, "update": 2.85, "loss": "0", "nll_loss": "0", "accuracy": "47.8", "wps": "3847", "ups": "8.96", "wpb": "429.6", "bsz": "32", "num_updates": "6000", "lr": "7.58931e-06", "gnorm": "0", "loss_scale": "2.81475e+14", "train_wall": "22", "gb_free": "15.5", "wall": "805"}
+[2024-03-04 02:12:28,052][train_inner][INFO] - {"epoch": 3, "update": 2.945, "loss": "0", "nll_loss": "0", "accuracy": "48.5", "wps": "3849.4", "ups": "8.98", "wpb": "428.5", "bsz": "32", "num_updates": "6200", "lr": "7.48768e-06", "gnorm": "0", "loss_scale": "1.1259e+15", "train_wall": "22", "gb_free": "15.5", "wall": "828"}
+[2024-03-04 02:12:40,621][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:12:40,623][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:12:43,298][valid][INFO] - {"epoch": 3, "valid_loss": "0.995", "valid_nll_loss": "0.04", "valid_accuracy": "51", "valid_wps": "8231", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "6315", "valid_best_accuracy": "51.3"}
+[2024-03-04 02:12:43,302][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 3 @ 6315 updates
+[2024-03-04 02:12:43,305][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:12:46,460][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:12:46,464][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 3 @ 6315 updates, score 51.0) (writing took 3.1626207910012454 seconds)
+[2024-03-04 02:12:46,465][fairseq_cli.train][INFO] - end of epoch 3 (average epoch stats below)
+[2024-03-04 02:12:46,467][train][INFO] - {"epoch": 3, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "48", "train_wps": "3077.4", "train_ups": "7.2", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "6315", "train_lr": "7.42924e-06", "train_gnorm": "0", "train_loss_scale": "2.2518e+15", "train_train_wall": "282", "train_gb_free": "15.5", "train_wall": "846"}
+[2024-03-04 02:12:46,469][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:12:46,475][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 02:12:46,479][fairseq.trainer][INFO] - begin training epoch 4
+[2024-03-04 02:12:46,480][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 02:12:56,088][train_inner][INFO] - {"epoch": 4, "update": 3.04, "loss": "0", "nll_loss": "0", "accuracy": "48.5", "wps": "3055.9", "ups": "7.13", "wpb": "428.3", "bsz": "32", "num_updates": "6400", "lr": "7.38605e-06", "gnorm": "0", "loss_scale": "4.5036e+15", "train_wall": "22", "gb_free": "15.5", "wall": "856"}
+[2024-03-04 02:13:13,333][train_inner][INFO] - {"epoch": 4, "update": 3.135, "loss": "0", "nll_loss": "0", "accuracy": "47.8", "wps": "4974.2", "ups": "11.6", "wpb": "428.8", "bsz": "32", "num_updates": "6600", "lr": "7.28441e-06", "gnorm": "0", "loss_scale": "9.0072e+15", "train_wall": "17", "gb_free": "15.5", "wall": "873"}
+[2024-03-04 02:13:29,255][train_inner][INFO] - {"epoch": 4, "update": 3.23, "loss": "0", "nll_loss": "0", "accuracy": "46.5", "wps": "5376.6", "ups": "12.56", "wpb": "428", "bsz": "32", "num_updates": "6800", "lr": "7.18278e-06", "gnorm": "0", "loss_scale": "3.60288e+16", "train_wall": "15", "gb_free": "15.5", "wall": "889"}
+[2024-03-04 02:13:44,792][train_inner][INFO] - {"epoch": 4, "update": 3.325, "loss": "0", "nll_loss": "0", "accuracy": "48.6", "wps": "5482.7", "ups": "12.87", "wpb": "425.9", "bsz": "31.9", "num_updates": "7000", "lr": "7.08115e-06", "gnorm": "0", "loss_scale": "7.20576e+16", "train_wall": "15", "gb_free": "15.5", "wall": "904"}
+[2024-03-04 02:14:00,670][train_inner][INFO] - {"epoch": 4, "update": 3.42, "loss": "0", "nll_loss": "0", "accuracy": "47.2", "wps": "5398.2", "ups": "12.6", "wpb": "428.5", "bsz": "32", "num_updates": "7200", "lr": "6.97952e-06", "gnorm": "0", "loss_scale": "2.8823e+17", "train_wall": "15", "gb_free": "15.5", "wall": "920"}
+[2024-03-04 02:14:16,105][train_inner][INFO] - {"epoch": 4, "update": 3.515, "loss": "0", "nll_loss": "0", "accuracy": "47.9", "wps": "5470.2", "ups": "12.96", "wpb": "422.1", "bsz": "32", "num_updates": "7400", "lr": "6.87789e-06", "gnorm": "0", "loss_scale": "5.76461e+17", "train_wall": "15", "gb_free": "15.5", "wall": "936"}
+[2024-03-04 02:14:30,427][train_inner][INFO] - {"epoch": 4, "update": 3.61, "loss": "0", "nll_loss": "0", "accuracy": "49", "wps": "5974.8", "ups": "13.97", "wpb": "427.8", "bsz": "32", "num_updates": "7600", "lr": "6.77626e-06", "gnorm": "0", "loss_scale": "2.30584e+18", "train_wall": "14", "gb_free": "15.5", "wall": "950"}
+[2024-03-04 02:14:43,187][train_inner][INFO] - {"epoch": 4, "update": 3.705, "loss": "0", "nll_loss": "0", "accuracy": "49.7", "wps": "6733.4", "ups": "15.68", "wpb": "429.6", "bsz": "32", "num_updates": "7800", "lr": "6.67463e-06", "gnorm": "0", "loss_scale": "4.61169e+18", "train_wall": "12", "gb_free": "15.5", "wall": "963"}
+[2024-03-04 02:14:56,065][train_inner][INFO] - {"epoch": 4, "update": 3.8, "loss": "0", "nll_loss": "0", "accuracy": "47.7", "wps": "6675.1", "ups": "15.53", "wpb": "429.8", "bsz": "32", "num_updates": "8000", "lr": "6.573e-06", "gnorm": "0", "loss_scale": "1.84467e+19", "train_wall": "12", "gb_free": "15.5", "wall": "976"}
+[2024-03-04 02:15:09,076][train_inner][INFO] - {"epoch": 4, "update": 3.895, "loss": "0", "nll_loss": "0", "accuracy": "47.7", "wps": "6525.1", "ups": "15.37", "wpb": "424.5", "bsz": "32", "num_updates": "8200", "lr": "6.47137e-06", "gnorm": "0", "loss_scale": "7.3787e+19", "train_wall": "13", "gb_free": "15.5", "wall": "989"}
+[2024-03-04 02:15:22,175][train_inner][INFO] - {"epoch": 4, "update": 3.99, "loss": "0", "nll_loss": "0", "accuracy": "47.2", "wps": "6488.5", "ups": "15.27", "wpb": "424.9", "bsz": "32", "num_updates": "8400", "lr": "6.36973e-06", "gnorm": "0", "loss_scale": "1.47574e+20", "train_wall": "13", "gb_free": "15.5", "wall": "1002"}
+[2024-03-04 02:15:23,375][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:15:23,376][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:15:24,935][valid][INFO] - {"epoch": 4, "valid_loss": "0.995", "valid_nll_loss": "0.04", "valid_accuracy": "51.1", "valid_wps": "14276.1", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "8420", "valid_best_accuracy": "51.3"}
+[2024-03-04 02:15:24,940][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 4 @ 8420 updates
+[2024-03-04 02:15:24,942][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:15:27,634][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:15:27,638][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 4 @ 8420 updates, score 51.1) (writing took 2.698021353000513 seconds)
+[2024-03-04 02:15:27,639][fairseq_cli.train][INFO] - end of epoch 4 (average epoch stats below)
+[2024-03-04 02:15:27,640][train][INFO] - {"epoch": 4, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "48", "train_wps": "5582.6", "train_ups": "13.06", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "8420", "train_lr": "6.35957e-06", "train_gnorm": "0", "train_loss_scale": "1.47574e+20", "train_train_wall": "152", "train_gb_free": "15.5", "train_wall": "1007"}
+[2024-03-04 02:15:27,642][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:15:27,646][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 02:15:27,649][fairseq.trainer][INFO] - begin training epoch 5
+[2024-03-04 02:15:27,651][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 02:15:47,094][train_inner][INFO] - {"epoch": 5, "update": 4.086, "loss": "0", "nll_loss": "0", "accuracy": "47.7", "wps": "3487.9", "ups": "8.03", "wpb": "434.5", "bsz": "32", "num_updates": "8600", "lr": "6.2681e-06", "gnorm": "0", "loss_scale": "5.90296e+20", "train_wall": "20", "gb_free": "15.5", "wall": "1027"}
+[2024-03-04 02:16:08,770][train_inner][INFO] - {"epoch": 5, "update": 4.181, "loss": "0", "nll_loss": "0", "accuracy": "48.3", "wps": "3926.3", "ups": "9.23", "wpb": "425.5", "bsz": "32", "num_updates": "8800", "lr": "6.16647e-06", "gnorm": "0", "loss_scale": "1.18059e+21", "train_wall": "21", "gb_free": "15.5", "wall": "1048"}
+[2024-03-04 02:16:30,196][train_inner][INFO] - {"epoch": 5, "update": 4.276, "loss": "0", "nll_loss": "0", "accuracy": "47.3", "wps": "3976.1", "ups": "9.34", "wpb": "425.9", "bsz": "32", "num_updates": "9000", "lr": "6.06484e-06", "gnorm": "0", "loss_scale": "4.72237e+21", "train_wall": "21", "gb_free": "15.5", "wall": "1070"}
+[2024-03-04 02:16:51,565][train_inner][INFO] - {"epoch": 5, "update": 4.371, "loss": "0", "nll_loss": "0", "accuracy": "48.1", "wps": "3963.1", "ups": "9.36", "wpb": "423.4", "bsz": "32", "num_updates": "9200", "lr": "5.96321e-06", "gnorm": "0", "loss_scale": "9.44473e+21", "train_wall": "21", "gb_free": "15.5", "wall": "1091"}
+[2024-03-04 02:17:14,446][train_inner][INFO] - {"epoch": 5, "update": 4.466, "loss": "0", "nll_loss": "0", "accuracy": "47.3", "wps": "3802.6", "ups": "8.74", "wpb": "435", "bsz": "32", "num_updates": "9400", "lr": "5.86158e-06", "gnorm": "0", "loss_scale": "3.77789e+22", "train_wall": "22", "gb_free": "15.5", "wall": "1114"}
+[2024-03-04 02:17:36,887][train_inner][INFO] - {"epoch": 5, "update": 4.561, "loss": "0", "nll_loss": "0", "accuracy": "48.1", "wps": "3792.5", "ups": "8.91", "wpb": "425.5", "bsz": "32", "num_updates": "9600", "lr": "5.75995e-06", "gnorm": "0", "loss_scale": "1.51116e+23", "train_wall": "22", "gb_free": "15.5", "wall": "1136"}
+[2024-03-04 02:17:58,525][train_inner][INFO] - {"epoch": 5, "update": 4.656, "loss": "0", "nll_loss": "0", "accuracy": "47.3", "wps": "3931.9", "ups": "9.25", "wpb": "425.3", "bsz": "32", "num_updates": "9800", "lr": "5.65832e-06", "gnorm": "0", "loss_scale": "3.02231e+23", "train_wall": "21", "gb_free": "15.5", "wall": "1158"}
+[2024-03-04 02:18:19,844][train_inner][INFO] - {"epoch": 5, "update": 4.751, "loss": "0", "nll_loss": "0", "accuracy": "49.1", "wps": "4003.3", "ups": "9.38", "wpb": "426.7", "bsz": "32", "num_updates": "10000", "lr": "5.55668e-06", "gnorm": "0", "loss_scale": "1.20893e+24", "train_wall": "21", "gb_free": "15.5", "wall": "1179"}
+[2024-03-04 02:18:41,588][train_inner][INFO] - {"epoch": 5, "update": 4.846, "loss": "0", "nll_loss": "0", "accuracy": "48.6", "wps": "3972", "ups": "9.2", "wpb": "431.8", "bsz": "31.9", "num_updates": "10200", "lr": "5.45505e-06", "gnorm": "0", "loss_scale": "2.41785e+24", "train_wall": "21", "gb_free": "15.5", "wall": "1201"}
+[2024-03-04 02:19:03,379][train_inner][INFO] - {"epoch": 5, "update": 4.941, "loss": "0", "nll_loss": "0", "accuracy": "48.1", "wps": "3909.5", "ups": "9.18", "wpb": "425.9", "bsz": "32", "num_updates": "10400", "lr": "5.35342e-06", "gnorm": "0", "loss_scale": "9.67141e+24", "train_wall": "21", "gb_free": "15.5", "wall": "1223"}
+[2024-03-04 02:19:17,002][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:19:17,004][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:19:19,690][valid][INFO] - {"epoch": 5, "valid_loss": "0.995", "valid_nll_loss": "0.04", "valid_accuracy": "51.1", "valid_wps": "8203.7", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "10525", "valid_best_accuracy": "51.3"}
+[2024-03-04 02:19:19,696][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 5 @ 10525 updates
+[2024-03-04 02:19:19,697][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:19:23,068][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:19:23,072][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 5 @ 10525 updates, score 51.1) (writing took 3.3763520760003303 seconds)
+[2024-03-04 02:19:23,073][fairseq_cli.train][INFO] - end of epoch 5 (average epoch stats below)
+[2024-03-04 02:19:23,076][train][INFO] - {"epoch": 5, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "48", "train_wps": "3821.7", "train_ups": "8.94", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "10525", "train_lr": "5.2899e-06", "train_gnorm": "0", "train_loss_scale": "1.93428e+25", "train_train_wall": "225", "train_gb_free": "15.5", "train_wall": "1243"}
+[2024-03-04 02:19:23,082][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:19:23,087][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 02:19:23,090][fairseq.trainer][INFO] - begin training epoch 6
+[2024-03-04 02:19:23,091][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 02:19:31,756][train_inner][INFO] - {"epoch": 6, "update": 5.036, "loss": "0", "nll_loss": "0", "accuracy": "47.7", "wps": "2995.9", "ups": "7.05", "wpb": "425.1", "bsz": "32", "num_updates": "10600", "lr": "5.25179e-06", "gnorm": "0", "loss_scale": "1.93428e+25", "train_wall": "22", "gb_free": "15.5", "wall": "1251"}
+[2024-03-04 02:19:53,626][train_inner][INFO] - {"epoch": 6, "update": 5.131, "loss": "0", "nll_loss": "0", "accuracy": "48", "wps": "3880.1", "ups": "9.15", "wpb": "424.2", "bsz": "32", "num_updates": "10800", "lr": "5.15016e-06", "gnorm": "0", "loss_scale": "7.73713e+25", "train_wall": "21", "gb_free": "15.5", "wall": "1273"}
+[2024-03-04 02:20:14,761][train_inner][INFO] - {"epoch": 6, "update": 5.226, "loss": "0", "nll_loss": "0", "accuracy": "48.5", "wps": "4058.1", "ups": "9.46", "wpb": "428.8", "bsz": "32", "num_updates": "11000", "lr": "5.04853e-06", "gnorm": "0", "loss_scale": "1.54743e+26", "train_wall": "21", "gb_free": "15.5", "wall": "1294"}
+[2024-03-04 02:20:36,197][train_inner][INFO] - {"epoch": 6, "update": 5.321, "loss": "0", "nll_loss": "0", "accuracy": "47.8", "wps": "3980", "ups": "9.33", "wpb": "426.6", "bsz": "32", "num_updates": "11200", "lr": "4.9469e-06", "gnorm": "0", "loss_scale": "6.1897e+26", "train_wall": "21", "gb_free": "15.5", "wall": "1316"}
+[2024-03-04 02:20:54,209][train_inner][INFO] - {"epoch": 6, "update": 5.416, "loss": "0", "nll_loss": "0", "accuracy": "48.2", "wps": "4762.5", "ups": "11.1", "wpb": "428.9", "bsz": "31.9", "num_updates": "11400", "lr": "4.84527e-06", "gnorm": "0", "loss_scale": "2.47588e+27", "train_wall": "18", "gb_free": "15.5", "wall": "1334"}
+[2024-03-04 02:21:16,493][train_inner][INFO] - {"epoch": 6, "update": 5.511, "loss": "0", "nll_loss": "0", "accuracy": "48.2", "wps": "3826.3", "ups": "8.98", "wpb": "426.3", "bsz": "32", "num_updates": "11600", "lr": "4.74364e-06", "gnorm": "0", "loss_scale": "4.95176e+27", "train_wall": "22", "gb_free": "15.5", "wall": "1356"}
+[2024-03-04 02:21:38,641][train_inner][INFO] - {"epoch": 6, "update": 5.606, "loss": "0", "nll_loss": "0", "accuracy": "48.2", "wps": "3855.6", "ups": "9.03", "wpb": "426.9", "bsz": "32", "num_updates": "11800", "lr": "4.642e-06", "gnorm": "0", "loss_scale": "1.9807e+28", "train_wall": "22", "gb_free": "15.5", "wall": "1378"}
+[2024-03-04 02:22:00,423][train_inner][INFO] - {"epoch": 6, "update": 5.701, "loss": "0", "nll_loss": "0", "accuracy": "48.9", "wps": "3946.8", "ups": "9.18", "wpb": "429.8", "bsz": "32", "num_updates": "12000", "lr": "4.54037e-06", "gnorm": "0", "loss_scale": "3.96141e+28", "train_wall": "21", "gb_free": "15.5", "wall": "1400"}
+[2024-03-04 02:22:22,108][train_inner][INFO] - {"epoch": 6, "update": 5.796, "loss": "0", "nll_loss": "0", "accuracy": "48.4", "wps": "3974.1", "ups": "9.22", "wpb": "430.9", "bsz": "32", "num_updates": "12200", "lr": "4.43874e-06", "gnorm": "0", "loss_scale": "1.58456e+29", "train_wall": "21", "gb_free": "15.5", "wall": "1422"}
+[2024-03-04 02:22:43,684][train_inner][INFO] - {"epoch": 6, "update": 5.891, "loss": "0", "nll_loss": "0", "accuracy": "49.3", "wps": "3958.8", "ups": "9.27", "wpb": "427.1", "bsz": "32", "num_updates": "12400", "lr": "4.33711e-06", "gnorm": "0", "loss_scale": "3.16913e+29", "train_wall": "21", "gb_free": "15.5", "wall": "1443"}
+[2024-03-04 02:23:05,019][train_inner][INFO] - {"epoch": 6, "update": 5.986, "loss": "0", "nll_loss": "0", "accuracy": "47.7", "wps": "3986.2", "ups": "9.38", "wpb": "425.2", "bsz": "32", "num_updates": "12600", "lr": "4.23548e-06", "gnorm": "0", "loss_scale": "1.26765e+30", "train_wall": "21", "gb_free": "15.5", "wall": "1465"}
+[2024-03-04 02:23:08,126][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:23:08,128][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:23:10,734][valid][INFO] - {"epoch": 6, "valid_loss": "0.995", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "8473.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "12630", "valid_best_accuracy": "51.3"}
+[2024-03-04 02:23:10,738][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 6 @ 12630 updates
+[2024-03-04 02:23:10,744][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:23:13,754][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:23:13,758][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 6 @ 12630 updates, score 50.9) (writing took 3.0203582499998447 seconds)
+[2024-03-04 02:23:13,759][fairseq_cli.train][INFO] - end of epoch 6 (average epoch stats below)
+[2024-03-04 02:23:13,761][train][INFO] - {"epoch": 6, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "48.2", "train_wps": "3900.4", "train_ups": "9.13", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "12630", "train_lr": "4.22023e-06", "train_gnorm": "0", "train_loss_scale": "1.26765e+30", "train_train_wall": "221", "train_gb_free": "15.5", "train_wall": "1473"}
+[2024-03-04 02:23:13,763][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:23:13,769][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 02:23:13,772][fairseq.trainer][INFO] - begin training epoch 7
+[2024-03-04 02:23:13,773][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 02:23:32,692][train_inner][INFO] - {"epoch": 7, "update": 6.081, "loss": "0", "nll_loss": "0", "accuracy": "47.7", "wps": "3076.5", "ups": "7.23", "wpb": "425.7", "bsz": "32", "num_updates": "12800", "lr": "4.13385e-06", "gnorm": "0", "loss_scale": "5.0706e+30", "train_wall": "22", "gb_free": "15.5", "wall": "1492"}
+[2024-03-04 02:23:54,883][train_inner][INFO] - {"epoch": 7, "update": 6.176, "loss": "0", "nll_loss": "0", "accuracy": "48.2", "wps": "3813.2", "ups": "9.01", "wpb": "423.1", "bsz": "32", "num_updates": "13000", "lr": "4.03222e-06", "gnorm": "0", "loss_scale": "1.01412e+31", "train_wall": "22", "gb_free": "15.5", "wall": "1514"}
+[2024-03-04 02:24:16,740][train_inner][INFO] - {"epoch": 7, "update": 6.271, "loss": "0", "nll_loss": "0", "accuracy": "48.5", "wps": "3959.9", "ups": "9.15", "wpb": "432.7", "bsz": "32", "num_updates": "13200", "lr": "3.93059e-06", "gnorm": "0", "loss_scale": "4.05648e+31", "train_wall": "21", "gb_free": "15.5", "wall": "1536"}
+[2024-03-04 02:24:38,603][train_inner][INFO] - {"epoch": 7, "update": 6.366, "loss": "0", "nll_loss": "0", "accuracy": "47.6", "wps": "3875.4", "ups": "9.15", "wpb": "423.6", "bsz": "32", "num_updates": "13400", "lr": "3.82895e-06", "gnorm": "0", "loss_scale": "8.11296e+31", "train_wall": "21", "gb_free": "15.5", "wall": "1558"}
+[2024-03-04 02:25:00,655][train_inner][INFO] - {"epoch": 7, "update": 6.461, "loss": "0", "nll_loss": "0", "accuracy": "48.7", "wps": "3892.9", "ups": "9.07", "wpb": "429.2", "bsz": "32", "num_updates": "13600", "lr": "3.72732e-06", "gnorm": "0", "loss_scale": "3.24519e+32", "train_wall": "22", "gb_free": "15.5", "wall": "1580"}
+[2024-03-04 02:25:22,754][train_inner][INFO] - {"epoch": 7, "update": 6.556, "loss": "0", "nll_loss": "0", "accuracy": "48.4", "wps": "3846.3", "ups": "9.05", "wpb": "425", "bsz": "32", "num_updates": "13800", "lr": "3.62569e-06", "gnorm": "0", "loss_scale": "6.49037e+32", "train_wall": "22", "gb_free": "15.5", "wall": "1602"}
+[2024-03-04 02:25:44,631][train_inner][INFO] - {"epoch": 7, "update": 6.651, "loss": "0", "nll_loss": "0", "accuracy": "47.1", "wps": "3945", "ups": "9.14", "wpb": "431.5", "bsz": "32", "num_updates": "14000", "lr": "3.52406e-06", "gnorm": "0", "loss_scale": "2.59615e+33", "train_wall": "21", "gb_free": "15.5", "wall": "1624"}
+[2024-03-04 02:26:04,484][train_inner][INFO] - {"epoch": 7, "update": 6.746, "loss": "0", "nll_loss": "0", "accuracy": "48.4", "wps": "4320.2", "ups": "10.07", "wpb": "428.8", "bsz": "31.9", "num_updates": "14200", "lr": "3.42243e-06", "gnorm": "0", "loss_scale": "5.1923e+33", "train_wall": "19", "gb_free": "15.5", "wall": "1644"}
+[2024-03-04 02:26:24,031][train_inner][INFO] - {"epoch": 7, "update": 6.841, "loss": "0", "nll_loss": "0", "accuracy": "47.2", "wps": "4426.1", "ups": "10.23", "wpb": "432.6", "bsz": "32", "num_updates": "14400", "lr": "3.3208e-06", "gnorm": "0", "loss_scale": "2.07692e+34", "train_wall": "19", "gb_free": "15.5", "wall": "1664"}
+[2024-03-04 02:26:46,156][train_inner][INFO] - {"epoch": 7, "update": 6.936, "loss": "0", "nll_loss": "0", "accuracy": "47.8", "wps": "3805", "ups": "9.04", "wpb": "420.9", "bsz": "32", "num_updates": "14600", "lr": "3.21917e-06", "gnorm": "0", "loss_scale": "8.30767e+34", "train_wall": "22", "gb_free": "15.5", "wall": "1686"}
+[2024-03-04 02:27:01,250][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:27:01,251][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:27:03,978][valid][INFO] - {"epoch": 7, "valid_loss": "0.995", "valid_nll_loss": "0.04", "valid_accuracy": "51.1", "valid_wps": "8067.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "14735", "valid_best_accuracy": "51.3"}
+[2024-03-04 02:27:03,982][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 7 @ 14735 updates
+[2024-03-04 02:27:03,985][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:27:07,233][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:27:07,237][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 7 @ 14735 updates, score 51.1) (writing took 3.2548753549999674 seconds)
+[2024-03-04 02:27:07,238][fairseq_cli.train][INFO] - end of epoch 7 (average epoch stats below)
+[2024-03-04 02:27:07,240][train][INFO] - {"epoch": 7, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "48", "train_wps": "3853.7", "train_ups": "9.02", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "14735", "train_lr": "3.15057e-06", "train_gnorm": "0", "train_loss_scale": "1.66153e+35", "train_train_wall": "223", "train_gb_free": "15.5", "train_wall": "1707"}
+[2024-03-04 02:27:07,243][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:27:07,259][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 02:27:07,263][fairseq.trainer][INFO] - begin training epoch 8
+[2024-03-04 02:27:07,264][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 02:27:14,338][train_inner][INFO] - {"epoch": 8, "update": 7.031, "loss": "0", "nll_loss": "0", "accuracy": "47.6", "wps": "3016.5", "ups": "7.1", "wpb": "425", "bsz": "32", "num_updates": "14800", "lr": "3.11754e-06", "gnorm": "0", "loss_scale": "1.66153e+35", "train_wall": "22", "gb_free": "15.5", "wall": "1714"}
+[2024-03-04 02:27:35,445][train_inner][INFO] - {"epoch": 8, "update": 7.126, "loss": "0", "nll_loss": "0", "accuracy": "48.3", "wps": "3966.5", "ups": "9.48", "wpb": "418.6", "bsz": "31.9", "num_updates": "15000", "lr": "3.01591e-06", "gnorm": "0", "loss_scale": "6.64614e+35", "train_wall": "21", "gb_free": "15.5", "wall": "1735"}
+[2024-03-04 02:27:57,632][train_inner][INFO] - {"epoch": 8, "update": 7.221, "loss": "0", "nll_loss": "0", "accuracy": "48.4", "wps": "3867.7", "ups": "9.02", "wpb": "429", "bsz": "32", "num_updates": "15200", "lr": "2.91427e-06", "gnorm": "0", "loss_scale": "1.32923e+36", "train_wall": "22", "gb_free": "15.5", "wall": "1757"}
+[2024-03-04 02:28:19,151][train_inner][INFO] - {"epoch": 8, "update": 7.316, "loss": "0", "nll_loss": "0", "accuracy": "47", "wps": "3895.7", "ups": "9.29", "wpb": "419.1", "bsz": "32", "num_updates": "15400", "lr": "2.81264e-06", "gnorm": "0", "loss_scale": "5.31691e+36", "train_wall": "21", "gb_free": "15.5", "wall": "1779"}
+[2024-03-04 02:28:41,127][train_inner][INFO] - {"epoch": 8, "update": 7.411, "loss": "0", "nll_loss": "0", "accuracy": "48.3", "wps": "3913.6", "ups": "9.1", "wpb": "430", "bsz": "32", "num_updates": "15600", "lr": "2.71101e-06", "gnorm": "0", "loss_scale": "1.06338e+37", "train_wall": "22", "gb_free": "15.5", "wall": "1801"}
+[2024-03-04 02:29:02,557][train_inner][INFO] - {"epoch": 8, "update": 7.506, "loss": "0", "nll_loss": "0", "accuracy": "47.8", "wps": "3971.7", "ups": "9.33", "wpb": "425.5", "bsz": "32", "num_updates": "15800", "lr": "2.60938e-06", "gnorm": "0", "loss_scale": "4.25353e+37", "train_wall": "21", "gb_free": "15.5", "wall": "1822"}
+[2024-03-04 02:29:24,431][train_inner][INFO] - {"epoch": 8, "update": 7.601, "loss": "0", "nll_loss": "0", "accuracy": "48.2", "wps": "3913.3", "ups": "9.14", "wpb": "428", "bsz": "32", "num_updates": "16000", "lr": "2.50775e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "1844"}
+[2024-03-04 02:29:38,439][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:29:46,436][train_inner][INFO] - {"epoch": 8, "update": 7.696, "loss": "0", "nll_loss": "0", "accuracy": "48", "wps": "3911.2", "ups": "9.09", "wpb": "430.3", "bsz": "32", "num_updates": "16200", "lr": "2.40612e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "1866"}
+[2024-03-04 02:29:52,482][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:30:06,647][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:30:08,324][train_inner][INFO] - {"epoch": 8, "update": 7.792, "loss": "0", "nll_loss": "0", "accuracy": "48.2", "wps": "3945.9", "ups": "9.14", "wpb": "431.8", "bsz": "32", "num_updates": "16400", "lr": "2.30449e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "1888"}
+[2024-03-04 02:30:20,729][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:30:30,314][train_inner][INFO] - {"epoch": 8, "update": 7.888, "loss": "0", "nll_loss": "0", "accuracy": "47.7", "wps": "3937.1", "ups": "9.1", "wpb": "432.8", "bsz": "32", "num_updates": "16600", "lr": "2.20286e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "1910"}
+[2024-03-04 02:30:34,777][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:30:48,909][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:30:52,343][train_inner][INFO] - {"epoch": 8, "update": 7.984, "loss": "0", "nll_loss": "0", "accuracy": "48.5", "wps": "3935.3", "ups": "9.08", "wpb": "433.4", "bsz": "32", "num_updates": "16800", "lr": "2.10122e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "1932"}
+[2024-03-04 02:30:55,946][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:30:55,948][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:30:58,560][valid][INFO] - {"epoch": 8, "valid_loss": "0.996", "valid_nll_loss": "0.04", "valid_accuracy": "51.3", "valid_wps": "8451.8", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "16834", "valid_best_accuracy": "51.3"}
+[2024-03-04 02:30:58,564][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 8 @ 16834 updates
+[2024-03-04 02:30:58,566][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_best.pt
+[2024-03-04 02:31:01,501][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_best.pt
+[2024-03-04 02:31:49,782][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 8 @ 16834 updates, score 51.3) (writing took 51.217792857998575 seconds)
+[2024-03-04 02:31:49,783][fairseq_cli.train][INFO] - end of epoch 8 (average epoch stats below)
+[2024-03-04 02:31:49,787][train][INFO] - {"epoch": 8, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "48", "train_wps": "3175.7", "train_ups": "7.43", "train_wpb": "427.5", "train_bsz": "32", "train_num_updates": "16834", "train_lr": "2.08395e-06", "train_gnorm": "0", "train_loss_scale": "1.70141e+38", "train_train_wall": "224", "train_gb_free": "15.5", "train_wall": "1989"}
+[2024-03-04 02:31:49,790][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:31:49,797][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 02:31:49,800][fairseq.trainer][INFO] - begin training epoch 9
+[2024-03-04 02:31:49,802][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 02:31:56,669][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:32:07,968][train_inner][INFO] - {"epoch": 9, "update": 8.079, "loss": "0", "nll_loss": "0", "accuracy": "48.4", "wps": "1135.7", "ups": "2.64", "wpb": "429.4", "bsz": "32", "num_updates": "17000", "lr": "1.99959e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2008"}
+[2024-03-04 02:32:10,730][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:32:24,805][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:32:29,842][train_inner][INFO] - {"epoch": 9, "update": 8.175, "loss": "0", "nll_loss": "0", "accuracy": "47.4", "wps": "3836.5", "ups": "9.14", "wpb": "419.6", "bsz": "32", "num_updates": "17200", "lr": "1.89796e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2029"}
+[2024-03-04 02:32:38,673][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:32:51,691][train_inner][INFO] - {"epoch": 9, "update": 8.271, "loss": "0", "nll_loss": "0", "accuracy": "46.7", "wps": "3925.1", "ups": "9.15", "wpb": "428.8", "bsz": "32", "num_updates": "17400", "lr": "1.79633e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2051"}
+[2024-03-04 02:32:52,648][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:33:06,825][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:33:13,712][train_inner][INFO] - {"epoch": 9, "update": 8.367, "loss": "0", "nll_loss": "0", "accuracy": "48.1", "wps": "3898.2", "ups": "9.08", "wpb": "429.2", "bsz": "32", "num_updates": "17600", "lr": "1.6947e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "2073"}
+[2024-03-04 02:33:20,864][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:33:34,900][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:33:35,732][train_inner][INFO] - {"epoch": 9, "update": 8.463, "loss": "0", "nll_loss": "0", "accuracy": "47.9", "wps": "3882.8", "ups": "9.08", "wpb": "427.5", "bsz": "32", "num_updates": "17800", "lr": "1.59307e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "2095"}
+[2024-03-04 02:33:48,758][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:33:57,439][train_inner][INFO] - {"epoch": 9, "update": 8.558, "loss": "0", "nll_loss": "0", "accuracy": "48.2", "wps": "3938.1", "ups": "9.21", "wpb": "427.4", "bsz": "32", "num_updates": "18000", "lr": "1.49144e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2117"}
+[2024-03-04 02:34:02,699][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:34:16,797][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:34:19,328][train_inner][INFO] - {"epoch": 9, "update": 8.654, "loss": "0", "nll_loss": "0", "accuracy": "48.4", "wps": "3878.3", "ups": "9.14", "wpb": "424.4", "bsz": "32", "num_updates": "18200", "lr": "1.38981e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2139"}
+[2024-03-04 02:34:31,141][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:34:41,698][train_inner][INFO] - {"epoch": 9, "update": 8.75, "loss": "0", "nll_loss": "0", "accuracy": "47.5", "wps": "3817.9", "ups": "8.94", "wpb": "427", "bsz": "31.9", "num_updates": "18400", "lr": "1.28818e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "2161"}
+[2024-03-04 02:34:45,286][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:34:59,174][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:35:03,557][train_inner][INFO] - {"epoch": 9, "update": 8.846, "loss": "0", "nll_loss": "0", "accuracy": "47.8", "wps": "3971.2", "ups": "9.15", "wpb": "434", "bsz": "32", "num_updates": "18600", "lr": "1.18654e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2183"}
+[2024-03-04 02:35:12,983][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:35:24,884][train_inner][INFO] - {"epoch": 9, "update": 8.941, "loss": "0", "nll_loss": "0", "accuracy": "47.6", "wps": "3979.8", "ups": "9.38", "wpb": "424.3", "bsz": "32", "num_updates": "18800", "lr": "1.08491e-06", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2204"}
+[2024-03-04 02:35:26,760][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:35:38,321][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:35:38,324][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:35:40,947][valid][INFO] - {"epoch": 9, "valid_loss": "0.995", "valid_nll_loss": "0.04", "valid_accuracy": "51.3", "valid_wps": "8411.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "18923", "valid_best_accuracy": "51.3"}
+[2024-03-04 02:35:40,953][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 9 @ 18923 updates
+[2024-03-04 02:35:40,954][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_best.pt
+[2024-03-04 02:35:44,110][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_best.pt
+[2024-03-04 02:36:32,999][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 9 @ 18923 updates, score 51.3) (writing took 52.04631988699839 seconds)
+[2024-03-04 02:36:33,001][fairseq_cli.train][INFO] - end of epoch 9 (average epoch stats below)
+[2024-03-04 02:36:33,004][train][INFO] - {"epoch": 9, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "47.9", "train_wps": "3152.5", "train_ups": "7.38", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "18923", "train_lr": "1.02241e-06", "train_gnorm": "0", "train_loss_scale": "1.70141e+38", "train_train_wall": "224", "train_gb_free": "15.5", "train_wall": "2273"}
+[2024-03-04 02:36:33,007][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:36:33,014][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 02:36:33,017][fairseq.trainer][INFO] - begin training epoch 10
+[2024-03-04 02:36:33,018][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 02:36:35,517][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:36:41,467][train_inner][INFO] - {"epoch": 10, "update": 9.037, "loss": "0", "nll_loss": "0", "accuracy": "49", "wps": "1129.9", "ups": "2.61", "wpb": "432.7", "bsz": "32", "num_updates": "19000", "lr": "9.83282e-07", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2281"}
+[2024-03-04 02:36:49,179][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:37:02,917][train_inner][INFO] - {"epoch": 10, "update": 9.133, "loss": "0", "nll_loss": "0", "accuracy": "48.5", "wps": "4006.8", "ups": "9.32", "wpb": "429.7", "bsz": "32", "num_updates": "19200", "lr": "8.8165e-07", "gnorm": "0", "loss_scale": "3.40282e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2303"}
+[2024-03-04 02:37:02,999][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:37:16,993][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:37:24,791][train_inner][INFO] - {"epoch": 10, "update": 9.229, "loss": "0", "nll_loss": "0", "accuracy": "47.6", "wps": "3902", "ups": "9.14", "wpb": "426.7", "bsz": "32", "num_updates": "19400", "lr": "7.80019e-07", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2324"}
+[2024-03-04 02:37:30,958][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:37:45,153][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:37:46,926][train_inner][INFO] - {"epoch": 10, "update": 9.324, "loss": "0", "nll_loss": "0", "accuracy": "48.9", "wps": "3823.6", "ups": "9.04", "wpb": "423.1", "bsz": "32", "num_updates": "19600", "lr": "6.78388e-07", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "2347"}
+[2024-03-04 02:37:59,341][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:38:09,299][train_inner][INFO] - {"epoch": 10, "update": 9.42, "loss": "0", "nll_loss": "0", "accuracy": "49", "wps": "3799.7", "ups": "8.94", "wpb": "425", "bsz": "32", "num_updates": "19800", "lr": "5.76757e-07", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "2369"}
+[2024-03-04 02:38:13,858][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:38:28,481][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:38:32,131][train_inner][INFO] - {"epoch": 10, "update": 9.516, "loss": "0", "nll_loss": "0", "accuracy": "48.1", "wps": "3777.8", "ups": "8.76", "wpb": "431.2", "bsz": "32", "num_updates": "20000", "lr": "4.75126e-07", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "2392"}
+[2024-03-04 02:38:43,059][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:38:54,945][train_inner][INFO] - {"epoch": 10, "update": 9.611, "loss": "0", "nll_loss": "0", "accuracy": "47", "wps": "3683.2", "ups": "8.77", "wpb": "420.1", "bsz": "32", "num_updates": "20200", "lr": "3.73495e-07", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "2415"}
+[2024-03-04 02:38:58,070][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:39:12,442][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:39:17,551][train_inner][INFO] - {"epoch": 10, "update": 9.707, "loss": "0", "nll_loss": "0", "accuracy": "48", "wps": "3832.6", "ups": "8.85", "wpb": "433.1", "bsz": "32", "num_updates": "20400", "lr": "2.71863e-07", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "2437"}
+[2024-03-04 02:39:26,402][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:39:39,436][train_inner][INFO] - {"epoch": 10, "update": 9.803, "loss": "0", "nll_loss": "0", "accuracy": "48.2", "wps": "3887.3", "ups": "9.14", "wpb": "425.3", "bsz": "32", "num_updates": "20600", "lr": "1.70232e-07", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "21", "gb_free": "15.5", "wall": "2459"}
+[2024-03-04 02:39:40,469][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:39:55,022][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:40:02,206][train_inner][INFO] - {"epoch": 10, "update": 9.899, "loss": "0", "nll_loss": "0", "accuracy": "47.9", "wps": "3734.3", "ups": "8.78", "wpb": "425.1", "bsz": "32", "num_updates": "20800", "lr": "6.8601e-08", "gnorm": "0", "loss_scale": "1.70141e+38", "train_wall": "22", "gb_free": "15.5", "wall": "2482"}
+[2024-03-04 02:40:09,797][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.7014118346046923e+38
+[2024-03-04 02:40:18,206][fairseq_cli.train][INFO] - Stopping training due to num_updates: 20935 >= max_update: 20935
+[2024-03-04 02:40:18,208][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 02:40:18,209][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 02:40:21,064][valid][INFO] - {"epoch": 10, "valid_loss": "0.996", "valid_nll_loss": "0.04", "valid_accuracy": "50.8", "valid_wps": "7750.1", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "20935", "valid_best_accuracy": "51.3"}
+[2024-03-04 02:40:21,068][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 10 @ 20935 updates
+[2024-03-04 02:40:21,070][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:40:24,483][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/01-58-36/checkpoints/checkpoint_last.pt
+[2024-03-04 02:40:24,487][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 10 @ 20935 updates, score 50.8) (writing took 3.419246547000512 seconds)
+[2024-03-04 02:40:24,489][fairseq_cli.train][INFO] - end of epoch 10 (average epoch stats below)
+[2024-03-04 02:40:24,492][train][INFO] - {"epoch": 10, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "48.2", "train_wps": "3712", "train_ups": "8.69", "train_wpb": "427.1", "train_bsz": "32", "train_num_updates": "20935", "train_lr": "0", "train_gnorm": "0", "train_loss_scale": "1.70141e+38", "train_train_wall": "221", "train_gb_free": "15.5", "train_wall": "2504"}
+[2024-03-04 02:40:24,493][fairseq_cli.train][INFO] - done training in 2495.6 seconds

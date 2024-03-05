@@ -1,0 +1,478 @@
+[2024-03-02 16:06:45,503][fairseq_cli.train][INFO] - {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 16, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 4400, 'batch_size_valid': 16, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 100, 'max_update': 2036, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [2e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': False, 'classification_head_name': 'sentence_classification_head', 'seed': 1, 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [2e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 122, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 2036.0, 'lr': [2e-05]}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'job_logging_cfg': {'version': 1, 'formatters': {'simple': {'format': '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}, 'file': {'class': 'logging.FileHandler', 'formatter': 'simple', 'filename': 'hydra_train.log'}}, 'root': {'level': 'INFO', 'handlers': ['console', 'file']}, 'disable_existing_loggers': False}}
+[2024-03-02 16:06:45,549][fairseq.tasks.sentence_prediction][INFO] - [input] dictionary: 50265 types
+[2024-03-02 16:06:45,556][fairseq.tasks.sentence_prediction][INFO] - [label] dictionary: 9 types
+[2024-03-02 16:06:47,112][fairseq_cli.train][INFO] - RobertaModel(
+  (encoder): RobertaEncoder(
+    (sentence_encoder): TransformerEncoder(
+      (dropout_module): FairseqDropout()
+      (embed_tokens): Embedding(50265, 768, padding_idx=1)
+      (embed_positions): LearnedPositionalEmbedding(514, 768, padding_idx=1)
+      (layernorm_embedding): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0-11): 12 x TransformerEncoderLayerBase(
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (lm_head): RobertaLMHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (classification_heads): ModuleDict(
+    (sentence_classification_head): RobertaClassificationHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (dropout): Dropout(p=0.0, inplace=False)
+      (out_proj): Linear(in_features=768, out_features=2, bias=True)
+    )
+  )
+)
+[2024-03-02 16:06:47,114][fairseq_cli.train][INFO] - task: SentencePredictionTask
+[2024-03-02 16:06:47,114][fairseq_cli.train][INFO] - model: RobertaModel
+[2024-03-02 16:06:47,115][fairseq_cli.train][INFO] - criterion: SentencePredictionCriterion
+[2024-03-02 16:06:47,116][fairseq_cli.train][INFO] - num. shared model params: 125,288,795 (num. trained: 125,288,795)
+[2024-03-02 16:06:47,117][fairseq_cli.train][INFO] - num. expert model params: 0 (num. trained: 0)
+[2024-03-02 16:06:47,153][fairseq.data.data_utils][INFO] - loaded 277 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/input0/valid
+[2024-03-02 16:06:47,173][fairseq.data.data_utils][INFO] - loaded 277 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/input1/valid
+[2024-03-02 16:06:47,196][fairseq.data.data_utils][INFO] - loaded 277 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/label/valid
+[2024-03-02 16:06:47,197][fairseq.tasks.sentence_prediction][INFO] - Loaded valid with #samples: 277
+[2024-03-02 16:06:47,512][fairseq.trainer][INFO] - detected shared parameter: encoder.sentence_encoder.embed_tokens.weight <- encoder.lm_head.weight
+[2024-03-02 16:06:47,513][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-02 16:06:47,514][fairseq.utils][INFO] - rank   0: capabilities =  8.6  ; total memory = 16.000 GB ; name = NVIDIA GeForce RTX 3080 Ti Laptop GPU   
+[2024-03-02 16:06:47,515][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-02 16:06:47,516][fairseq_cli.train][INFO] - training on 1 devices (GPUs/TPUs)
+[2024-03-02 16:06:47,517][fairseq_cli.train][INFO] - max tokens per device = 4400 and max sentences per device = 16
+[2024-03-02 16:06:47,518][fairseq.trainer][INFO] - Preparing to load checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt
+[2024-03-02 16:06:54,486][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.weight
+[2024-03-02 16:06:54,488][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.bias
+[2024-03-02 16:06:54,489][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.weight
+[2024-03-02 16:06:54,490][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.bias
+[2024-03-02 16:06:54,556][fairseq.optim.adam][INFO] - using FusedAdam
+[2024-03-02 16:06:54,877][fairseq.trainer][INFO] - Loaded checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt (epoch 1 @ 0 updates)
+[2024-03-02 16:06:54,878][fairseq.trainer][INFO] - loading train data for epoch 1
+[2024-03-02 16:06:54,897][fairseq.data.data_utils][INFO] - loaded 2,490 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/input0/train
+[2024-03-02 16:06:54,919][fairseq.data.data_utils][INFO] - loaded 2,490 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/input1/train
+[2024-03-02 16:06:54,945][fairseq.data.data_utils][INFO] - loaded 2,490 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/label/train
+[2024-03-02 16:06:54,947][fairseq.tasks.sentence_prediction][INFO] - Loaded train with #samples: 2490
+[2024-03-02 16:06:54,948][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:06:54,949][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-02 16:06:54,950][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-02 16:06:54,950][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+[2024-03-02 16:06:54,984][fairseq_cli.train][INFO] - begin dry-run validation on "valid" subset
+[2024-03-02 16:06:54,985][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:06:54,986][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-02 16:06:54,987][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-02 16:06:54,987][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+layer encoder.sentence_encoder.embed_tokens.weight, require grad: False
+layer encoder.sentence_encoder.embed_positions.weight, require grad: False
+layer encoder.sentence_encoder.layernorm_embedding.weight, require grad: False
+layer encoder.sentence_encoder.layernorm_embedding.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.final_layer_norm.bias, require grad: False
+layer encoder.lm_head.bias, require grad: False
+layer encoder.lm_head.dense.weight, require grad: False
+layer encoder.lm_head.dense.bias, require grad: False
+layer encoder.lm_head.layer_norm.weight, require grad: False
+layer encoder.lm_head.layer_norm.bias, require grad: False
+layer classification_heads.sentence_classification_head.dense.weight, require grad: True
+layer classification_heads.sentence_classification_head.dense.bias, require grad: True
+layer classification_heads.sentence_classification_head.out_proj.weight, require grad: True
+layer classification_heads.sentence_classification_head.out_proj.bias, require grad: True
+[2024-03-02 16:06:55,152][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:06:55,156][fairseq.trainer][INFO] - begin training epoch 1
+[2024-03-02 16:06:55,158][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:07:01,289][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:07:01,291][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:07:01,893][valid][INFO] - {"epoch": 1, "valid_loss": "0.999", "valid_nll_loss": "0.014", "valid_accuracy": "56", "valid_wps": "33464.8", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "156"}
+[2024-03-02 16:07:01,897][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 1 @ 156 updates
+[2024-03-02 16:07:01,898][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:07:03,373][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:07:30,235][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 1 @ 156 updates, score 56.0) (writing took 28.338104942002246 seconds)
+[2024-03-02 16:07:30,236][fairseq_cli.train][INFO] - end of epoch 1 (average epoch stats below)
+[2024-03-02 16:07:30,239][train][INFO] - {"epoch": 1, "train_loss": "1.001", "train_nll_loss": "0.014", "train_accuracy": "50", "train_wps": "5102.2", "train_ups": "4.49", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "156", "train_lr": "1.96447e-05", "train_gnorm": "1.604", "train_loss_scale": "8", "train_train_wall": "6", "train_gb_free": "15.6", "train_wall": "43"}
+[2024-03-02 16:07:30,241][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:07:30,245][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:07:30,247][fairseq.trainer][INFO] - begin training epoch 2
+[2024-03-02 16:07:30,248][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:07:32,113][train_inner][INFO] - {"epoch": 2, "update": 1.282, "loss": "1.002", "nll_loss": "0.014", "accuracy": "50.2", "wps": "6218.2", "ups": "5.47", "wpb": "1137.4", "bsz": "16", "num_updates": "200", "lr": "1.9185e-05", "gnorm": "1.572", "loss_scale": "8", "train_wall": "8", "gb_free": "15.6", "wall": "45"}
+[2024-03-02 16:07:35,990][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:07:35,991][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:07:36,530][valid][INFO] - {"epoch": 2, "valid_loss": "1.001", "valid_nll_loss": "0.014", "valid_accuracy": "47.7", "valid_wps": "36884.7", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "312", "valid_best_accuracy": "56"}
+[2024-03-02 16:07:36,533][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 2 @ 312 updates
+[2024-03-02 16:07:36,534][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:07:38,078][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:07:38,081][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 2 @ 312 updates, score 47.7) (writing took 1.5486356710025575 seconds)
+[2024-03-02 16:07:38,082][fairseq_cli.train][INFO] - end of epoch 2 (average epoch stats below)
+[2024-03-02 16:07:38,084][train][INFO] - {"epoch": 2, "train_loss": "1.004", "train_nll_loss": "0.014", "train_accuracy": "49.8", "train_wps": "22604.4", "train_ups": "19.89", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "312", "train_lr": "1.80146e-05", "train_gnorm": "1.553", "train_loss_scale": "16", "train_train_wall": "6", "train_gb_free": "15.7", "train_wall": "51"}
+[2024-03-02 16:07:38,086][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:07:38,091][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:07:38,094][fairseq.trainer][INFO] - begin training epoch 3
+[2024-03-02 16:07:38,095][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:07:41,630][train_inner][INFO] - {"epoch": 3, "update": 2.564, "loss": "1.002", "nll_loss": "0.014", "accuracy": "49.9", "wps": "23719.3", "ups": "21.02", "wpb": "1128.7", "bsz": "16", "num_updates": "400", "lr": "1.70951e-05", "gnorm": "1.55", "loss_scale": "32", "train_wall": "7", "gb_free": "15.7", "wall": "54"}
+[2024-03-02 16:07:44,173][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:07:44,175][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:07:44,727][valid][INFO] - {"epoch": 3, "valid_loss": "0.997", "valid_nll_loss": "0.014", "valid_accuracy": "53.1", "valid_wps": "36092.5", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "468", "valid_best_accuracy": "56"}
+[2024-03-02 16:07:44,730][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 3 @ 468 updates
+[2024-03-02 16:07:44,732][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:07:46,267][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:07:46,271][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 3 @ 468 updates, score 53.1) (writing took 1.5404651099997864 seconds)
+[2024-03-02 16:07:46,272][fairseq_cli.train][INFO] - end of epoch 3 (average epoch stats below)
+[2024-03-02 16:07:46,273][train][INFO] - {"epoch": 3, "train_loss": "1.001", "train_nll_loss": "0.014", "train_accuracy": "50.6", "train_wps": "21656", "train_ups": "19.05", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "468", "train_lr": "1.63845e-05", "train_gnorm": "1.505", "train_loss_scale": "32", "train_train_wall": "6", "train_gb_free": "15.7", "train_wall": "59"}
+[2024-03-02 16:07:46,275][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:07:46,280][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:07:46,285][fairseq.trainer][INFO] - begin training epoch 4
+[2024-03-02 16:07:46,287][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:07:51,356][train_inner][INFO] - {"epoch": 4, "update": 3.846, "loss": "0.999", "nll_loss": "0.014", "accuracy": "51.6", "wps": "23597.6", "ups": "20.57", "wpb": "1147.3", "bsz": "15.9", "num_updates": "600", "lr": "1.50052e-05", "gnorm": "1.53", "loss_scale": "64", "train_wall": "7", "gb_free": "15.7", "wall": "64"}
+[2024-03-02 16:07:52,186][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:07:52,188][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:07:52,733][valid][INFO] - {"epoch": 4, "valid_loss": "1.001", "valid_nll_loss": "0.014", "valid_accuracy": "47.7", "valid_wps": "36492", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "624", "valid_best_accuracy": "56"}
+[2024-03-02 16:07:52,736][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 4 @ 624 updates
+[2024-03-02 16:07:52,738][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:07:54,368][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:07:54,372][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 4 @ 624 updates, score 47.7) (writing took 1.6357551399996737 seconds)
+[2024-03-02 16:07:54,373][fairseq_cli.train][INFO] - end of epoch 4 (average epoch stats below)
+[2024-03-02 16:07:54,375][train][INFO] - {"epoch": 4, "train_loss": "0.998", "train_nll_loss": "0.014", "train_accuracy": "52.1", "train_wps": "21889.1", "train_ups": "19.26", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "624", "train_lr": "1.47544e-05", "train_gnorm": "1.516", "train_loss_scale": "64", "train_train_wall": "6", "train_gb_free": "15.7", "train_wall": "67"}
+[2024-03-02 16:07:54,377][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:07:54,380][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:07:54,383][fairseq.trainer][INFO] - begin training epoch 5
+[2024-03-02 16:07:54,384][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:08:00,262][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:08:00,264][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:00,841][valid][INFO] - {"epoch": 5, "valid_loss": "0.999", "valid_nll_loss": "0.014", "valid_accuracy": "48.4", "valid_wps": "34667", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "780", "valid_best_accuracy": "56"}
+[2024-03-02 16:08:00,844][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 5 @ 780 updates
+[2024-03-02 16:08:00,846][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:08:02,399][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:08:02,403][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 5 @ 780 updates, score 48.4) (writing took 1.5592225510008575 seconds)
+[2024-03-02 16:08:02,405][fairseq_cli.train][INFO] - end of epoch 5 (average epoch stats below)
+[2024-03-02 16:08:02,407][train][INFO] - {"epoch": 5, "train_loss": "0.999", "train_nll_loss": "0.014", "train_accuracy": "51.6", "train_wps": "22080.5", "train_ups": "19.43", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "780", "train_lr": "1.31243e-05", "train_gnorm": "1.542", "train_loss_scale": "256", "train_train_wall": "6", "train_gb_free": "15.7", "train_wall": "75"}
+[2024-03-02 16:08:02,409][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:02,412][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:08:02,415][fairseq.trainer][INFO] - begin training epoch 6
+[2024-03-02 16:08:02,417][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:08:03,239][train_inner][INFO] - {"epoch": 6, "update": 5.128, "loss": "0.999", "nll_loss": "0.014", "accuracy": "51.8", "wps": "18949.4", "ups": "16.83", "wpb": "1125.9", "bsz": "16", "num_updates": "800", "lr": "1.29154e-05", "gnorm": "1.507", "loss_scale": "256", "train_wall": "7", "gb_free": "15.7", "wall": "76"}
+[2024-03-02 16:08:08,740][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:08:08,742][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:09,412][valid][INFO] - {"epoch": 6, "valid_loss": "0.996", "valid_nll_loss": "0.014", "valid_accuracy": "55.2", "valid_wps": "30264.6", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "936", "valid_best_accuracy": "56"}
+[2024-03-02 16:08:09,415][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 6 @ 936 updates
+[2024-03-02 16:08:09,416][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:08:11,048][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:08:11,051][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 6 @ 936 updates, score 55.2) (writing took 1.636351769000612 seconds)
+[2024-03-02 16:08:11,053][fairseq_cli.train][INFO] - end of epoch 6 (average epoch stats below)
+[2024-03-02 16:08:11,054][train][INFO] - {"epoch": 6, "train_loss": "0.998", "train_nll_loss": "0.014", "train_accuracy": "52.6", "train_wps": "20508.3", "train_ups": "18.04", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "936", "train_lr": "1.14943e-05", "train_gnorm": "1.495", "train_loss_scale": "512", "train_train_wall": "6", "train_gb_free": "15.7", "train_wall": "84"}
+[2024-03-02 16:08:11,056][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:11,059][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:08:11,063][fairseq.trainer][INFO] - begin training epoch 7
+[2024-03-02 16:08:11,064][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:08:13,441][train_inner][INFO] - {"epoch": 7, "update": 6.41, "loss": "0.997", "nll_loss": "0.014", "accuracy": "52.5", "wps": "22414.1", "ups": "19.61", "wpb": "1143.2", "bsz": "15.9", "num_updates": "1000", "lr": "1.08255e-05", "gnorm": "1.519", "loss_scale": "512", "train_wall": "8", "gb_free": "15.6", "wall": "86"}
+[2024-03-02 16:08:16,935][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:08:16,936][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:17,492][valid][INFO] - {"epoch": 7, "valid_loss": "0.997", "valid_nll_loss": "0.014", "valid_accuracy": "57", "valid_wps": "36846.4", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "1092", "valid_best_accuracy": "57"}
+[2024-03-02 16:08:17,495][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 7 @ 1092 updates
+[2024-03-02 16:08:17,496][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:08:19,128][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:08:43,494][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 7 @ 1092 updates, score 57.0) (writing took 25.99964181800169 seconds)
+[2024-03-02 16:08:43,495][fairseq_cli.train][INFO] - end of epoch 7 (average epoch stats below)
+[2024-03-02 16:08:43,498][train][INFO] - {"epoch": 7, "train_loss": "0.998", "train_nll_loss": "0.014", "train_accuracy": "53.3", "train_wps": "5465.6", "train_ups": "4.81", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "1092", "train_lr": "9.86416e-06", "train_gnorm": "1.58", "train_loss_scale": "1024", "train_train_wall": "6", "train_gb_free": "15.6", "train_wall": "116"}
+[2024-03-02 16:08:43,499][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:43,502][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:08:43,504][fairseq.trainer][INFO] - begin training epoch 8
+[2024-03-02 16:08:43,505][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:08:47,449][train_inner][INFO] - {"epoch": 8, "update": 7.692, "loss": "0.997", "nll_loss": "0.014", "accuracy": "54.5", "wps": "6689.1", "ups": "5.88", "wpb": "1137.4", "bsz": "16", "num_updates": "1200", "lr": "8.73563e-06", "gnorm": "1.603", "loss_scale": "2048", "train_wall": "7", "gb_free": "15.7", "wall": "120"}
+[2024-03-02 16:08:49,113][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:08:49,115][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:49,653][valid][INFO] - {"epoch": 8, "valid_loss": "0.996", "valid_nll_loss": "0.014", "valid_accuracy": "54.5", "valid_wps": "36996.3", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "1248", "valid_best_accuracy": "57"}
+[2024-03-02 16:08:49,656][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 8 @ 1248 updates
+[2024-03-02 16:08:49,657][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:08:51,137][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:08:51,140][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 8 @ 1248 updates, score 54.5) (writing took 1.4844687469994824 seconds)
+[2024-03-02 16:08:51,141][fairseq_cli.train][INFO] - end of epoch 8 (average epoch stats below)
+[2024-03-02 16:08:51,143][train][INFO] - {"epoch": 8, "train_loss": "0.996", "train_nll_loss": "0.014", "train_accuracy": "54.3", "train_wps": "23197", "train_ups": "20.41", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "1248", "train_lr": "8.23406e-06", "train_gnorm": "1.565", "train_loss_scale": "2048", "train_train_wall": "5", "train_gb_free": "15.6", "train_wall": "124"}
+[2024-03-02 16:08:51,144][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:51,147][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:08:51,149][fairseq.trainer][INFO] - begin training epoch 9
+[2024-03-02 16:08:51,150][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:08:56,547][train_inner][INFO] - {"epoch": 9, "update": 8.974, "loss": "0.996", "nll_loss": "0.014", "accuracy": "53.9", "wps": "25032.4", "ups": "21.98", "wpb": "1138.6", "bsz": "15.9", "num_updates": "1400", "lr": "6.64577e-06", "gnorm": "1.53", "loss_scale": "4096", "train_wall": "7", "gb_free": "15.6", "wall": "129"}
+[2024-03-02 16:08:56,687][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:08:56,689][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:57,228][valid][INFO] - {"epoch": 9, "valid_loss": "0.998", "valid_nll_loss": "0.014", "valid_accuracy": "52", "valid_wps": "37091.6", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "1404", "valid_best_accuracy": "57"}
+[2024-03-02 16:08:57,231][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 9 @ 1404 updates
+[2024-03-02 16:08:57,233][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:08:58,829][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:08:58,833][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 9 @ 1404 updates, score 52.0) (writing took 1.6015041600003315 seconds)
+[2024-03-02 16:08:58,834][fairseq_cli.train][INFO] - end of epoch 9 (average epoch stats below)
+[2024-03-02 16:08:58,836][train][INFO] - {"epoch": 9, "train_loss": "0.997", "train_nll_loss": "0.014", "train_accuracy": "54.4", "train_wps": "23050.9", "train_ups": "20.28", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "1404", "train_lr": "6.60397e-06", "train_gnorm": "1.542", "train_loss_scale": "4096", "train_train_wall": "5", "train_gb_free": "15.7", "train_wall": "131"}
+[2024-03-02 16:08:58,838][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:08:58,841][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:08:58,843][fairseq.trainer][INFO] - begin training epoch 10
+[2024-03-02 16:08:58,844][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:09:04,008][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-02 16:09:04,405][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:09:04,406][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:09:04,947][valid][INFO] - {"epoch": 10, "valid_loss": "0.998", "valid_nll_loss": "0.014", "valid_accuracy": "50.9", "valid_wps": "36913.3", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "1559", "valid_best_accuracy": "57"}
+[2024-03-02 16:09:04,950][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 10 @ 1559 updates
+[2024-03-02 16:09:04,951][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:09:06,524][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:09:06,528][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 10 @ 1559 updates, score 50.9) (writing took 1.577928653001436 seconds)
+[2024-03-02 16:09:06,529][fairseq_cli.train][INFO] - end of epoch 10 (average epoch stats below)
+[2024-03-02 16:09:06,530][train][INFO] - {"epoch": 10, "train_loss": "0.997", "train_nll_loss": "0.014", "train_accuracy": "54.9", "train_wps": "22923.8", "train_ups": "20.15", "train_wpb": "1137.8", "train_bsz": "16", "train_num_updates": "1559", "train_lr": "4.98433e-06", "train_gnorm": "1.514", "train_loss_scale": "8192", "train_train_wall": "5", "train_gb_free": "15.7", "train_wall": "139"}
+[2024-03-02 16:09:06,532][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:09:06,536][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:09:06,540][fairseq.trainer][INFO] - begin training epoch 11
+[2024-03-02 16:09:06,541][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:09:08,019][train_inner][INFO] - {"epoch": 11, "update": 10.263, "loss": "0.996", "nll_loss": "0.014", "accuracy": "54.9", "wps": "19958.2", "ups": "17.44", "wpb": "1144.7", "bsz": "16", "num_updates": "1600", "lr": "4.5559e-06", "gnorm": "1.558", "loss_scale": "8192", "train_wall": "7", "gb_free": "15.6", "wall": "141"}
+[2024-03-02 16:09:12,079][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:09:12,081][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:09:12,623][valid][INFO] - {"epoch": 11, "valid_loss": "0.997", "valid_nll_loss": "0.014", "valid_accuracy": "56.3", "valid_wps": "36975.3", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "1715", "valid_best_accuracy": "57"}
+[2024-03-02 16:09:12,626][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 11 @ 1715 updates
+[2024-03-02 16:09:12,628][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:09:14,224][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_last.pt
+[2024-03-02 16:09:14,227][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 11 @ 1715 updates, score 56.3) (writing took 1.6009338030016806 seconds)
+[2024-03-02 16:09:14,228][fairseq_cli.train][INFO] - end of epoch 11 (average epoch stats below)
+[2024-03-02 16:09:14,230][train][INFO] - {"epoch": 11, "train_loss": "0.997", "train_nll_loss": "0.014", "train_accuracy": "56.2", "train_wps": "23033.1", "train_ups": "20.26", "train_wpb": "1136.7", "train_bsz": "16", "train_num_updates": "1715", "train_lr": "3.35423e-06", "train_gnorm": "1.548", "train_loss_scale": "16384", "train_train_wall": "5", "train_gb_free": "15.6", "train_wall": "147"}
+[2024-03-02 16:09:14,232][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:09:14,234][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:09:14,237][fairseq.trainer][INFO] - begin training epoch 12
+[2024-03-02 16:09:14,238][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:09:14,927][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-02 16:09:17,377][train_inner][INFO] - {"epoch": 12, "update": 11.551, "loss": "0.996", "nll_loss": "0.014", "accuracy": "56.3", "wps": "24089.3", "ups": "21.37", "wpb": "1127", "bsz": "15.9", "num_updates": "1800", "lr": "2.46604e-06", "gnorm": "1.527", "loss_scale": "8192", "train_wall": "7", "gb_free": "15.7", "wall": "150"}
+[2024-03-02 16:09:19,817][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:09:19,818][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:09:20,359][valid][INFO] - {"epoch": 12, "valid_loss": "0.997", "valid_nll_loss": "0.014", "valid_accuracy": "58.8", "valid_wps": "36918.8", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "1870", "valid_best_accuracy": "58.8"}
+[2024-03-02 16:09:20,362][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 12 @ 1870 updates
+[2024-03-02 16:09:20,363][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:09:21,898][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:09:47,145][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 12 @ 1870 updates, score 58.8) (writing took 26.783216575997358 seconds)
+[2024-03-02 16:09:47,146][fairseq_cli.train][INFO] - end of epoch 12 (average epoch stats below)
+[2024-03-02 16:09:47,149][train][INFO] - {"epoch": 12, "train_loss": "0.996", "train_nll_loss": "0.014", "train_accuracy": "56.6", "train_wps": "5347.5", "train_ups": "4.71", "train_wpb": "1135.7", "train_bsz": "16", "train_num_updates": "1870", "train_lr": "1.73459e-06", "train_gnorm": "1.53", "train_loss_scale": "16384", "train_train_wall": "5", "train_gb_free": "15.7", "train_wall": "180"}
+[2024-03-02 16:09:47,150][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:09:47,153][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:09:47,155][fairseq.trainer][INFO] - begin training epoch 13
+[2024-03-02 16:09:47,156][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:09:49,798][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-02 16:09:52,074][train_inner][INFO] - {"epoch": 13, "update": 12.84, "loss": "0.995", "nll_loss": "0.014", "accuracy": "58.1", "wps": "6537.5", "ups": "5.76", "wpb": "1134.1", "bsz": "16", "num_updates": "2000", "lr": "3.76176e-07", "gnorm": "1.503", "loss_scale": "8192", "train_wall": "7", "gb_free": "15.7", "wall": "185"}
+[2024-03-02 16:09:52,898][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:09:52,899][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:09:53,427][valid][INFO] - {"epoch": 13, "valid_loss": "0.997", "valid_nll_loss": "0.014", "valid_accuracy": "59.2", "valid_wps": "37378.2", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "2025", "valid_best_accuracy": "59.2"}
+[2024-03-02 16:09:53,430][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 13 @ 2025 updates
+[2024-03-02 16:09:53,432][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:09:54,943][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:10:18,970][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 13 @ 2025 updates, score 59.2) (writing took 25.539508386002126 seconds)
+[2024-03-02 16:10:18,970][fairseq_cli.train][INFO] - end of epoch 13 (average epoch stats below)
+[2024-03-02 16:10:18,974][train][INFO] - {"epoch": 13, "train_loss": "0.995", "train_nll_loss": "0.014", "train_accuracy": "58.5", "train_wps": "5531.3", "train_ups": "4.87", "train_wpb": "1135.7", "train_bsz": "16", "train_num_updates": "2025", "train_lr": "1.14943e-07", "train_gnorm": "1.542", "train_loss_scale": "8192", "train_train_wall": "6", "train_gb_free": "15.6", "train_wall": "211"}
+[2024-03-02 16:10:18,977][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:10:18,981][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 16:10:18,984][fairseq.trainer][INFO] - begin training epoch 14
+[2024-03-02 16:10:18,985][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 16:10:19,677][fairseq_cli.train][INFO] - Stopping training due to num_updates: 2036 >= max_update: 2036
+[2024-03-02 16:10:19,678][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 16:10:19,679][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 16:10:20,210][valid][INFO] - {"epoch": 14, "valid_loss": "0.997", "valid_nll_loss": "0.014", "valid_accuracy": "59.2", "valid_wps": "37679.5", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "2036", "valid_best_accuracy": "59.2"}
+[2024-03-02 16:10:20,213][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 14 @ 2036 updates
+[2024-03-02 16:10:20,214][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:10:21,732][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/16-06-44/checkpoints/checkpoint_best.pt
+[2024-03-02 16:10:46,171][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 14 @ 2036 updates, score 59.2) (writing took 25.957654721001745 seconds)
+[2024-03-02 16:10:46,171][fairseq_cli.train][INFO] - end of epoch 14 (average epoch stats below)
+[2024-03-02 16:10:46,174][train][INFO] - {"epoch": 14, "train_loss": "0.992", "train_nll_loss": "0.015", "train_accuracy": "58", "train_wps": "420.1", "train_ups": "0.4", "train_wpb": "1038.8", "train_bsz": "16", "train_num_updates": "2036", "train_lr": "0", "train_gnorm": "1.775", "train_loss_scale": "8192", "train_train_wall": "1", "train_gb_free": "15.7", "train_wall": "239"}
+[2024-03-02 16:10:46,175][fairseq_cli.train][INFO] - done training in 231.0 seconds

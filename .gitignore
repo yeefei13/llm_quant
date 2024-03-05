@@ -1,0 +1,4 @@
+# Ignore specific large files to comply with GitHub's file size limit
+glue_data
+roberta.base/model.pt
+fairseq_task2/roberta.base/model.pt 

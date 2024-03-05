@@ -1,0 +1,3 @@
+CUDA_VISIBLE_DEVICES=0 fairseq-hydra-train --config-dir examples/roberta/config/finetuning --config-name rte 'task.data="/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/RTE-bin"' 'checkpoint.restore_file="/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt"'
+
+

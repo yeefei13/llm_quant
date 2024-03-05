@@ -1,0 +1,291 @@
+[2024-03-02 15:12:06,300][fairseq_cli.train][INFO] - {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 16, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 4400, 'batch_size_valid': 16, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 100, 'max_update': 2036, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [2e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': False, 'classification_head_name': 'sentence_classification_head', 'seed': 1, 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [2e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 122, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 2036.0, 'lr': [2e-05]}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'job_logging_cfg': {'version': 1, 'formatters': {'simple': {'format': '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}, 'file': {'class': 'logging.FileHandler', 'formatter': 'simple', 'filename': 'hydra_train.log'}}, 'root': {'level': 'INFO', 'handlers': ['console', 'file']}, 'disable_existing_loggers': False}}
+[2024-03-02 15:12:06,346][fairseq.tasks.sentence_prediction][INFO] - [input] dictionary: 50265 types
+[2024-03-02 15:12:06,351][fairseq.tasks.sentence_prediction][INFO] - [label] dictionary: 9 types
+[2024-03-02 15:12:07,805][fairseq_cli.train][INFO] - RobertaModel(
+  (encoder): RobertaEncoder(
+    (sentence_encoder): TransformerEncoder(
+      (dropout_module): FairseqDropout()
+      (embed_tokens): Embedding(50265, 768, padding_idx=1)
+      (embed_positions): LearnedPositionalEmbedding(514, 768, padding_idx=1)
+      (layernorm_embedding): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0-11): 12 x TransformerEncoderLayerBase(
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (lm_head): RobertaLMHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (classification_heads): ModuleDict(
+    (sentence_classification_head): RobertaClassificationHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (dropout): Dropout(p=0.0, inplace=False)
+      (out_proj): Linear(in_features=768, out_features=2, bias=True)
+    )
+  )
+)
+[2024-03-02 15:12:07,807][fairseq_cli.train][INFO] - task: SentencePredictionTask
+[2024-03-02 15:12:07,808][fairseq_cli.train][INFO] - model: RobertaModel
+[2024-03-02 15:12:07,809][fairseq_cli.train][INFO] - criterion: SentencePredictionCriterion
+[2024-03-02 15:12:07,810][fairseq_cli.train][INFO] - num. shared model params: 125,288,795 (num. trained: 125,288,795)
+[2024-03-02 15:12:07,811][fairseq_cli.train][INFO] - num. expert model params: 0 (num. trained: 0)
+[2024-03-02 15:12:07,849][fairseq.data.data_utils][INFO] - loaded 277 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/input0/valid
+[2024-03-02 15:12:07,872][fairseq.data.data_utils][INFO] - loaded 277 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/input1/valid
+[2024-03-02 15:12:07,897][fairseq.data.data_utils][INFO] - loaded 277 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/label/valid
+[2024-03-02 15:12:07,898][fairseq.tasks.sentence_prediction][INFO] - Loaded valid with #samples: 277
+[2024-03-02 15:12:08,196][fairseq.trainer][INFO] - detected shared parameter: encoder.sentence_encoder.embed_tokens.weight <- encoder.lm_head.weight
+[2024-03-02 15:12:08,197][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-02 15:12:08,198][fairseq.utils][INFO] - rank   0: capabilities =  8.6  ; total memory = 16.000 GB ; name = NVIDIA GeForce RTX 3080 Ti Laptop GPU   
+[2024-03-02 15:12:08,199][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-02 15:12:08,199][fairseq_cli.train][INFO] - training on 1 devices (GPUs/TPUs)
+[2024-03-02 15:12:08,200][fairseq_cli.train][INFO] - max tokens per device = 4400 and max sentences per device = 16
+[2024-03-02 15:12:08,201][fairseq.trainer][INFO] - Preparing to load checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt
+[2024-03-02 15:12:15,644][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.weight
+[2024-03-02 15:12:15,645][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.bias
+[2024-03-02 15:12:15,646][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.weight
+[2024-03-02 15:12:15,647][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.bias
+[2024-03-02 15:12:15,741][fairseq.optim.adam][INFO] - using FusedAdam
+[2024-03-02 15:12:16,062][fairseq.trainer][INFO] - Loaded checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt (epoch 1 @ 0 updates)
+[2024-03-02 15:12:16,063][fairseq.trainer][INFO] - loading train data for epoch 1
+[2024-03-02 15:12:16,081][fairseq.data.data_utils][INFO] - loaded 2,490 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/input0/train
+[2024-03-02 15:12:16,109][fairseq.data.data_utils][INFO] - loaded 2,490 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/input1/train
+[2024-03-02 15:12:16,131][fairseq.data.data_utils][INFO] - loaded 2,490 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_notnow/RTE-bin/label/train
+[2024-03-02 15:12:16,134][fairseq.tasks.sentence_prediction][INFO] - Loaded train with #samples: 2490
+[2024-03-02 15:12:16,136][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 15:12:16,137][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-02 15:12:16,138][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-02 15:12:16,139][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+[2024-03-02 15:12:16,175][fairseq_cli.train][INFO] - begin dry-run validation on "valid" subset
+[2024-03-02 15:12:16,177][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 15:12:16,178][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-02 15:12:16,179][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-02 15:12:16,179][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+layer encoder.sentence_encoder.embed_tokens.weight, require grad: False
+layer encoder.sentence_encoder.embed_positions.weight, require grad: False
+layer encoder.sentence_encoder.layernorm_embedding.weight, require grad: False
+layer encoder.sentence_encoder.layernorm_embedding.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.0.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.0.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.1.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.1.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.2.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.2.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.3.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.3.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.4.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.4.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.5.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.5.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.6.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.6.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.7.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.7.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.8.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.8.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.9.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.9.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.10.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.10.final_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.k_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.k_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.v_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.v_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.q_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.q_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.out_proj.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn.out_proj.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.self_attn_layer_norm.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.fc1.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.fc1.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.fc2.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.fc2.bias, require grad: False
+layer encoder.sentence_encoder.layers.11.final_layer_norm.weight, require grad: False
+layer encoder.sentence_encoder.layers.11.final_layer_norm.bias, require grad: False
+layer encoder.lm_head.bias, require grad: False
+layer encoder.lm_head.dense.weight, require grad: False
+layer encoder.lm_head.dense.bias, require grad: False
+layer encoder.lm_head.layer_norm.weight, require grad: False
+layer encoder.lm_head.layer_norm.bias, require grad: False
+layer classification_heads.sentence_classification_head.dense.weight, require grad: True
+layer classification_heads.sentence_classification_head.dense.bias, require grad: True
+layer classification_heads.sentence_classification_head.out_proj.weight, require grad: True
+layer classification_heads.sentence_classification_head.out_proj.bias, require grad: True
+[2024-03-02 15:12:16,317][fairseq.data.iterators][INFO] - grouped total_num_itrs = 156
+[2024-03-02 15:12:16,320][fairseq.trainer][INFO] - begin training epoch 1
+[2024-03-02 15:12:16,321][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-02 15:12:24,190][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-02 15:12:24,192][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-02 15:12:24,721][valid][INFO] - {"epoch": 1, "valid_loss": "0.998", "valid_nll_loss": "0.014", "valid_accuracy": "52.7", "valid_wps": "37715.9", "valid_wpb": "1069.6", "valid_bsz": "15.4", "valid_num_updates": "156"}
+[2024-03-02 15:12:24,724][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 1 @ 156 updates
+[2024-03-02 15:12:24,726][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/15-12-05/checkpoints/checkpoint_best.pt
+[2024-03-02 15:12:28,178][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-02/15-12-05/checkpoints/checkpoint_best.pt

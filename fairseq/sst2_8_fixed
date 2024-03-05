@@ -1,0 +1,346 @@
+[2024-03-04 18:40:23,135][fairseq_cli.train][INFO] - {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': False, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': False, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 32, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 4400, 'batch_size_valid': 32, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 10, 'max_update': 20935, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [1e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': False, 'classification_head_name': 'sentence_classification_head', 'seed': 1, 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [1e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 1256, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 20935.0, 'lr': [1e-05]}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'job_logging_cfg': {'version': 1, 'formatters': {'simple': {'format': '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}, 'file': {'class': 'logging.FileHandler', 'formatter': 'simple', 'filename': 'hydra_train.log'}}, 'root': {'level': 'INFO', 'handlers': ['console', 'file']}, 'disable_existing_loggers': False}}
+[2024-03-04 18:40:23,192][fairseq.tasks.sentence_prediction][INFO] - [input] dictionary: 50265 types
+[2024-03-04 18:40:23,202][fairseq.tasks.sentence_prediction][INFO] - [label] dictionary: 9 types
+[2024-03-04 18:40:25,598][fairseq_cli.train][INFO] - RobertaModel(
+  (encoder): RobertaEncoder(
+    (sentence_encoder): TransformerEncoder(
+      (dropout_module): FairseqDropout()
+      (embed_tokens): Embedding(50265, 768, padding_idx=1)
+      (embed_positions): LearnedPositionalEmbedding(514, 768, padding_idx=1)
+      (layernorm_embedding): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0-11): 12 x TransformerEncoderLayerBase(
+          (self_attn): MultiheadAttention(
+            (quantize_input): QuantMeasure()
+            (dropout_module): FairseqDropout()
+            (k_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+            (v_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+            (q_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+            (out_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+          )
+          (self_attn_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (fc1): QLinear(
+            in_features=768, out_features=3072, bias=True
+            (linear): Linear(in_features=768, out_features=3072, bias=True)
+            (quantize_input): QuantMeasure()
+          )
+          (fc2): QLinear(
+            in_features=3072, out_features=768, bias=True
+            (linear): Linear(in_features=3072, out_features=768, bias=True)
+            (quantize_input): QuantMeasure()
+          )
+          (final_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (lm_head): RobertaLMHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (classification_heads): ModuleDict(
+    (sentence_classification_head): RobertaClassificationHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (dropout): Dropout(p=0.0, inplace=False)
+      (out_proj): Linear(in_features=768, out_features=2, bias=True)
+    )
+  )
+)
+[2024-03-04 18:40:25,600][fairseq_cli.train][INFO] - task: SentencePredictionTask
+[2024-03-04 18:40:25,601][fairseq_cli.train][INFO] - model: RobertaModel
+[2024-03-04 18:40:25,601][fairseq_cli.train][INFO] - criterion: SentencePredictionCriterion
+[2024-03-04 18:40:25,603][fairseq_cli.train][INFO] - num. shared model params: 210,306,395 (num. trained: 210,306,395)
+[2024-03-04 18:40:25,604][fairseq_cli.train][INFO] - num. expert model params: 0 (num. trained: 0)
+[2024-03-04 18:40:25,656][fairseq.data.data_utils][INFO] - loaded 872 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin/input0/valid
+[2024-03-04 18:40:25,705][fairseq.data.data_utils][INFO] - loaded 872 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin/label/valid
+[2024-03-04 18:40:25,706][fairseq.tasks.sentence_prediction][INFO] - Loaded valid with #samples: 872
+[2024-03-04 18:40:26,058][fairseq.trainer][INFO] - detected shared parameter: encoder.sentence_encoder.embed_tokens.weight <- encoder.lm_head.weight
+[2024-03-04 18:40:26,059][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-04 18:40:26,060][fairseq.utils][INFO] - rank   0: capabilities =  8.6  ; total memory = 16.000 GB ; name = NVIDIA GeForce RTX 3080 Ti Laptop GPU   
+[2024-03-04 18:40:26,061][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-04 18:40:26,061][fairseq_cli.train][INFO] - training on 1 devices (GPUs/TPUs)
+[2024-03-04 18:40:26,062][fairseq_cli.train][INFO] - max tokens per device = 4400 and max sentences per device = 32
+[2024-03-04 18:40:26,063][fairseq.trainer][INFO] - Preparing to load checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt
+[2024-03-04 18:40:31,255][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.weight
+[2024-03-04 18:40:31,256][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.bias
+[2024-03-04 18:40:31,257][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.weight
+[2024-03-04 18:40:31,257][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.bias
+[2024-03-04 18:40:31,426][fairseq.trainer][INFO] - NOTE: your device may support faster training with --fp16 or --amp
+[2024-03-04 18:40:31,430][fairseq.optim.adam][INFO] - using FusedAdam
+[2024-03-04 18:40:31,748][fairseq.trainer][INFO] - Loaded checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt (epoch 1 @ 0 updates)
+[2024-03-04 18:40:31,749][fairseq.trainer][INFO] - loading train data for epoch 1
+[2024-03-04 18:40:31,784][fairseq.data.data_utils][INFO] - loaded 67,349 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin/input0/train
+[2024-03-04 18:40:31,850][fairseq.data.data_utils][INFO] - loaded 67,349 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin/label/train
+[2024-03-04 18:40:31,852][fairseq.tasks.sentence_prediction][INFO] - Loaded train with #samples: 67349
+[2024-03-04 18:40:31,853][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 18:40:31,855][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-04 18:40:31,855][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-04 18:40:31,856][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+[2024-03-04 18:40:31,969][fairseq_cli.train][INFO] - begin dry-run validation on "valid" subset
+[2024-03-04 18:40:31,970][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 18:40:31,971][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-04 18:40:31,971][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-04 18:40:31,972][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+TASK3 TRAINING RN
+[2024-03-04 18:40:32,159][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 18:40:32,162][fairseq.trainer][INFO] - begin training epoch 1
+[2024-03-04 18:40:32,163][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 18:42:11,841][train_inner][INFO] - {"epoch": 1, "update": 0.095, "loss": "0.985", "nll_loss": "0.074", "accuracy": "55.3", "wps": "861.4", "ups": "2.02", "wpb": "426.9", "bsz": "32", "num_updates": "200", "lr": "1.59236e-06", "gnorm": "4.579", "train_wall": "99", "gb_free": "13.2", "wall": "106"}
+[2024-03-04 18:43:25,786][train_inner][INFO] - {"epoch": 1, "update": 0.19, "loss": "0.854", "nll_loss": "0.064", "accuracy": "67.9", "wps": "1155.4", "ups": "2.7", "wpb": "427.2", "bsz": "32", "num_updates": "400", "lr": "3.18471e-06", "gnorm": "9.909", "train_wall": "73", "gb_free": "13.3", "wall": "180"}
+[2024-03-04 18:43:58,586][train_inner][INFO] - {"epoch": 1, "update": 0.285, "loss": "0.768", "nll_loss": "0.057", "accuracy": "73.2", "wps": "2641", "ups": "6.1", "wpb": "433.1", "bsz": "32", "num_updates": "600", "lr": "4.77707e-06", "gnorm": "11.094", "train_wall": "32", "gb_free": "12.9", "wall": "213"}
+[2024-03-04 18:45:09,267][train_inner][INFO] - {"epoch": 1, "update": 0.38, "loss": "0.695", "nll_loss": "0.052", "accuracy": "76.8", "wps": "1205", "ups": "2.83", "wpb": "425.8", "bsz": "31.9", "num_updates": "800", "lr": "6.36943e-06", "gnorm": "9.237", "train_wall": "70", "gb_free": "13", "wall": "283"}
+[2024-03-04 18:46:48,488][train_inner][INFO] - {"epoch": 1, "update": 0.475, "loss": "0.66", "nll_loss": "0.049", "accuracy": "78.1", "wps": "863", "ups": "2.02", "wpb": "428.1", "bsz": "32", "num_updates": "1000", "lr": "7.96178e-06", "gnorm": "7.814", "train_wall": "99", "gb_free": "13.3", "wall": "382"}
+[2024-03-04 18:47:47,367][train_inner][INFO] - {"epoch": 1, "update": 0.57, "loss": "0.621", "nll_loss": "0.047", "accuracy": "80.2", "wps": "1449", "ups": "3.4", "wpb": "426.6", "bsz": "32", "num_updates": "1200", "lr": "9.55414e-06", "gnorm": "7.014", "train_wall": "58", "gb_free": "13.1", "wall": "441"}
+[2024-03-04 18:48:39,309][train_inner][INFO] - {"epoch": 1, "update": 0.665, "loss": "0.594", "nll_loss": "0.044", "accuracy": "81.2", "wps": "1663.6", "ups": "3.85", "wpb": "432", "bsz": "32", "num_updates": "1400", "lr": "9.92683e-06", "gnorm": "6.831", "train_wall": "51", "gb_free": "13.2", "wall": "493"}
+[2024-03-04 18:50:24,917][train_inner][INFO] - {"epoch": 1, "update": 0.76, "loss": "0.58", "nll_loss": "0.044", "accuracy": "82", "wps": "806.3", "ups": "1.89", "wpb": "425.7", "bsz": "32", "num_updates": "1600", "lr": "9.82519e-06", "gnorm": "5.93", "train_wall": "105", "gb_free": "13.3", "wall": "599"}
+[2024-03-04 18:51:39,827][train_inner][INFO] - {"epoch": 1, "update": 0.855, "loss": "0.571", "nll_loss": "0.043", "accuracy": "82.2", "wps": "1136.3", "ups": "2.67", "wpb": "425.6", "bsz": "32", "num_updates": "1800", "lr": "9.72356e-06", "gnorm": "5.878", "train_wall": "74", "gb_free": "13.3", "wall": "674"}
+[2024-03-04 18:52:27,197][train_inner][INFO] - {"epoch": 1, "update": 0.95, "loss": "0.551", "nll_loss": "0.042", "accuracy": "83.1", "wps": "1786.3", "ups": "4.22", "wpb": "423.1", "bsz": "32", "num_updates": "2000", "lr": "9.62193e-06", "gnorm": "5.604", "train_wall": "47", "gb_free": "13.4", "wall": "721"}
+[2024-03-04 18:53:15,180][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 18:53:15,183][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 18:53:20,993][valid][INFO] - {"epoch": 1, "valid_loss": "0.599", "valid_nll_loss": "0.024", "valid_accuracy": "80.6", "valid_wps": "3758.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "2105"}
+[2024-03-04 18:53:20,997][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 1 @ 2105 updates
+[2024-03-04 18:53:20,998][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 18:53:26,381][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 18:54:57,709][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 1 @ 2105 updates, score 80.6) (writing took 96.71249128999989 seconds)
+[2024-03-04 18:54:57,710][fairseq_cli.train][INFO] - end of epoch 1 (average epoch stats below)
+[2024-03-04 18:54:57,716][train][INFO] - {"epoch": 1, "train_loss": "0.682", "train_nll_loss": "0.051", "train_accuracy": "76.3", "train_wps": "1040.3", "train_ups": "2.43", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "2105", "train_lr": "9.56858e-06", "train_gnorm": "7.284", "train_train_wall": "756", "train_gb_free": "13.3", "train_wall": "872"}
+[2024-03-04 18:54:57,718][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+TASK3 TRAINING RN
+[2024-03-04 18:54:57,723][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 18:54:57,726][fairseq.trainer][INFO] - begin training epoch 2
+[2024-03-04 18:54:57,727][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 18:55:53,149][train_inner][INFO] - {"epoch": 2, "update": 1.045, "loss": "0.541", "nll_loss": "0.04", "accuracy": "83.4", "wps": "416.4", "ups": "0.97", "wpb": "428.8", "bsz": "32", "num_updates": "2200", "lr": "9.5203e-06", "gnorm": "5.681", "train_wall": "103", "gb_free": "12.9", "wall": "927"}
+[2024-03-04 18:56:43,786][train_inner][INFO] - {"epoch": 2, "update": 1.14, "loss": "0.503", "nll_loss": "0.038", "accuracy": "85.1", "wps": "1686.9", "ups": "3.95", "wpb": "427.1", "bsz": "32", "num_updates": "2400", "lr": "9.41867e-06", "gnorm": "5.477", "train_wall": "50", "gb_free": "13.4", "wall": "978"}
+[2024-03-04 18:57:16,722][train_inner][INFO] - {"epoch": 2, "update": 1.235, "loss": "0.489", "nll_loss": "0.037", "accuracy": "86", "wps": "2597.4", "ups": "6.07", "wpb": "427.7", "bsz": "32", "num_updates": "2600", "lr": "9.31704e-06", "gnorm": "5.714", "train_wall": "32", "gb_free": "13.1", "wall": "1011"}
+[2024-03-04 18:58:15,083][train_inner][INFO] - {"epoch": 2, "update": 1.33, "loss": "0.52", "nll_loss": "0.039", "accuracy": "84.4", "wps": "1471.6", "ups": "3.43", "wpb": "429.4", "bsz": "31.9", "num_updates": "2800", "lr": "9.21541e-06", "gnorm": "5.247", "train_wall": "58", "gb_free": "13", "wall": "1069"}
+[2024-03-04 19:00:12,307][train_inner][INFO] - {"epoch": 2, "update": 1.425, "loss": "0.488", "nll_loss": "0.036", "accuracy": "85.3", "wps": "735.4", "ups": "1.71", "wpb": "431.1", "bsz": "32", "num_updates": "3000", "lr": "9.11378e-06", "gnorm": "5.178", "train_wall": "117", "gb_free": "13.3", "wall": "1186"}
+[2024-03-04 19:01:37,607][train_inner][INFO] - {"epoch": 2, "update": 1.52, "loss": "0.474", "nll_loss": "0.035", "accuracy": "86", "wps": "1003.1", "ups": "2.34", "wpb": "427.8", "bsz": "32", "num_updates": "3200", "lr": "9.01214e-06", "gnorm": "5.361", "train_wall": "85", "gb_free": "13.3", "wall": "1272"}
+[2024-03-04 19:03:15,706][train_inner][INFO] - {"epoch": 2, "update": 1.615, "loss": "0.487", "nll_loss": "0.037", "accuracy": "85.2", "wps": "868", "ups": "2.04", "wpb": "425.8", "bsz": "32", "num_updates": "3400", "lr": "8.91051e-06", "gnorm": "5.086", "train_wall": "97", "gb_free": "12.9", "wall": "1370"}
+[2024-03-04 19:05:13,123][train_inner][INFO] - {"epoch": 2, "update": 1.71, "loss": "0.461", "nll_loss": "0.035", "accuracy": "86.1", "wps": "725.4", "ups": "1.7", "wpb": "425.9", "bsz": "32", "num_updates": "3600", "lr": "8.80888e-06", "gnorm": "5.257", "train_wall": "117", "gb_free": "13.5", "wall": "1487"}
+[2024-03-04 19:06:34,250][train_inner][INFO] - {"epoch": 2, "update": 1.805, "loss": "0.475", "nll_loss": "0.036", "accuracy": "85.7", "wps": "1049.6", "ups": "2.47", "wpb": "425.7", "bsz": "32", "num_updates": "3800", "lr": "8.70725e-06", "gnorm": "5.144", "train_wall": "80", "gb_free": "13.3", "wall": "1568"}
+[2024-03-04 19:08:11,001][train_inner][INFO] - {"epoch": 2, "update": 1.9, "loss": "0.451", "nll_loss": "0.033", "accuracy": "86.7", "wps": "891", "ups": "2.07", "wpb": "431", "bsz": "32", "num_updates": "4000", "lr": "8.60562e-06", "gnorm": "5.32", "train_wall": "96", "gb_free": "12.9", "wall": "1665"}
+[2024-03-04 19:10:02,146][train_inner][INFO] - {"epoch": 2, "update": 1.995, "loss": "0.429", "nll_loss": "0.033", "accuracy": "87.6", "wps": "756.8", "ups": "1.8", "wpb": "420.6", "bsz": "32", "num_updates": "4200", "lr": "8.50399e-06", "gnorm": "5.35", "train_wall": "110", "gb_free": "13.5", "wall": "1776"}
+[2024-03-04 19:10:08,106][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 19:10:08,109][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 19:10:15,080][valid][INFO] - {"epoch": 2, "valid_loss": "0.517", "valid_nll_loss": "0.021", "valid_accuracy": "83.7", "valid_wps": "3125.3", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "4210", "valid_best_accuracy": "83.7"}
+[2024-03-04 19:10:15,083][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 2 @ 4210 updates
+[2024-03-04 19:10:15,086][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:10:21,740][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:11:50,346][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 2 @ 4210 updates, score 83.7) (writing took 95.26260553600014 seconds)
+[2024-03-04 19:11:50,347][fairseq_cli.train][INFO] - end of epoch 2 (average epoch stats below)
+[2024-03-04 19:11:50,350][train][INFO] - {"epoch": 2, "train_loss": "0.479", "train_nll_loss": "0.036", "train_accuracy": "85.8", "train_wps": "888.5", "train_ups": "2.08", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "4210", "train_lr": "8.49891e-06", "train_gnorm": "5.349", "train_train_wall": "903", "train_gb_free": "12.9", "train_wall": "1884"}
+[2024-03-04 19:11:50,352][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+TASK3 TRAINING RN
+[2024-03-04 19:11:50,355][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 19:11:50,358][fairseq.trainer][INFO] - begin training epoch 3
+[2024-03-04 19:11:50,359][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 19:12:49,964][train_inner][INFO] - {"epoch": 3, "update": 2.09, "loss": "0.428", "nll_loss": "0.032", "accuracy": "87.3", "wps": "514.3", "ups": "1.19", "wpb": "431.6", "bsz": "32", "num_updates": "4400", "lr": "8.40236e-06", "gnorm": "5.447", "train_wall": "65", "gb_free": "13", "wall": "1944"}
+[2024-03-04 19:13:48,353][train_inner][INFO] - {"epoch": 3, "update": 2.185, "loss": "0.403", "nll_loss": "0.03", "accuracy": "88", "wps": "1456.8", "ups": "3.43", "wpb": "425.3", "bsz": "32", "num_updates": "4600", "lr": "8.30073e-06", "gnorm": "5.208", "train_wall": "58", "gb_free": "13.3", "wall": "2002"}
+[2024-03-04 19:14:19,653][train_inner][INFO] - {"epoch": 3, "update": 2.28, "loss": "0.427", "nll_loss": "0.032", "accuracy": "87.8", "wps": "2725.9", "ups": "6.39", "wpb": "426.6", "bsz": "32", "num_updates": "4800", "lr": "8.1991e-06", "gnorm": "5.393", "train_wall": "31", "gb_free": "13", "wall": "2034"}
+[2024-03-04 19:14:50,600][train_inner][INFO] - {"epoch": 3, "update": 2.375, "loss": "0.42", "nll_loss": "0.031", "accuracy": "87.9", "wps": "2789.6", "ups": "6.46", "wpb": "431.6", "bsz": "32", "num_updates": "5000", "lr": "8.09746e-06", "gnorm": "5.468", "train_wall": "30", "gb_free": "13.3", "wall": "2065"}
+[2024-03-04 19:15:42,691][train_inner][INFO] - {"epoch": 3, "update": 2.47, "loss": "0.401", "nll_loss": "0.03", "accuracy": "88.6", "wps": "1629.9", "ups": "3.84", "wpb": "424.5", "bsz": "31.9", "num_updates": "5200", "lr": "7.99583e-06", "gnorm": "5.203", "train_wall": "52", "gb_free": "13.4", "wall": "2117"}
+[2024-03-04 19:16:50,099][train_inner][INFO] - {"epoch": 3, "update": 2.565, "loss": "0.409", "nll_loss": "0.03", "accuracy": "87.9", "wps": "1284.2", "ups": "2.97", "wpb": "432.8", "bsz": "32", "num_updates": "5400", "lr": "7.8942e-06", "gnorm": "5.079", "train_wall": "67", "gb_free": "13.3", "wall": "2184"}
+[2024-03-04 19:17:27,176][train_inner][INFO] - {"epoch": 3, "update": 2.66, "loss": "0.403", "nll_loss": "0.03", "accuracy": "88.4", "wps": "2294", "ups": "5.39", "wpb": "425.3", "bsz": "32", "num_updates": "5600", "lr": "7.79257e-06", "gnorm": "5.043", "train_wall": "36", "gb_free": "13.4", "wall": "2221"}
+[2024-03-04 19:17:58,726][train_inner][INFO] - {"epoch": 3, "update": 2.755, "loss": "0.401", "nll_loss": "0.03", "accuracy": "88.3", "wps": "2669.3", "ups": "6.34", "wpb": "421.1", "bsz": "32", "num_updates": "5800", "lr": "7.69094e-06", "gnorm": "5.256", "train_wall": "31", "gb_free": "13.4", "wall": "2253"}
+[2024-03-04 19:18:30,323][train_inner][INFO] - {"epoch": 3, "update": 2.85, "loss": "0.395", "nll_loss": "0.029", "accuracy": "88.8", "wps": "2719.1", "ups": "6.33", "wpb": "429.6", "bsz": "32", "num_updates": "6000", "lr": "7.58931e-06", "gnorm": "5.104", "train_wall": "31", "gb_free": "13.3", "wall": "2284"}
+[2024-03-04 19:19:33,139][train_inner][INFO] - {"epoch": 3, "update": 2.945, "loss": "0.395", "nll_loss": "0.03", "accuracy": "88.5", "wps": "1364.3", "ups": "3.18", "wpb": "428.5", "bsz": "32", "num_updates": "6200", "lr": "7.48768e-06", "gnorm": "5.527", "train_wall": "62", "gb_free": "13", "wall": "2347"}
+[2024-03-04 19:20:12,034][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 19:20:12,037][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 19:20:16,332][valid][INFO] - {"epoch": 3, "valid_loss": "0.494", "valid_nll_loss": "0.02", "valid_accuracy": "85.4", "valid_wps": "5067.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "6315", "valid_best_accuracy": "85.4"}
+[2024-03-04 19:20:16,338][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 3 @ 6315 updates
+[2024-03-04 19:20:16,340][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:20:22,294][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:21:25,218][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 3 @ 6315 updates, score 85.4) (writing took 68.88091829999985 seconds)
+[2024-03-04 19:21:25,220][fairseq_cli.train][INFO] - end of epoch 3 (average epoch stats below)
+[2024-03-04 19:21:25,224][train][INFO] - {"epoch": 3, "train_loss": "0.408", "train_nll_loss": "0.031", "train_accuracy": "88.1", "train_wps": "1565.1", "train_ups": "3.66", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "6315", "train_lr": "7.42924e-06", "train_gnorm": "5.276", "train_train_wall": "496", "train_gb_free": "13.3", "train_wall": "2459"}
+[2024-03-04 19:21:25,226][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+TASK3 TRAINING RN
+[2024-03-04 19:21:25,230][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 19:21:25,233][fairseq.trainer][INFO] - begin training epoch 4
+[2024-03-04 19:21:25,234][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 19:21:38,307][train_inner][INFO] - {"epoch": 4, "update": 3.04, "loss": "0.388", "nll_loss": "0.029", "accuracy": "88.7", "wps": "684.4", "ups": "1.6", "wpb": "428.3", "bsz": "32", "num_updates": "6400", "lr": "7.38605e-06", "gnorm": "5.209", "train_wall": "51", "gb_free": "12.7", "wall": "2472"}
+[2024-03-04 19:22:08,267][train_inner][INFO] - {"epoch": 4, "update": 3.135, "loss": "0.372", "nll_loss": "0.028", "accuracy": "89.4", "wps": "2862.9", "ups": "6.68", "wpb": "428.8", "bsz": "32", "num_updates": "6600", "lr": "7.28441e-06", "gnorm": "5.123", "train_wall": "29", "gb_free": "13.3", "wall": "2502"}
+[2024-03-04 19:22:37,335][train_inner][INFO] - {"epoch": 4, "update": 3.23, "loss": "0.356", "nll_loss": "0.027", "accuracy": "89.8", "wps": "2944.9", "ups": "6.88", "wpb": "428", "bsz": "32", "num_updates": "6800", "lr": "7.18278e-06", "gnorm": "5.34", "train_wall": "29", "gb_free": "13.1", "wall": "2531"}
+[2024-03-04 19:23:08,147][train_inner][INFO] - {"epoch": 4, "update": 3.325, "loss": "0.347", "nll_loss": "0.026", "accuracy": "90.2", "wps": "2764.5", "ups": "6.49", "wpb": "425.9", "bsz": "31.9", "num_updates": "7000", "lr": "7.08115e-06", "gnorm": "5.332", "train_wall": "30", "gb_free": "13.4", "wall": "2562"}
+[2024-03-04 19:23:39,049][train_inner][INFO] - {"epoch": 4, "update": 3.42, "loss": "0.374", "nll_loss": "0.028", "accuracy": "89.5", "wps": "2773.6", "ups": "6.47", "wpb": "428.5", "bsz": "32", "num_updates": "7200", "lr": "6.97952e-06", "gnorm": "5.363", "train_wall": "30", "gb_free": "13.5", "wall": "2593"}
+[2024-03-04 19:24:09,364][train_inner][INFO] - {"epoch": 4, "update": 3.515, "loss": "0.356", "nll_loss": "0.027", "accuracy": "89.7", "wps": "2785", "ups": "6.6", "wpb": "422.1", "bsz": "32", "num_updates": "7400", "lr": "6.87789e-06", "gnorm": "5.355", "train_wall": "30", "gb_free": "13.2", "wall": "2623"}
+[2024-03-04 19:24:40,112][train_inner][INFO] - {"epoch": 4, "update": 3.61, "loss": "0.359", "nll_loss": "0.027", "accuracy": "89.5", "wps": "2782.7", "ups": "6.5", "wpb": "427.8", "bsz": "32", "num_updates": "7600", "lr": "6.77626e-06", "gnorm": "5.321", "train_wall": "30", "gb_free": "13", "wall": "2654"}
+[2024-03-04 19:25:10,613][train_inner][INFO] - {"epoch": 4, "update": 3.705, "loss": "0.349", "nll_loss": "0.026", "accuracy": "90.5", "wps": "2816.7", "ups": "6.56", "wpb": "429.6", "bsz": "32", "num_updates": "7800", "lr": "6.67463e-06", "gnorm": "5.51", "train_wall": "30", "gb_free": "13.4", "wall": "2685"}
+[2024-03-04 19:25:41,676][train_inner][INFO] - {"epoch": 4, "update": 3.8, "loss": "0.361", "nll_loss": "0.027", "accuracy": "89.8", "wps": "2767.2", "ups": "6.44", "wpb": "429.8", "bsz": "32", "num_updates": "8000", "lr": "6.573e-06", "gnorm": "5.257", "train_wall": "31", "gb_free": "13.5", "wall": "2716"}
+[2024-03-04 19:26:12,495][train_inner][INFO] - {"epoch": 4, "update": 3.895, "loss": "0.345", "nll_loss": "0.026", "accuracy": "90", "wps": "2754.7", "ups": "6.49", "wpb": "424.5", "bsz": "32", "num_updates": "8200", "lr": "6.47137e-06", "gnorm": "5.516", "train_wall": "30", "gb_free": "12.9", "wall": "2746"}
+[2024-03-04 19:26:44,462][train_inner][INFO] - {"epoch": 4, "update": 3.99, "loss": "0.347", "nll_loss": "0.026", "accuracy": "90", "wps": "2658.6", "ups": "6.26", "wpb": "424.9", "bsz": "32", "num_updates": "8400", "lr": "6.36973e-06", "gnorm": "5.415", "train_wall": "31", "gb_free": "12.9", "wall": "2778"}
+[2024-03-04 19:26:47,557][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 19:26:47,559][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 19:26:49,811][valid][INFO] - {"epoch": 4, "valid_loss": "0.508", "valid_nll_loss": "0.02", "valid_accuracy": "86.5", "valid_wps": "9738.3", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "8420", "valid_best_accuracy": "86.5"}
+[2024-03-04 19:26:49,814][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 4 @ 8420 updates
+[2024-03-04 19:26:49,816][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:26:56,040][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:28:22,959][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 4 @ 8420 updates, score 86.5) (writing took 93.14412345499977 seconds)
+[2024-03-04 19:28:22,959][fairseq_cli.train][INFO] - end of epoch 4 (average epoch stats below)
+[2024-03-04 19:28:22,965][train][INFO] - {"epoch": 4, "train_loss": "0.357", "train_nll_loss": "0.027", "train_accuracy": "89.8", "train_wps": "2153.9", "train_ups": "5.04", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "8420", "train_lr": "6.35957e-06", "train_gnorm": "5.343", "train_train_wall": "317", "train_gb_free": "13.5", "train_wall": "2877"}
+[2024-03-04 19:28:22,968][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+TASK3 TRAINING RN
+[2024-03-04 19:28:22,973][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 19:28:22,976][fairseq.trainer][INFO] - begin training epoch 5
+[2024-03-04 19:28:22,977][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 19:29:37,807][train_inner][INFO] - {"epoch": 5, "update": 4.086, "loss": "0.33", "nll_loss": "0.024", "accuracy": "90.6", "wps": "501.4", "ups": "1.15", "wpb": "434.5", "bsz": "32", "num_updates": "8600", "lr": "6.2681e-06", "gnorm": "5.539", "train_wall": "77", "gb_free": "13.3", "wall": "2952"}
+[2024-03-04 19:30:13,807][train_inner][INFO] - {"epoch": 5, "update": 4.181, "loss": "0.333", "nll_loss": "0.025", "accuracy": "90.7", "wps": "2364.1", "ups": "5.56", "wpb": "425.5", "bsz": "32", "num_updates": "8800", "lr": "6.16647e-06", "gnorm": "5.326", "train_wall": "35", "gb_free": "13.3", "wall": "2988"}
+[2024-03-04 19:30:56,144][train_inner][INFO] - {"epoch": 5, "update": 4.276, "loss": "0.318", "nll_loss": "0.024", "accuracy": "90.9", "wps": "2012.2", "ups": "4.72", "wpb": "425.9", "bsz": "32", "num_updates": "9000", "lr": "6.06484e-06", "gnorm": "5.764", "train_wall": "42", "gb_free": "13.2", "wall": "3030"}
+[2024-03-04 19:32:45,142][train_inner][INFO] - {"epoch": 5, "update": 4.371, "loss": "0.33", "nll_loss": "0.025", "accuracy": "90.7", "wps": "776.9", "ups": "1.83", "wpb": "423.4", "bsz": "32", "num_updates": "9200", "lr": "5.96321e-06", "gnorm": "5.513", "train_wall": "108", "gb_free": "13.1", "wall": "3139"}
+[2024-03-04 19:33:58,470][train_inner][INFO] - {"epoch": 5, "update": 4.466, "loss": "0.334", "nll_loss": "0.025", "accuracy": "90.3", "wps": "1186.5", "ups": "2.73", "wpb": "435", "bsz": "32", "num_updates": "9400", "lr": "5.86158e-06", "gnorm": "5.421", "train_wall": "73", "gb_free": "13.1", "wall": "3212"}
+[2024-03-04 19:34:30,694][train_inner][INFO] - {"epoch": 5, "update": 4.561, "loss": "0.326", "nll_loss": "0.025", "accuracy": "90.6", "wps": "2641", "ups": "6.21", "wpb": "425.5", "bsz": "32", "num_updates": "9600", "lr": "5.75995e-06", "gnorm": "5.44", "train_wall": "32", "gb_free": "13.4", "wall": "3245"}
+[2024-03-04 19:35:47,106][train_inner][INFO] - {"epoch": 5, "update": 4.656, "loss": "0.324", "nll_loss": "0.024", "accuracy": "90.8", "wps": "1113.1", "ups": "2.62", "wpb": "425.3", "bsz": "32", "num_updates": "9800", "lr": "5.65832e-06", "gnorm": "5.36", "train_wall": "76", "gb_free": "13.3", "wall": "3321"}
+[2024-03-04 19:37:30,452][train_inner][INFO] - {"epoch": 5, "update": 4.751, "loss": "0.309", "nll_loss": "0.023", "accuracy": "91.5", "wps": "825.8", "ups": "1.94", "wpb": "426.7", "bsz": "32", "num_updates": "10000", "lr": "5.55668e-06", "gnorm": "5.595", "train_wall": "103", "gb_free": "13.5", "wall": "3424"}
+[2024-03-04 19:38:23,426][train_inner][INFO] - {"epoch": 5, "update": 4.846, "loss": "0.302", "nll_loss": "0.022", "accuracy": "91.4", "wps": "1630.3", "ups": "3.78", "wpb": "431.8", "bsz": "31.9", "num_updates": "10200", "lr": "5.45505e-06", "gnorm": "5.644", "train_wall": "52", "gb_free": "13.4", "wall": "3477"}
+[2024-03-04 19:38:59,338][train_inner][INFO] - {"epoch": 5, "update": 4.941, "loss": "0.31", "nll_loss": "0.023", "accuracy": "90.9", "wps": "2372.1", "ups": "5.57", "wpb": "425.9", "bsz": "32", "num_updates": "10400", "lr": "5.35342e-06", "gnorm": "5.531", "train_wall": "35", "gb_free": "13.1", "wall": "3513"}
+[2024-03-04 19:39:57,408][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 19:39:57,410][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 19:40:05,223][valid][INFO] - {"epoch": 5, "valid_loss": "0.512", "valid_nll_loss": "0.02", "valid_accuracy": "86.7", "valid_wps": "2784.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "10525", "valid_best_accuracy": "86.7"}
+[2024-03-04 19:40:05,227][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 5 @ 10525 updates
+[2024-03-04 19:40:05,230][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:40:11,248][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:41:49,776][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 5 @ 10525 updates, score 86.7) (writing took 104.54912878100004 seconds)
+[2024-03-04 19:41:49,777][fairseq_cli.train][INFO] - end of epoch 5 (average epoch stats below)
+[2024-03-04 19:41:49,782][train][INFO] - {"epoch": 5, "train_loss": "0.321", "train_nll_loss": "0.024", "train_accuracy": "90.9", "train_wps": "1115.2", "train_ups": "2.61", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "10525", "train_lr": "5.2899e-06", "train_gnorm": "5.516", "train_train_wall": "688", "train_gb_free": "13.1", "train_wall": "3684"}
+[2024-03-04 19:41:49,785][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+TASK3 TRAINING RN
+[2024-03-04 19:41:49,791][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 19:41:49,795][fairseq.trainer][INFO] - begin training epoch 6
+[2024-03-04 19:41:49,797][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 19:42:30,238][train_inner][INFO] - {"epoch": 6, "update": 5.036, "loss": "0.306", "nll_loss": "0.023", "accuracy": "91.6", "wps": "403.1", "ups": "0.95", "wpb": "425.1", "bsz": "32", "num_updates": "10600", "lr": "5.25179e-06", "gnorm": "5.511", "train_wall": "98", "gb_free": "13.3", "wall": "3724"}
+[2024-03-04 19:43:55,669][train_inner][INFO] - {"epoch": 6, "update": 5.131, "loss": "0.3", "nll_loss": "0.023", "accuracy": "91.7", "wps": "993.2", "ups": "2.34", "wpb": "424.2", "bsz": "32", "num_updates": "10800", "lr": "5.15016e-06", "gnorm": "5.483", "train_wall": "85", "gb_free": "13.2", "wall": "3810"}
+[2024-03-04 19:45:55,525][train_inner][INFO] - {"epoch": 6, "update": 5.226, "loss": "0.291", "nll_loss": "0.022", "accuracy": "91.9", "wps": "715.6", "ups": "1.67", "wpb": "428.8", "bsz": "32", "num_updates": "11000", "lr": "5.04853e-06", "gnorm": "5.774", "train_wall": "119", "gb_free": "13.3", "wall": "3929"}
+[2024-03-04 19:46:58,247][train_inner][INFO] - {"epoch": 6, "update": 5.321, "loss": "0.29", "nll_loss": "0.022", "accuracy": "91.9", "wps": "1360.2", "ups": "3.19", "wpb": "426.6", "bsz": "32", "num_updates": "11200", "lr": "4.9469e-06", "gnorm": "5.473", "train_wall": "62", "gb_free": "13.2", "wall": "3992"}
+[2024-03-04 19:47:35,414][train_inner][INFO] - {"epoch": 6, "update": 5.416, "loss": "0.297", "nll_loss": "0.022", "accuracy": "91.5", "wps": "2308", "ups": "5.38", "wpb": "428.9", "bsz": "31.9", "num_updates": "11400", "lr": "4.84527e-06", "gnorm": "5.628", "train_wall": "36", "gb_free": "13.1", "wall": "4029"}
+[2024-03-04 19:48:46,664][train_inner][INFO] - {"epoch": 6, "update": 5.511, "loss": "0.284", "nll_loss": "0.021", "accuracy": "92", "wps": "1196.7", "ups": "2.81", "wpb": "426.3", "bsz": "32", "num_updates": "11600", "lr": "4.74364e-06", "gnorm": "5.674", "train_wall": "71", "gb_free": "13.2", "wall": "4101"}
+[2024-03-04 19:50:43,071][train_inner][INFO] - {"epoch": 6, "update": 5.606, "loss": "0.284", "nll_loss": "0.021", "accuracy": "91.8", "wps": "733.5", "ups": "1.72", "wpb": "426.9", "bsz": "32", "num_updates": "11800", "lr": "4.642e-06", "gnorm": "6.029", "train_wall": "116", "gb_free": "13.4", "wall": "4217"}
+[2024-03-04 19:52:26,887][train_inner][INFO] - {"epoch": 6, "update": 5.701, "loss": "0.285", "nll_loss": "0.021", "accuracy": "91.8", "wps": "828", "ups": "1.93", "wpb": "429.8", "bsz": "32", "num_updates": "12000", "lr": "4.54037e-06", "gnorm": "5.746", "train_wall": "103", "gb_free": "13.3", "wall": "4321"}
+[2024-03-04 19:54:09,443][train_inner][INFO] - {"epoch": 6, "update": 5.796, "loss": "0.295", "nll_loss": "0.022", "accuracy": "91.8", "wps": "840.3", "ups": "1.95", "wpb": "430.9", "bsz": "32", "num_updates": "12200", "lr": "4.43874e-06", "gnorm": "5.678", "train_wall": "102", "gb_free": "13.4", "wall": "4423"}
+[2024-03-04 19:56:05,303][train_inner][INFO] - {"epoch": 6, "update": 5.891, "loss": "0.298", "nll_loss": "0.022", "accuracy": "91.8", "wps": "737.2", "ups": "1.73", "wpb": "427.1", "bsz": "32", "num_updates": "12400", "lr": "4.33711e-06", "gnorm": "5.738", "train_wall": "115", "gb_free": "13", "wall": "4539"}
+[2024-03-04 19:56:43,524][train_inner][INFO] - {"epoch": 6, "update": 5.986, "loss": "0.286", "nll_loss": "0.021", "accuracy": "91.9", "wps": "2225", "ups": "5.23", "wpb": "425.2", "bsz": "32", "num_updates": "12600", "lr": "4.23548e-06", "gnorm": "5.545", "train_wall": "37", "gb_free": "13.4", "wall": "4577"}
+[2024-03-04 19:56:48,582][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 19:56:48,584][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 19:56:50,903][valid][INFO] - {"epoch": 6, "valid_loss": "0.551", "valid_nll_loss": "0.022", "valid_accuracy": "87.3", "valid_wps": "9578.9", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "12630", "valid_best_accuracy": "87.3"}
+[2024-03-04 19:56:50,907][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 6 @ 12630 updates
+[2024-03-04 19:56:50,909][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:56:56,774][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 19:58:24,772][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 6 @ 12630 updates, score 87.3) (writing took 93.86475729100039 seconds)
+[2024-03-04 19:58:24,773][fairseq_cli.train][INFO] - end of epoch 6 (average epoch stats below)
+[2024-03-04 19:58:24,778][train][INFO] - {"epoch": 6, "train_loss": "0.291", "train_nll_loss": "0.022", "train_accuracy": "91.8", "train_wps": "904.3", "train_ups": "2.12", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "12630", "train_lr": "4.22023e-06", "train_gnorm": "5.667", "train_train_wall": "891", "train_gb_free": "13.1", "train_wall": "4679"}
+[2024-03-04 19:58:24,781][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+TASK3 TRAINING RN
+[2024-03-04 19:58:24,789][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 19:58:24,792][fairseq.trainer][INFO] - begin training epoch 7
+[2024-03-04 19:58:24,793][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 19:59:55,670][train_inner][INFO] - {"epoch": 7, "update": 6.081, "loss": "0.279", "nll_loss": "0.021", "accuracy": "92", "wps": "443.1", "ups": "1.04", "wpb": "425.7", "bsz": "32", "num_updates": "12800", "lr": "4.13385e-06", "gnorm": "5.95", "train_wall": "95", "gb_free": "13.2", "wall": "4770"}
+[2024-03-04 20:00:45,266][train_inner][INFO] - {"epoch": 7, "update": 6.176, "loss": "0.277", "nll_loss": "0.021", "accuracy": "92.2", "wps": "1706.1", "ups": "4.03", "wpb": "423.1", "bsz": "32", "num_updates": "13000", "lr": "4.03222e-06", "gnorm": "5.774", "train_wall": "49", "gb_free": "13.2", "wall": "4819"}
+[2024-03-04 20:01:19,462][train_inner][INFO] - {"epoch": 7, "update": 6.271, "loss": "0.265", "nll_loss": "0.02", "accuracy": "92.7", "wps": "2530.9", "ups": "5.85", "wpb": "432.7", "bsz": "32", "num_updates": "13200", "lr": "3.93059e-06", "gnorm": "5.669", "train_wall": "34", "gb_free": "12.9", "wall": "4853"}
+[2024-03-04 20:01:51,370][train_inner][INFO] - {"epoch": 7, "update": 6.366, "loss": "0.281", "nll_loss": "0.021", "accuracy": "92.2", "wps": "2655.1", "ups": "6.27", "wpb": "423.6", "bsz": "32", "num_updates": "13400", "lr": "3.82895e-06", "gnorm": "5.947", "train_wall": "31", "gb_free": "13.3", "wall": "4885"}
+[2024-03-04 20:02:40,536][train_inner][INFO] - {"epoch": 7, "update": 6.461, "loss": "0.257", "nll_loss": "0.019", "accuracy": "93.1", "wps": "1745.8", "ups": "4.07", "wpb": "429.2", "bsz": "32", "num_updates": "13600", "lr": "3.72732e-06", "gnorm": "5.625", "train_wall": "49", "gb_free": "13.2", "wall": "4934"}
+[2024-03-04 20:03:49,132][train_inner][INFO] - {"epoch": 7, "update": 6.556, "loss": "0.261", "nll_loss": "0.02", "accuracy": "93.1", "wps": "1239.1", "ups": "2.92", "wpb": "425", "bsz": "32", "num_updates": "13800", "lr": "3.62569e-06", "gnorm": "5.608", "train_wall": "68", "gb_free": "13", "wall": "5003"}
+[2024-03-04 20:04:51,738][train_inner][INFO] - {"epoch": 7, "update": 6.651, "loss": "0.269", "nll_loss": "0.02", "accuracy": "92.4", "wps": "1378.4", "ups": "3.19", "wpb": "431.5", "bsz": "32", "num_updates": "14000", "lr": "3.52406e-06", "gnorm": "5.823", "train_wall": "62", "gb_free": "13.1", "wall": "5066"}
+[2024-03-04 20:05:59,617][train_inner][INFO] - {"epoch": 7, "update": 6.746, "loss": "0.266", "nll_loss": "0.02", "accuracy": "92.8", "wps": "1263.5", "ups": "2.95", "wpb": "428.8", "bsz": "31.9", "num_updates": "14200", "lr": "3.42243e-06", "gnorm": "5.956", "train_wall": "67", "gb_free": "13.1", "wall": "5134"}
+[2024-03-04 20:06:36,090][train_inner][INFO] - {"epoch": 7, "update": 6.841, "loss": "0.261", "nll_loss": "0.019", "accuracy": "93", "wps": "2372", "ups": "5.48", "wpb": "432.6", "bsz": "32", "num_updates": "14400", "lr": "3.3208e-06", "gnorm": "5.937", "train_wall": "36", "gb_free": "13.2", "wall": "5170"}
+[2024-03-04 20:07:06,935][train_inner][INFO] - {"epoch": 7, "update": 6.936, "loss": "0.27", "nll_loss": "0.021", "accuracy": "92.3", "wps": "2729.3", "ups": "6.48", "wpb": "420.9", "bsz": "32", "num_updates": "14600", "lr": "3.21917e-06", "gnorm": "5.595", "train_wall": "30", "gb_free": "12.9", "wall": "5201"}
+[2024-03-04 20:07:27,685][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 20:07:27,686][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 20:07:29,738][valid][INFO] - {"epoch": 7, "valid_loss": "0.532", "valid_nll_loss": "0.021", "valid_accuracy": "88.2", "valid_wps": "10695.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "14735", "valid_best_accuracy": "88.2"}
+[2024-03-04 20:07:29,741][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 7 @ 14735 updates
+[2024-03-04 20:07:29,743][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 20:07:35,180][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 20:08:44,391][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 7 @ 14735 updates, score 88.2) (writing took 74.64994390900029 seconds)
+[2024-03-04 20:08:44,392][fairseq_cli.train][INFO] - end of epoch 7 (average epoch stats below)
+[2024-03-04 20:08:44,394][train][INFO] - {"epoch": 7, "train_loss": "0.267", "train_nll_loss": "0.02", "train_accuracy": "92.6", "train_wps": "1452.1", "train_ups": "3.4", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "14735", "train_lr": "3.15057e-06", "train_gnorm": "5.784", "train_train_wall": "537", "train_gb_free": "13.2", "train_wall": "5298"}
+[2024-03-04 20:08:44,395][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+TASK3 TRAINING RN
+[2024-03-04 20:08:44,399][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 20:08:44,402][fairseq.trainer][INFO] - begin training epoch 8
+[2024-03-04 20:08:44,403][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 20:09:04,124][train_inner][INFO] - {"epoch": 8, "update": 7.031, "loss": "0.255", "nll_loss": "0.019", "accuracy": "92.7", "wps": "725.4", "ups": "1.71", "wpb": "425", "bsz": "32", "num_updates": "14800", "lr": "3.11754e-06", "gnorm": "5.913", "train_wall": "40", "gb_free": "13.1", "wall": "5318"}
+[2024-03-04 20:10:18,256][train_inner][INFO] - {"epoch": 8, "update": 7.126, "loss": "0.243", "nll_loss": "0.019", "accuracy": "93.6", "wps": "1129.3", "ups": "2.7", "wpb": "418.6", "bsz": "31.9", "num_updates": "15000", "lr": "3.01591e-06", "gnorm": "5.553", "train_wall": "74", "gb_free": "13.1", "wall": "5392"}
+[2024-03-04 20:11:37,300][train_inner][INFO] - {"epoch": 8, "update": 7.221, "loss": "0.271", "nll_loss": "0.02", "accuracy": "92.5", "wps": "1085.6", "ups": "2.53", "wpb": "429", "bsz": "32", "num_updates": "15200", "lr": "2.91427e-06", "gnorm": "6.03", "train_wall": "79", "gb_free": "13.3", "wall": "5471"}
+[2024-03-04 20:12:55,727][train_inner][INFO] - {"epoch": 8, "update": 7.316, "loss": "0.243", "nll_loss": "0.019", "accuracy": "93.5", "wps": "1068.9", "ups": "2.55", "wpb": "419.1", "bsz": "32", "num_updates": "15400", "lr": "2.81264e-06", "gnorm": "5.639", "train_wall": "78", "gb_free": "13.4", "wall": "5550"}
+[2024-03-04 20:14:14,864][train_inner][INFO] - {"epoch": 8, "update": 7.411, "loss": "0.247", "nll_loss": "0.018", "accuracy": "93.3", "wps": "1086.8", "ups": "2.53", "wpb": "430", "bsz": "32", "num_updates": "15600", "lr": "2.71101e-06", "gnorm": "5.807", "train_wall": "79", "gb_free": "13.4", "wall": "5629"}
+[2024-03-04 20:15:33,037][train_inner][INFO] - {"epoch": 8, "update": 7.506, "loss": "0.255", "nll_loss": "0.019", "accuracy": "92.7", "wps": "1088.7", "ups": "2.56", "wpb": "425.5", "bsz": "32", "num_updates": "15800", "lr": "2.60938e-06", "gnorm": "5.781", "train_wall": "78", "gb_free": "13.2", "wall": "5707"}
+[2024-03-04 20:16:52,031][train_inner][INFO] - {"epoch": 8, "update": 7.601, "loss": "0.238", "nll_loss": "0.018", "accuracy": "93.8", "wps": "1083.6", "ups": "2.53", "wpb": "428", "bsz": "32", "num_updates": "16000", "lr": "2.50775e-06", "gnorm": "5.948", "train_wall": "78", "gb_free": "13.3", "wall": "5786"}
+[2024-03-04 20:18:13,075][train_inner][INFO] - {"epoch": 8, "update": 7.696, "loss": "0.246", "nll_loss": "0.018", "accuracy": "93.2", "wps": "1062.3", "ups": "2.47", "wpb": "430.5", "bsz": "32", "num_updates": "16200", "lr": "2.40612e-06", "gnorm": "5.8", "train_wall": "80", "gb_free": "13.1", "wall": "5867"}
+[2024-03-04 20:19:34,806][train_inner][INFO] - {"epoch": 8, "update": 7.791, "loss": "0.26", "nll_loss": "0.019", "accuracy": "92.9", "wps": "1055.5", "ups": "2.45", "wpb": "431.3", "bsz": "32", "num_updates": "16400", "lr": "2.30449e-06", "gnorm": "5.819", "train_wall": "81", "gb_free": "13.4", "wall": "5949"}
+[2024-03-04 20:20:59,995][train_inner][INFO] - {"epoch": 8, "update": 7.886, "loss": "0.231", "nll_loss": "0.017", "accuracy": "93.8", "wps": "1018.9", "ups": "2.35", "wpb": "434", "bsz": "32", "num_updates": "16600", "lr": "2.20286e-06", "gnorm": "6.031", "train_wall": "85", "gb_free": "12.9", "wall": "6034"}
+[2024-03-04 20:22:23,063][train_inner][INFO] - {"epoch": 8, "update": 7.981, "loss": "0.253", "nll_loss": "0.019", "accuracy": "93", "wps": "1039.9", "ups": "2.41", "wpb": "431.9", "bsz": "32", "num_updates": "16800", "lr": "2.10122e-06", "gnorm": "5.903", "train_wall": "82", "gb_free": "13.3", "wall": "6117"}
+[2024-03-04 20:22:39,181][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 20:22:39,183][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 20:22:44,522][valid][INFO] - {"epoch": 8, "valid_loss": "0.568", "valid_nll_loss": "0.023", "valid_accuracy": "87.6", "valid_wps": "4086.3", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "16840", "valid_best_accuracy": "88.2"}
+[2024-03-04 20:22:44,526][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 8 @ 16840 updates
+[2024-03-04 20:22:44,527][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_last.pt
+[2024-03-04 20:22:50,876][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_last.pt
+[2024-03-04 20:22:50,884][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 8 @ 16840 updates, score 87.6) (writing took 6.357702846000393 seconds)
+[2024-03-04 20:22:50,885][fairseq_cli.train][INFO] - end of epoch 8 (average epoch stats below)
+[2024-03-04 20:22:50,886][train][INFO] - {"epoch": 8, "train_loss": "0.248", "train_nll_loss": "0.019", "train_accuracy": "93.2", "train_wps": "1062.9", "train_ups": "2.49", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "16840", "train_lr": "2.0809e-06", "train_gnorm": "5.844", "train_train_wall": "829", "train_gb_free": "13.1", "train_wall": "6145"}
+[2024-03-04 20:22:50,888][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+TASK3 TRAINING RN
+[2024-03-04 20:22:50,893][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 20:22:50,897][fairseq.trainer][INFO] - begin training epoch 9
+[2024-03-04 20:22:50,898][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 20:23:17,763][train_inner][INFO] - {"epoch": 9, "update": 8.076, "loss": "0.237", "nll_loss": "0.018", "accuracy": "93.8", "wps": "1573.7", "ups": "3.66", "wpb": "430.4", "bsz": "32", "num_updates": "17000", "lr": "1.99959e-06", "gnorm": "5.648", "train_wall": "42", "gb_free": "13.3", "wall": "6172"}
+[2024-03-04 20:23:50,040][train_inner][INFO] - {"epoch": 9, "update": 8.171, "loss": "0.237", "nll_loss": "0.018", "accuracy": "93.5", "wps": "2599.9", "ups": "6.2", "wpb": "419.6", "bsz": "32", "num_updates": "17200", "lr": "1.89796e-06", "gnorm": "5.712", "train_wall": "32", "gb_free": "13.4", "wall": "6204"}
+[2024-03-04 20:24:22,069][train_inner][INFO] - {"epoch": 9, "update": 8.266, "loss": "0.232", "nll_loss": "0.017", "accuracy": "93.7", "wps": "2681.8", "ups": "6.24", "wpb": "429.5", "bsz": "32", "num_updates": "17400", "lr": "1.79633e-06", "gnorm": "5.795", "train_wall": "32", "gb_free": "13.2", "wall": "6236"}
+[2024-03-04 20:25:36,559][train_inner][INFO] - {"epoch": 9, "update": 8.361, "loss": "0.224", "nll_loss": "0.017", "accuracy": "93.9", "wps": "1149.4", "ups": "2.68", "wpb": "428.1", "bsz": "32", "num_updates": "17600", "lr": "1.6947e-06", "gnorm": "5.908", "train_wall": "74", "gb_free": "13.2", "wall": "6310"}
+[2024-03-04 20:26:59,406][train_inner][INFO] - {"epoch": 9, "update": 8.456, "loss": "0.238", "nll_loss": "0.018", "accuracy": "93.7", "wps": "1034.7", "ups": "2.41", "wpb": "428.6", "bsz": "32", "num_updates": "17800", "lr": "1.59307e-06", "gnorm": "5.718", "train_wall": "82", "gb_free": "13.1", "wall": "6393"}
+[2024-03-04 20:28:20,860][train_inner][INFO] - {"epoch": 9, "update": 8.551, "loss": "0.24", "nll_loss": "0.018", "accuracy": "93.3", "wps": "1048.3", "ups": "2.46", "wpb": "426.9", "bsz": "32", "num_updates": "18000", "lr": "1.49144e-06", "gnorm": "5.843", "train_wall": "81", "gb_free": "13.5", "wall": "6475"}
+[2024-03-04 20:29:44,600][train_inner][INFO] - {"epoch": 9, "update": 8.646, "loss": "0.218", "nll_loss": "0.016", "accuracy": "94.2", "wps": "1017", "ups": "2.39", "wpb": "425.8", "bsz": "32", "num_updates": "18200", "lr": "1.38981e-06", "gnorm": "5.961", "train_wall": "83", "gb_free": "12.9", "wall": "6559"}
+[2024-03-04 20:31:06,969][train_inner][INFO] - {"epoch": 9, "update": 8.741, "loss": "0.243", "nll_loss": "0.018", "accuracy": "93.1", "wps": "1035.3", "ups": "2.43", "wpb": "426.4", "bsz": "31.9", "num_updates": "18400", "lr": "1.28818e-06", "gnorm": "6.146", "train_wall": "82", "gb_free": "13.1", "wall": "6641"}
+[2024-03-04 20:32:32,553][train_inner][INFO] - {"epoch": 9, "update": 8.836, "loss": "0.231", "nll_loss": "0.017", "accuracy": "94", "wps": "1010.5", "ups": "2.34", "wpb": "432.4", "bsz": "32", "num_updates": "18600", "lr": "1.18654e-06", "gnorm": "5.712", "train_wall": "85", "gb_free": "13.3", "wall": "6726"}
+[2024-03-04 20:33:57,929][train_inner][INFO] - {"epoch": 9, "update": 8.931, "loss": "0.244", "nll_loss": "0.018", "accuracy": "93.3", "wps": "993.6", "ups": "2.34", "wpb": "424.1", "bsz": "32", "num_updates": "18800", "lr": "1.08491e-06", "gnorm": "6.021", "train_wall": "85", "gb_free": "12.9", "wall": "6812"}
+[2024-03-04 20:35:01,884][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 20:35:01,885][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 20:35:07,357][valid][INFO] - {"epoch": 9, "valid_loss": "0.584", "valid_nll_loss": "0.023", "valid_accuracy": "88.1", "valid_wps": "3974.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "18945", "valid_best_accuracy": "88.2"}
+[2024-03-04 20:35:07,360][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 9 @ 18945 updates
+[2024-03-04 20:35:07,363][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_last.pt
+[2024-03-04 20:35:13,574][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_last.pt
+[2024-03-04 20:35:13,577][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 9 @ 18945 updates, score 88.1) (writing took 6.217004844000257 seconds)
+[2024-03-04 20:35:13,579][fairseq_cli.train][INFO] - end of epoch 9 (average epoch stats below)
+[2024-03-04 20:35:13,582][train][INFO] - {"epoch": 9, "train_loss": "0.234", "train_nll_loss": "0.018", "train_accuracy": "93.6", "train_wps": "1211.5", "train_ups": "2.83", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "18945", "train_lr": "1.01123e-06", "train_gnorm": "5.856", "train_train_wall": "725", "train_gb_free": "13.4", "train_wall": "6888"}
+[2024-03-04 20:35:13,584][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+TASK3 TRAINING RN
+[2024-03-04 20:35:13,591][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-04 20:35:13,595][fairseq.trainer][INFO] - begin training epoch 10
+[2024-03-04 20:35:13,596][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 20:35:37,495][train_inner][INFO] - {"epoch": 10, "update": 9.026, "loss": "0.232", "nll_loss": "0.017", "accuracy": "93.8", "wps": "870", "ups": "2.01", "wpb": "433.1", "bsz": "32", "num_updates": "19000", "lr": "9.83282e-07", "gnorm": "6.002", "train_wall": "87", "gb_free": "13.4", "wall": "6911"}
+[2024-03-04 20:37:03,332][train_inner][INFO] - {"epoch": 10, "update": 9.121, "loss": "0.229", "nll_loss": "0.017", "accuracy": "93.5", "wps": "1003.5", "ups": "2.33", "wpb": "430.7", "bsz": "32", "num_updates": "19200", "lr": "8.8165e-07", "gnorm": "5.831", "train_wall": "85", "gb_free": "13.4", "wall": "6997"}
+[2024-03-04 20:38:27,720][train_inner][INFO] - {"epoch": 10, "update": 9.216, "loss": "0.22", "nll_loss": "0.017", "accuracy": "93.7", "wps": "1008.3", "ups": "2.37", "wpb": "425.4", "bsz": "32", "num_updates": "19400", "lr": "7.80019e-07", "gnorm": "6.254", "train_wall": "84", "gb_free": "13", "wall": "7082"}
+[2024-03-04 20:39:35,146][train_inner][INFO] - {"epoch": 10, "update": 9.311, "loss": "0.224", "nll_loss": "0.017", "accuracy": "93.8", "wps": "1255.9", "ups": "2.97", "wpb": "423.4", "bsz": "32", "num_updates": "19600", "lr": "6.78388e-07", "gnorm": "6.185", "train_wall": "67", "gb_free": "13.4", "wall": "7149"}
+[2024-03-04 20:40:09,902][train_inner][INFO] - {"epoch": 10, "update": 9.406, "loss": "0.224", "nll_loss": "0.017", "accuracy": "93.7", "wps": "2440.1", "ups": "5.75", "wpb": "424", "bsz": "32", "num_updates": "19800", "lr": "5.76757e-07", "gnorm": "5.916", "train_wall": "34", "gb_free": "13.2", "wall": "7184"}
+[2024-03-04 20:40:42,692][train_inner][INFO] - {"epoch": 10, "update": 9.501, "loss": "0.235", "nll_loss": "0.017", "accuracy": "93.6", "wps": "2633.2", "ups": "6.1", "wpb": "431.7", "bsz": "32", "num_updates": "20000", "lr": "4.75126e-07", "gnorm": "6.045", "train_wall": "32", "gb_free": "13.2", "wall": "7217"}
+[2024-03-04 20:41:44,582][train_inner][INFO] - {"epoch": 10, "update": 9.596, "loss": "0.222", "nll_loss": "0.017", "accuracy": "94.1", "wps": "1363.4", "ups": "3.23", "wpb": "421.9", "bsz": "32", "num_updates": "20200", "lr": "3.73495e-07", "gnorm": "5.659", "train_wall": "61", "gb_free": "13", "wall": "7279"}
+[2024-03-04 20:43:09,725][train_inner][INFO] - {"epoch": 10, "update": 9.691, "loss": "0.23", "nll_loss": "0.017", "accuracy": "93.9", "wps": "1016.5", "ups": "2.35", "wpb": "432.8", "bsz": "32", "num_updates": "20400", "lr": "2.71863e-07", "gnorm": "6.006", "train_wall": "85", "gb_free": "13.3", "wall": "7364"}
+[2024-03-04 20:44:34,701][train_inner][INFO] - {"epoch": 10, "update": 9.786, "loss": "0.219", "nll_loss": "0.017", "accuracy": "94.2", "wps": "998.3", "ups": "2.35", "wpb": "424.2", "bsz": "32", "num_updates": "20600", "lr": "1.70232e-07", "gnorm": "5.989", "train_wall": "84", "gb_free": "13.4", "wall": "7449"}
+[2024-03-04 20:46:01,533][train_inner][INFO] - {"epoch": 10, "update": 9.881, "loss": "0.221", "nll_loss": "0.017", "accuracy": "94.1", "wps": "982.3", "ups": "2.3", "wpb": "426.5", "bsz": "32", "num_updates": "20800", "lr": "6.8601e-08", "gnorm": "5.839", "train_wall": "86", "gb_free": "13.2", "wall": "7535"}
+[2024-03-04 20:47:00,250][fairseq_cli.train][INFO] - Stopping training due to num_updates: 20935 >= max_update: 20935
+[2024-03-04 20:47:00,251][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 20:47:00,253][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 20:47:05,757][valid][INFO] - {"epoch": 10, "valid_loss": "0.577", "valid_nll_loss": "0.023", "valid_accuracy": "88.2", "valid_wps": "3966.7", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "20935", "valid_best_accuracy": "88.2"}
+[2024-03-04 20:47:05,760][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 10 @ 20935 updates
+[2024-03-04 20:47:05,762][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 20:47:11,999][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/18-40-22/checkpoints/checkpoint_best.pt
+[2024-03-04 20:48:40,631][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 10 @ 20935 updates, score 88.2) (writing took 94.87041519800005 seconds)
+[2024-03-04 20:48:40,633][fairseq_cli.train][INFO] - end of epoch 10 (average epoch stats below)
+[2024-03-04 20:48:40,637][train][INFO] - {"epoch": 10, "train_loss": "0.225", "train_nll_loss": "0.017", "train_accuracy": "93.8", "train_wps": "1053.5", "train_ups": "2.47", "train_wpb": "427.3", "train_bsz": "32", "train_num_updates": "20935", "train_lr": "0", "train_gnorm": "5.976", "train_train_wall": "701", "train_gb_free": "13.3", "train_wall": "7695"}
+[2024-03-04 20:48:40,638][fairseq_cli.train][INFO] - done training in 7688.5 seconds

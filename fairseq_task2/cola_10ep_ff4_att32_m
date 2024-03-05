@@ -1,0 +1,609 @@
+{'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': json, 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': pytorch_ddp, 'ddp_comm_hook': none, 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': never, 'zero_sharding': none, 'fp16': '${common.fp16}', 'memory_efficient_fp16': '${common.memory_efficient_fp16}', 'tpu': '${common.tpu}', 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 16, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': '${dataset.max_tokens}', 'batch_size_valid': '${dataset.batch_size}', 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': '${dataset.grouped_shuffling}', 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 10, 'max_update': 5336, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [1e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': '${common.model_parallel_size}'}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': '${distributed_training.distributed_world_size}'}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/CoLA-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': '${criterion.regression_target}', 'classification_head_name': '${criterion.classification_head_name}', 'seed': '${common.seed}', 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': '${common.tpu}', 'lr': '${optimization.lr}'}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 320, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': '${optimization.max_update}', 'lr': '${optimization.lr}'}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}}
+[2024-03-04 05:25:09,566][fairseq_cli.train][INFO] - {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 16, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 4400, 'batch_size_valid': 16, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 10, 'max_update': 5336, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [1e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/CoLA-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': False, 'classification_head_name': 'sentence_classification_head', 'seed': 1, 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [1e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 320, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 5336.0, 'lr': [1e-05]}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'job_logging_cfg': {'version': 1, 'formatters': {'simple': {'format': '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}, 'file': {'class': 'logging.FileHandler', 'formatter': 'simple', 'filename': 'hydra_train.log'}}, 'root': {'level': 'INFO', 'handlers': ['console', 'file']}, 'disable_existing_loggers': False}}
+[2024-03-04 05:25:09,624][fairseq.tasks.sentence_prediction][INFO] - [input] dictionary: 50265 types
+[2024-03-04 05:25:09,628][fairseq.tasks.sentence_prediction][INFO] - [label] dictionary: 9 types
+[2024-03-04 05:25:13,174][fairseq_cli.train][INFO] - RobertaModel(
+  (encoder): RobertaEncoder(
+    (sentence_encoder): TransformerEncoder(
+      (dropout_module): FairseqDropout()
+      (embed_tokens): Embedding(50265, 768, padding_idx=1)
+      (embed_positions): LearnedPositionalEmbedding(514, 768, padding_idx=1)
+      (layernorm_embedding): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0-11): 12 x TransformerEncoderLayerBase(
+          (self_attn): MultiheadAttention(
+            (quantize_input): QuantMeasure()
+            (dropout_module): FairseqDropout()
+            (k_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+            (v_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+            (q_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+            (out_proj): QLinear(
+              in_features=768, out_features=768, bias=True
+              (linear): Linear(in_features=768, out_features=768, bias=True)
+              (quantize_input): QuantMeasure()
+            )
+          )
+          (self_attn_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (fc1): QLinear(
+            in_features=768, out_features=3072, bias=True
+            (linear): Linear(in_features=768, out_features=3072, bias=True)
+            (quantize_input): QuantMeasure()
+          )
+          (fc2): QLinear(
+            in_features=3072, out_features=768, bias=True
+            (linear): Linear(in_features=3072, out_features=768, bias=True)
+            (quantize_input): QuantMeasure()
+          )
+          (final_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (lm_head): RobertaLMHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (classification_heads): ModuleDict(
+    (sentence_classification_head): RobertaClassificationHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (dropout): Dropout(p=0.0, inplace=False)
+      (out_proj): Linear(in_features=768, out_features=2, bias=True)
+    )
+  )
+)
+[2024-03-04 05:25:13,178][fairseq_cli.train][INFO] - task: SentencePredictionTask
+[2024-03-04 05:25:13,179][fairseq_cli.train][INFO] - model: RobertaModel
+[2024-03-04 05:25:13,179][fairseq_cli.train][INFO] - criterion: SentencePredictionCriterion
+[2024-03-04 05:25:13,182][fairseq_cli.train][INFO] - num. shared model params: 210,306,395 (num. trained: 210,306,395)
+[2024-03-04 05:25:13,184][fairseq_cli.train][INFO] - num. expert model params: 0 (num. trained: 0)
+[2024-03-04 05:25:13,223][fairseq.data.data_utils][INFO] - loaded 1,043 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/CoLA-bin/input0/valid
+[2024-03-04 05:25:13,252][fairseq.data.data_utils][INFO] - loaded 1,043 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/CoLA-bin/label/valid
+[2024-03-04 05:25:13,252][fairseq.tasks.sentence_prediction][INFO] - Loaded valid with #samples: 1043
+layerls name encoder.sentence_encoder.embed_tokens.weight
+layerls name encoder.sentence_encoder.embed_positions.weight
+layerls name encoder.sentence_encoder.layernorm_embedding.weight
+layerls name encoder.sentence_encoder.layernorm_embedding.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.0.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.0.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.0.fc1.weight
+layerls name encoder.sentence_encoder.layers.0.fc1.bias
+layerls name encoder.sentence_encoder.layers.0.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.0.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.0.fc2.weight
+layerls name encoder.sentence_encoder.layers.0.fc2.bias
+layerls name encoder.sentence_encoder.layers.0.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.0.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.0.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.0.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.1.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.1.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.1.fc1.weight
+layerls name encoder.sentence_encoder.layers.1.fc1.bias
+layerls name encoder.sentence_encoder.layers.1.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.1.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.1.fc2.weight
+layerls name encoder.sentence_encoder.layers.1.fc2.bias
+layerls name encoder.sentence_encoder.layers.1.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.1.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.1.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.1.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.2.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.2.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.2.fc1.weight
+layerls name encoder.sentence_encoder.layers.2.fc1.bias
+layerls name encoder.sentence_encoder.layers.2.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.2.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.2.fc2.weight
+layerls name encoder.sentence_encoder.layers.2.fc2.bias
+layerls name encoder.sentence_encoder.layers.2.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.2.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.2.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.2.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.3.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.3.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.3.fc1.weight
+layerls name encoder.sentence_encoder.layers.3.fc1.bias
+layerls name encoder.sentence_encoder.layers.3.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.3.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.3.fc2.weight
+layerls name encoder.sentence_encoder.layers.3.fc2.bias
+layerls name encoder.sentence_encoder.layers.3.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.3.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.3.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.3.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.4.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.4.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.4.fc1.weight
+layerls name encoder.sentence_encoder.layers.4.fc1.bias
+layerls name encoder.sentence_encoder.layers.4.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.4.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.4.fc2.weight
+layerls name encoder.sentence_encoder.layers.4.fc2.bias
+layerls name encoder.sentence_encoder.layers.4.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.4.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.4.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.4.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.5.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.5.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.5.fc1.weight
+layerls name encoder.sentence_encoder.layers.5.fc1.bias
+layerls name encoder.sentence_encoder.layers.5.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.5.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.5.fc2.weight
+layerls name encoder.sentence_encoder.layers.5.fc2.bias
+layerls name encoder.sentence_encoder.layers.5.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.5.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.5.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.5.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.6.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.6.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.6.fc1.weight
+layerls name encoder.sentence_encoder.layers.6.fc1.bias
+layerls name encoder.sentence_encoder.layers.6.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.6.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.6.fc2.weight
+layerls name encoder.sentence_encoder.layers.6.fc2.bias
+layerls name encoder.sentence_encoder.layers.6.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.6.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.6.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.6.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.7.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.7.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.7.fc1.weight
+layerls name encoder.sentence_encoder.layers.7.fc1.bias
+layerls name encoder.sentence_encoder.layers.7.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.7.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.7.fc2.weight
+layerls name encoder.sentence_encoder.layers.7.fc2.bias
+layerls name encoder.sentence_encoder.layers.7.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.7.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.7.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.7.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.8.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.8.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.8.fc1.weight
+layerls name encoder.sentence_encoder.layers.8.fc1.bias
+layerls name encoder.sentence_encoder.layers.8.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.8.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.8.fc2.weight
+layerls name encoder.sentence_encoder.layers.8.fc2.bias
+layerls name encoder.sentence_encoder.layers.8.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.8.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.8.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.8.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.9.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.9.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.9.fc1.weight
+layerls name encoder.sentence_encoder.layers.9.fc1.bias
+layerls name encoder.sentence_encoder.layers.9.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.9.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.9.fc2.weight
+layerls name encoder.sentence_encoder.layers.9.fc2.bias
+layerls name encoder.sentence_encoder.layers.9.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.9.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.9.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.9.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.10.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.10.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.10.fc1.weight
+layerls name encoder.sentence_encoder.layers.10.fc1.bias
+layerls name encoder.sentence_encoder.layers.10.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.10.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.10.fc2.weight
+layerls name encoder.sentence_encoder.layers.10.fc2.bias
+layerls name encoder.sentence_encoder.layers.10.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.10.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.10.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.10.final_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.k_proj.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.k_proj.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.k_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.k_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.v_proj.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.v_proj.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.v_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.v_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.q_proj.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.q_proj.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.q_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.q_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.out_proj.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.out_proj.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn.out_proj.linear.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn.out_proj.linear.bias
+layerls name encoder.sentence_encoder.layers.11.self_attn_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.11.self_attn_layer_norm.bias
+layerls name encoder.sentence_encoder.layers.11.fc1.weight
+layerls name encoder.sentence_encoder.layers.11.fc1.bias
+layerls name encoder.sentence_encoder.layers.11.fc1.linear.weight
+layerls name encoder.sentence_encoder.layers.11.fc1.linear.bias
+layerls name encoder.sentence_encoder.layers.11.fc2.weight
+layerls name encoder.sentence_encoder.layers.11.fc2.bias
+layerls name encoder.sentence_encoder.layers.11.fc2.linear.weight
+layerls name encoder.sentence_encoder.layers.11.fc2.linear.bias
+layerls name encoder.sentence_encoder.layers.11.final_layer_norm.weight
+layerls name encoder.sentence_encoder.layers.11.final_layer_norm.bias
+layerls name encoder.lm_head.bias
+layerls name encoder.lm_head.dense.weight
+layerls name encoder.lm_head.dense.bias
+layerls name encoder.lm_head.layer_norm.weight
+layerls name encoder.lm_head.layer_norm.bias
+layerls name classification_heads.sentence_classification_head.dense.weight
+layerls name classification_heads.sentence_classification_head.dense.bias
+layerls name classification_heads.sentence_classification_head.out_proj.weight
+layerls name classification_heads.sentence_classification_head.out_proj.bias
+MY TRAINER CONFIG! {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 16, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 4400, 'batch_size_valid': 16, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 10, 'max_update': 5336, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [1e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1, 'max_positions': 512, 'encoder_layers': 12, 'encoder_embed_dim': 768, 'encoder_ffn_embed_dim': 3072, 'encoder_attention_heads': 12, 'activation_dropout': 0.0, 'pooler_dropout': 0.0, 'max_source_positions': 512, 'no_token_positional_embeddings': False, 'encoder_learned_pos': True, 'layernorm_embedding': True, 'no_scale_embedding': True, 'activation_fn': 'gelu', 'encoder_normalize_before': False, 'pooler_activation_fn': 'tanh', 'untie_weights_roberta': False, 'adaptive_input': False, 'encoder_layerdrop': 0.0, 'encoder_layers_to_keep': None, 'quant_noise_pq': 0, 'quant_noise_pq_block_size': 8, 'quant_noise_scalar': 0, 'spectral_norm_classification_head': False}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/CoLA-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': False, 'classification_head_name': 'sentence_classification_head', 'seed': 1, 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [1e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 320, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 5336.0, 'lr': [1e-05]}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'job_logging_cfg': {'version': 1, 'formatters': {'simple': {'format': '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}, 'file': {'class': 'logging.FileHandler', 'formatter': 'simple', 'filename': 'hydra_train.log'}}, 'root': {'level': 'INFO', 'handlers': ['console', 'file']}, 'disable_existing_loggers': False}}
+MY MODEL!
+[2024-03-04 05:25:13,826][fairseq.trainer][INFO] - detected shared parameter: encoder.sentence_encoder.embed_tokens.weight <- encoder.lm_head.weight
+[2024-03-04 05:25:13,827][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-04 05:25:13,828][fairseq.utils][INFO] - rank   0: capabilities =  8.6  ; total memory = 16.000 GB ; name = NVIDIA GeForce RTX 3080 Ti Laptop GPU   
+[2024-03-04 05:25:13,829][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-04 05:25:13,830][fairseq_cli.train][INFO] - training on 1 devices (GPUs/TPUs)
+[2024-03-04 05:25:13,831][fairseq_cli.train][INFO] - max tokens per device = 4400 and max sentences per device = 16
+[2024-03-04 05:25:13,832][fairseq.trainer][INFO] - Preparing to load checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt
+[2024-03-04 05:25:20,185][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.weight
+[2024-03-04 05:25:20,185][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.bias
+[2024-03-04 05:25:20,186][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.weight
+[2024-03-04 05:25:20,187][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.bias
+[2024-03-04 05:25:20,318][fairseq.optim.adam][INFO] - using FusedAdam
+[2024-03-04 05:25:20,802][fairseq.trainer][INFO] - Loaded checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt (epoch 1 @ 0 updates)
+[2024-03-04 05:25:20,803][fairseq.trainer][INFO] - loading train data for epoch 1
+[2024-03-04 05:25:20,827][fairseq.data.data_utils][INFO] - loaded 8,551 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/CoLA-bin/input0/train
+[2024-03-04 05:25:20,859][fairseq.data.data_utils][INFO] - loaded 8,551 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/CoLA-bin/label/train
+[2024-03-04 05:25:20,861][fairseq.tasks.sentence_prediction][INFO] - Loaded train with #samples: 8551
+[2024-03-04 05:25:20,863][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:25:20,864][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-04 05:25:20,865][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-04 05:25:20,865][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+[2024-03-04 05:25:20,891][fairseq_cli.train][INFO] - begin dry-run validation on "valid" subset
+[2024-03-04 05:25:20,892][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:25:20,894][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-04 05:25:20,894][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-04 05:25:20,895][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+[2024-03-04 05:25:21,676][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:25:21,682][fairseq.trainer][INFO] - begin training epoch 1
+[2024-03-04 05:25:21,684][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:25:42,972][train_inner][INFO] - {"epoch": 1, "update": 0.374, "loss": "0", "nll_loss": "0", "accuracy": "44", "wps": "1787.6", "ups": "9.87", "wpb": "181.1", "bsz": "16", "num_updates": "200", "lr": "6.25e-06", "gnorm": "0", "loss_scale": "8", "train_wall": "21", "gb_free": "15.6", "wall": "29"}
+[2024-03-04 05:26:01,113][train_inner][INFO] - {"epoch": 1, "update": 0.748, "loss": "0", "nll_loss": "0", "accuracy": "45.3", "wps": "2011.1", "ups": "11.03", "wpb": "182.4", "bsz": "16", "num_updates": "400", "lr": "9.84051e-06", "gnorm": "0", "loss_scale": "32", "train_wall": "18", "gb_free": "15.6", "wall": "47"}
+[2024-03-04 05:26:16,807][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:26:16,809][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:26:22,878][valid][INFO] - {"epoch": 1, "valid_loss": "1.024", "valid_nll_loss": "0.088", "valid_accuracy": "45", "valid_wps": "2022.2", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "535"}
+[2024-03-04 05:26:22,882][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 1 @ 535 updates
+[2024-03-04 05:26:22,885][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_best.pt
+[2024-03-04 05:26:26,232][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_best.pt
+[2024-03-04 05:27:19,525][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 1 @ 535 updates, score 45.0) (writing took 56.642366846994264 seconds)
+[2024-03-04 05:27:19,526][fairseq_cli.train][INFO] - end of epoch 1 (average epoch stats below)
+[2024-03-04 05:27:19,530][train][INFO] - {"epoch": 1, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "44.2", "train_wps": "831.4", "train_ups": "4.58", "train_wpb": "181.7", "train_bsz": "16", "train_num_updates": "535", "train_lr": "9.57137e-06", "train_gnorm": "0", "train_loss_scale": "64", "train_train_wall": "54", "train_gb_free": "15.6", "train_wall": "126"}
+[2024-03-04 05:27:19,534][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:27:19,542][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:27:19,550][fairseq.trainer][INFO] - begin training epoch 2
+[2024-03-04 05:27:19,552][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:27:27,877][train_inner][INFO] - {"epoch": 2, "update": 1.121, "loss": "0", "nll_loss": "0", "accuracy": "43.5", "wps": "416.5", "ups": "2.31", "wpb": "180.7", "bsz": "15.9", "num_updates": "600", "lr": "9.44179e-06", "gnorm": "0", "loss_scale": "64", "train_wall": "23", "gb_free": "15.6", "wall": "134"}
+[2024-03-04 05:27:53,452][train_inner][INFO] - {"epoch": 2, "update": 1.495, "loss": "0", "nll_loss": "0", "accuracy": "45.2", "wps": "1433.1", "ups": "7.82", "wpb": "183.2", "bsz": "16", "num_updates": "800", "lr": "9.04306e-06", "gnorm": "0", "loss_scale": "256", "train_wall": "25", "gb_free": "15.6", "wall": "160"}
+[2024-03-04 05:28:16,982][train_inner][INFO] - {"epoch": 2, "update": 1.869, "loss": "0", "nll_loss": "0", "accuracy": "42.9", "wps": "1535.7", "ups": "8.5", "wpb": "180.7", "bsz": "16", "num_updates": "1000", "lr": "8.64434e-06", "gnorm": "0", "loss_scale": "512", "train_wall": "23", "gb_free": "15.6", "wall": "183"}
+[2024-03-04 05:28:24,035][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:28:24,037][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:28:29,479][valid][INFO] - {"epoch": 2, "valid_loss": "0.968", "valid_nll_loss": "0.083", "valid_accuracy": "65.3", "valid_wps": "2255.5", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "1070", "valid_best_accuracy": "65.3"}
+[2024-03-04 05:28:29,484][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 2 @ 1070 updates
+[2024-03-04 05:28:29,486][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_best.pt
+[2024-03-04 05:28:32,678][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_best.pt
+[2024-03-04 05:29:23,138][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 2 @ 1070 updates, score 65.3) (writing took 53.65416662100324 seconds)
+[2024-03-04 05:29:23,140][fairseq_cli.train][INFO] - end of epoch 2 (average epoch stats below)
+[2024-03-04 05:29:23,143][train][INFO] - {"epoch": 2, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "44.1", "train_wps": "786.6", "train_ups": "4.33", "train_wpb": "181.7", "train_bsz": "16", "train_num_updates": "1070", "train_lr": "8.50478e-06", "train_gnorm": "0", "train_loss_scale": "1024", "train_train_wall": "63", "train_gb_free": "15.6", "train_wall": "249"}
+[2024-03-04 05:29:23,146][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:29:23,154][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:29:23,158][fairseq.trainer][INFO] - begin training epoch 3
+[2024-03-04 05:29:23,159][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:29:35,633][train_inner][INFO] - {"epoch": 3, "update": 2.243, "loss": "0", "nll_loss": "0", "accuracy": "45.4", "wps": "460.7", "ups": "2.54", "wpb": "181.2", "bsz": "16", "num_updates": "1200", "lr": "8.24561e-06", "gnorm": "0", "loss_scale": "2048", "train_wall": "19", "gb_free": "15.6", "wall": "262"}
+[2024-03-04 05:29:54,620][train_inner][INFO] - {"epoch": 3, "update": 2.617, "loss": "0", "nll_loss": "0", "accuracy": "46.3", "wps": "1935.6", "ups": "10.53", "wpb": "183.8", "bsz": "16", "num_updates": "1400", "lr": "7.84689e-06", "gnorm": "0", "loss_scale": "4096", "train_wall": "19", "gb_free": "15.6", "wall": "281"}
+[2024-03-04 05:30:19,328][train_inner][INFO] - {"epoch": 3, "update": 2.991, "loss": "0", "nll_loss": "0", "accuracy": "45.1", "wps": "1465", "ups": "8.09", "wpb": "181", "bsz": "16", "num_updates": "1600", "lr": "7.44817e-06", "gnorm": "0", "loss_scale": "16384", "train_wall": "24", "gb_free": "15.6", "wall": "305"}
+[2024-03-04 05:30:19,975][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:30:19,977][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:30:26,200][valid][INFO] - {"epoch": 3, "valid_loss": "1.024", "valid_nll_loss": "0.088", "valid_accuracy": "44.2", "valid_wps": "1956.6", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "1605", "valid_best_accuracy": "65.3"}
+[2024-03-04 05:30:26,204][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 3 @ 1605 updates
+[2024-03-04 05:30:26,206][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:30:29,545][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:30:29,549][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 3 @ 1605 updates, score 44.2) (writing took 3.345216621994041 seconds)
+[2024-03-04 05:30:29,551][fairseq_cli.train][INFO] - end of epoch 3 (average epoch stats below)
+[2024-03-04 05:30:29,555][train][INFO] - {"epoch": 3, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "45.9", "train_wps": "1464.1", "train_ups": "8.06", "train_wpb": "181.7", "train_bsz": "16", "train_num_updates": "1605", "train_lr": "7.4382e-06", "train_gnorm": "0", "train_loss_scale": "16384", "train_train_wall": "55", "train_gb_free": "15.6", "train_wall": "316"}
+[2024-03-04 05:30:29,557][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:30:29,563][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:30:29,567][fairseq.trainer][INFO] - begin training epoch 4
+[2024-03-04 05:30:29,569][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:30:54,032][train_inner][INFO] - {"epoch": 4, "update": 3.364, "loss": "0", "nll_loss": "0", "accuracy": "45.3", "wps": "1053.9", "ups": "5.76", "wpb": "182.9", "bsz": "16", "num_updates": "1800", "lr": "7.04944e-06", "gnorm": "0", "loss_scale": "65536", "train_wall": "25", "gb_free": "15.6", "wall": "340"}
+[2024-03-04 05:31:18,395][train_inner][INFO] - {"epoch": 4, "update": 3.738, "loss": "0", "nll_loss": "0", "accuracy": "44.2", "wps": "1484.2", "ups": "8.21", "wpb": "180.8", "bsz": "16", "num_updates": "2000", "lr": "6.65072e-06", "gnorm": "0", "loss_scale": "131072", "train_wall": "24", "gb_free": "15.6", "wall": "365"}
+[2024-03-04 05:31:34,773][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:31:34,776][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:31:40,214][valid][INFO] - {"epoch": 4, "valid_loss": "1.044", "valid_nll_loss": "0.09", "valid_accuracy": "38.3", "valid_wps": "2250.1", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "2140", "valid_best_accuracy": "65.3"}
+[2024-03-04 05:31:40,219][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 4 @ 2140 updates
+[2024-03-04 05:31:40,221][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:31:44,725][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:31:44,731][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 4 @ 2140 updates, score 38.3) (writing took 4.512532487002318 seconds)
+[2024-03-04 05:31:44,733][fairseq_cli.train][INFO] - end of epoch 4 (average epoch stats below)
+[2024-03-04 05:31:44,736][train][INFO] - {"epoch": 4, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "44.5", "train_wps": "1293.3", "train_ups": "7.12", "train_wpb": "181.7", "train_bsz": "16", "train_num_updates": "2140", "train_lr": "6.37161e-06", "train_gnorm": "0", "train_loss_scale": "262144", "train_train_wall": "64", "train_gb_free": "15.6", "train_wall": "391"}
+[2024-03-04 05:31:44,742][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:31:44,751][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:31:44,758][fairseq.trainer][INFO] - begin training epoch 5
+[2024-03-04 05:31:44,760][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:31:54,264][train_inner][INFO] - {"epoch": 5, "update": 4.112, "loss": "0", "nll_loss": "0", "accuracy": "44.2", "wps": "1009.2", "ups": "5.58", "wpb": "181", "bsz": "16", "num_updates": "2200", "lr": "6.25199e-06", "gnorm": "0", "loss_scale": "524288", "train_wall": "25", "gb_free": "15.6", "wall": "400"}
+[2024-03-04 05:32:17,636][train_inner][INFO] - {"epoch": 5, "update": 4.486, "loss": "0", "nll_loss": "0", "accuracy": "45.2", "wps": "1539.2", "ups": "8.56", "wpb": "179.9", "bsz": "16", "num_updates": "2400", "lr": "5.85327e-06", "gnorm": "0", "loss_scale": "1.04858e+06", "train_wall": "23", "gb_free": "15.6", "wall": "424"}
+[2024-03-04 05:32:37,121][train_inner][INFO] - {"epoch": 5, "update": 4.86, "loss": "0", "nll_loss": "0", "accuracy": "45.2", "wps": "1876.1", "ups": "10.27", "wpb": "182.8", "bsz": "16", "num_updates": "2600", "lr": "5.45455e-06", "gnorm": "0", "loss_scale": "4.1943e+06", "train_wall": "19", "gb_free": "15.6", "wall": "443"}
+[2024-03-04 05:32:44,205][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:32:44,207][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:32:49,212][valid][INFO] - {"epoch": 5, "valid_loss": "1.054", "valid_nll_loss": "0.091", "valid_accuracy": "34.7", "valid_wps": "2452.7", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "2675", "valid_best_accuracy": "65.3"}
+[2024-03-04 05:32:49,216][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 5 @ 2675 updates
+[2024-03-04 05:32:49,218][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:32:52,813][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:32:52,821][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 5 @ 2675 updates, score 34.7) (writing took 3.6055507249984657 seconds)
+[2024-03-04 05:32:52,823][fairseq_cli.train][INFO] - end of epoch 5 (average epoch stats below)
+[2024-03-04 05:32:52,826][train][INFO] - {"epoch": 5, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "45.3", "train_wps": "1428", "train_ups": "7.86", "train_wpb": "181.7", "train_bsz": "16", "train_num_updates": "2675", "train_lr": "5.30502e-06", "train_gnorm": "0", "train_loss_scale": "4.1943e+06", "train_train_wall": "58", "train_gb_free": "15.6", "train_wall": "459"}
+[2024-03-04 05:32:52,830][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:32:52,833][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:32:52,836][fairseq.trainer][INFO] - begin training epoch 6
+[2024-03-04 05:32:52,837][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:33:05,554][train_inner][INFO] - {"epoch": 6, "update": 5.234, "loss": "0", "nll_loss": "0", "accuracy": "45.8", "wps": "1286.1", "ups": "7.03", "wpb": "182.8", "bsz": "16", "num_updates": "2800", "lr": "5.05582e-06", "gnorm": "0", "loss_scale": "8.38861e+06", "train_wall": "19", "gb_free": "15.6", "wall": "472"}
+[2024-03-04 05:33:25,115][train_inner][INFO] - {"epoch": 6, "update": 5.607, "loss": "0", "nll_loss": "0", "accuracy": "44.7", "wps": "1855", "ups": "10.23", "wpb": "181.4", "bsz": "16", "num_updates": "3000", "lr": "4.6571e-06", "gnorm": "0", "loss_scale": "3.35544e+07", "train_wall": "19", "gb_free": "15.6", "wall": "491"}
+[2024-03-04 05:33:45,683][train_inner][INFO] - {"epoch": 6, "update": 5.981, "loss": "0", "nll_loss": "0", "accuracy": "44.9", "wps": "1769.8", "ups": "9.72", "wpb": "182", "bsz": "16", "num_updates": "3200", "lr": "4.25837e-06", "gnorm": "0", "loss_scale": "1.34218e+08", "train_wall": "20", "gb_free": "15.6", "wall": "512"}
+[2024-03-04 05:33:46,710][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:33:46,712][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:33:51,914][valid][INFO] - {"epoch": 6, "valid_loss": "1.018", "valid_nll_loss": "0.088", "valid_accuracy": "45.4", "valid_wps": "2345", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "3210", "valid_best_accuracy": "65.3"}
+[2024-03-04 05:33:51,920][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 6 @ 3210 updates
+[2024-03-04 05:33:51,922][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:33:55,013][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:33:55,015][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 6 @ 3210 updates, score 45.4) (writing took 3.095283770999231 seconds)
+[2024-03-04 05:33:55,016][fairseq_cli.train][INFO] - end of epoch 6 (average epoch stats below)
+[2024-03-04 05:33:55,018][train][INFO] - {"epoch": 6, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "44.9", "train_wps": "1563.4", "train_ups": "8.6", "train_wpb": "181.7", "train_bsz": "16", "train_num_updates": "3210", "train_lr": "4.23844e-06", "train_gnorm": "0", "train_loss_scale": "1.34218e+08", "train_train_wall": "52", "train_gb_free": "15.6", "train_wall": "521"}
+[2024-03-04 05:33:55,020][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:33:55,023][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:33:55,026][fairseq.trainer][INFO] - begin training epoch 7
+[2024-03-04 05:33:55,028][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:34:13,115][train_inner][INFO] - {"epoch": 7, "update": 6.355, "loss": "0", "nll_loss": "0", "accuracy": "44.7", "wps": "1325.4", "ups": "7.29", "wpb": "181.8", "bsz": "16", "num_updates": "3400", "lr": "3.85965e-06", "gnorm": "0", "loss_scale": "2.68435e+08", "train_wall": "19", "gb_free": "15.6", "wall": "539"}
+[2024-03-04 05:34:32,857][train_inner][INFO] - {"epoch": 7, "update": 6.729, "loss": "0", "nll_loss": "0", "accuracy": "44.9", "wps": "1825.4", "ups": "10.13", "wpb": "180.2", "bsz": "16", "num_updates": "3600", "lr": "3.46093e-06", "gnorm": "0", "loss_scale": "1.07374e+09", "train_wall": "19", "gb_free": "15.6", "wall": "559"}
+[2024-03-04 05:34:46,716][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:34:46,718][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:34:51,325][valid][INFO] - {"epoch": 7, "valid_loss": "1.005", "valid_nll_loss": "0.087", "valid_accuracy": "48.9", "valid_wps": "2652.9", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "3745", "valid_best_accuracy": "65.3"}
+[2024-03-04 05:34:51,329][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 7 @ 3745 updates
+[2024-03-04 05:34:51,331][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:34:54,559][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:34:54,563][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 7 @ 3745 updates, score 48.9) (writing took 3.2339886210029363 seconds)
+[2024-03-04 05:34:54,564][fairseq_cli.train][INFO] - end of epoch 7 (average epoch stats below)
+[2024-03-04 05:34:54,566][train][INFO] - {"epoch": 7, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "44.7", "train_wps": "1632.9", "train_ups": "8.98", "train_wpb": "181.7", "train_bsz": "16", "train_num_updates": "3745", "train_lr": "3.17185e-06", "train_gnorm": "0", "train_loss_scale": "2.14748e+09", "train_train_wall": "50", "train_gb_free": "15.6", "train_wall": "581"}
+[2024-03-04 05:34:54,568][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:34:54,571][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:34:54,574][fairseq.trainer][INFO] - begin training epoch 8
+[2024-03-04 05:34:54,575][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:34:59,807][train_inner][INFO] - {"epoch": 8, "update": 7.103, "loss": "0", "nll_loss": "0", "accuracy": "44.3", "wps": "1359.4", "ups": "7.42", "wpb": "183.2", "bsz": "16", "num_updates": "3800", "lr": "3.0622e-06", "gnorm": "0", "loss_scale": "2.14748e+09", "train_wall": "19", "gb_free": "15.6", "wall": "586"}
+[2024-03-04 05:35:19,344][train_inner][INFO] - {"epoch": 8, "update": 7.477, "loss": "0", "nll_loss": "0", "accuracy": "45.7", "wps": "1880.6", "ups": "10.24", "wpb": "183.7", "bsz": "16", "num_updates": "4000", "lr": "2.66348e-06", "gnorm": "0", "loss_scale": "8.58993e+09", "train_wall": "19", "gb_free": "15.6", "wall": "606"}
+[2024-03-04 05:35:39,445][train_inner][INFO] - {"epoch": 8, "update": 7.85, "loss": "0", "nll_loss": "0", "accuracy": "45.5", "wps": "1802.3", "ups": "9.95", "wpb": "181.1", "bsz": "16", "num_updates": "4200", "lr": "2.26475e-06", "gnorm": "0", "loss_scale": "1.71799e+10", "train_wall": "20", "gb_free": "15.6", "wall": "626"}
+[2024-03-04 05:35:47,008][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:35:47,010][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:35:51,619][valid][INFO] - {"epoch": 8, "valid_loss": "1.009", "valid_nll_loss": "0.087", "valid_accuracy": "46.5", "valid_wps": "2660.4", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "4280", "valid_best_accuracy": "65.3"}
+[2024-03-04 05:35:51,623][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 8 @ 4280 updates
+[2024-03-04 05:35:51,625][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:35:54,661][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:35:54,666][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 8 @ 4280 updates, score 46.5) (writing took 3.04326243900141 seconds)
+[2024-03-04 05:35:54,667][fairseq_cli.train][INFO] - end of epoch 8 (average epoch stats below)
+[2024-03-04 05:35:54,670][train][INFO] - {"epoch": 8, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "45.4", "train_wps": "1617.8", "train_ups": "8.9", "train_wpb": "181.7", "train_bsz": "16", "train_num_updates": "4280", "train_lr": "2.10526e-06", "train_gnorm": "0", "train_loss_scale": "3.43597e+10", "train_train_wall": "51", "train_gb_free": "15.6", "train_wall": "641"}
+[2024-03-04 05:35:54,672][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:35:54,678][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:35:54,681][fairseq.trainer][INFO] - begin training epoch 9
+[2024-03-04 05:35:54,683][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:36:05,919][train_inner][INFO] - {"epoch": 9, "update": 8.224, "loss": "0", "nll_loss": "0", "accuracy": "43.5", "wps": "1374.9", "ups": "7.55", "wpb": "182", "bsz": "16", "num_updates": "4400", "lr": "1.86603e-06", "gnorm": "0", "loss_scale": "6.87195e+10", "train_wall": "18", "gb_free": "15.6", "wall": "652"}
+[2024-03-04 05:36:23,407][train_inner][INFO] - {"epoch": 9, "update": 8.598, "loss": "0", "nll_loss": "0", "accuracy": "46.2", "wps": "2082.8", "ups": "11.44", "wpb": "182.1", "bsz": "16", "num_updates": "4600", "lr": "1.4673e-06", "gnorm": "0", "loss_scale": "1.37439e+11", "train_wall": "17", "gb_free": "15.6", "wall": "670"}
+[2024-03-04 05:36:40,907][train_inner][INFO] - {"epoch": 9, "update": 8.972, "loss": "0", "nll_loss": "0", "accuracy": "44.5", "wps": "2061.5", "ups": "11.43", "wpb": "180.4", "bsz": "16", "num_updates": "4800", "lr": "1.06858e-06", "gnorm": "0", "loss_scale": "5.49756e+11", "train_wall": "17", "gb_free": "15.6", "wall": "687"}
+[2024-03-04 05:36:42,236][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:36:42,238][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:36:46,986][valid][INFO] - {"epoch": 9, "valid_loss": "1.001", "valid_nll_loss": "0.086", "valid_accuracy": "50.7", "valid_wps": "2566.1", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "4815", "valid_best_accuracy": "65.3"}
+[2024-03-04 05:36:46,991][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 9 @ 4815 updates
+[2024-03-04 05:36:46,993][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:36:49,986][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:36:49,991][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 9 @ 4815 updates, score 50.7) (writing took 2.999646339994797 seconds)
+[2024-03-04 05:36:49,992][fairseq_cli.train][INFO] - end of epoch 9 (average epoch stats below)
+[2024-03-04 05:36:49,994][train][INFO] - {"epoch": 9, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "44.8", "train_wps": "1757.5", "train_ups": "9.67", "train_wpb": "181.7", "train_bsz": "16", "train_num_updates": "4815", "train_lr": "1.03868e-06", "train_gnorm": "0", "train_loss_scale": "5.49756e+11", "train_train_wall": "46", "train_gb_free": "15.6", "train_wall": "696"}
+[2024-03-04 05:36:49,997][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:36:50,001][fairseq.data.iterators][INFO] - grouped total_num_itrs = 535
+[2024-03-04 05:36:50,007][fairseq.trainer][INFO] - begin training epoch 10
+[2024-03-04 05:36:50,008][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-04 05:37:08,772][train_inner][INFO] - {"epoch": 10, "update": 9.346, "loss": "0", "nll_loss": "0", "accuracy": "44", "wps": "1302.5", "ups": "7.18", "wpb": "181.5", "bsz": "16", "num_updates": "5000", "lr": "6.69856e-07", "gnorm": "0", "loss_scale": "2.19902e+12", "train_wall": "20", "gb_free": "15.6", "wall": "715"}
+[2024-03-04 05:37:28,378][train_inner][INFO] - {"epoch": 10, "update": 9.72, "loss": "0", "nll_loss": "0", "accuracy": "44.5", "wps": "1862.3", "ups": "10.2", "wpb": "182.5", "bsz": "16", "num_updates": "5200", "lr": "2.71132e-07", "gnorm": "0", "loss_scale": "4.39805e+12", "train_wall": "19", "gb_free": "15.6", "wall": "735"}
+[2024-03-04 05:37:40,539][fairseq_cli.train][INFO] - Stopping training due to num_updates: 5336 >= max_update: 5336
+[2024-03-04 05:37:40,541][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-04 05:37:40,542][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-04 05:37:44,959][valid][INFO] - {"epoch": 10, "valid_loss": "1", "valid_nll_loss": "0.086", "valid_accuracy": "51.7", "valid_wps": "2796.7", "valid_wpb": "183.7", "valid_bsz": "15.8", "valid_num_updates": "5336", "valid_best_accuracy": "65.3"}
+[2024-03-04 05:37:44,964][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 10 @ 5336 updates
+[2024-03-04 05:37:44,966][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:37:47,898][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-04/05-25-09/checkpoints/checkpoint_last.pt
+[2024-03-04 05:37:47,904][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 10 @ 5336 updates, score 51.7) (writing took 2.9397515689997817 seconds)
+[2024-03-04 05:37:47,905][fairseq_cli.train][INFO] - end of epoch 10 (average epoch stats below)
+[2024-03-04 05:37:47,907][train][INFO] - {"epoch": 10, "train_loss": "0", "train_nll_loss": "0", "train_accuracy": "44.3", "train_wps": "1635.8", "train_ups": "9", "train_wpb": "181.8", "train_bsz": "16", "train_num_updates": "5336", "train_lr": "0", "train_gnorm": "0", "train_loss_scale": "8.79609e+12", "train_train_wall": "49", "train_gb_free": "15.6", "train_wall": "754"}
+[2024-03-04 05:37:47,908][fairseq_cli.train][INFO] - done training in 746.2 seconds

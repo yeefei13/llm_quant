@@ -1,0 +1,437 @@
+[2024-03-03 19:38:24,400][fairseq_cli.train][INFO] - {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 4, 'fp16_scale_window': 128, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': 1.0, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 4400, 'batch_size': 32, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 4400, 'batch_size_valid': 32, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 10, 'max_update': 20935, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [1e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta', 'dropout': 0.1, 'attention_dropout': 0.1}, 'task': {'_name': 'sentence_prediction', 'data': '/mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin', 'num_classes': 2, 'init_token': 0, 'separator_token': 2, 'no_shuffle': False, 'shorten_method': none, 'shorten_data_split_list': '', 'add_prev_output_tokens': False, 'max_positions': 512, 'regression_target': False, 'classification_head_name': 'sentence_classification_head', 'seed': 1, 'd2v2_multi': False}, 'criterion': {'_name': 'sentence_prediction', 'classification_head_name': 'sentence_classification_head', 'regression_target': False, 'report_mcc': False, 'report_acc_and_f1': False, 'report_pearson_and_spearman': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.1, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [1e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 1256, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 20935.0, 'lr': [1e-05]}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'job_logging_cfg': {'version': 1, 'formatters': {'simple': {'format': '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}, 'file': {'class': 'logging.FileHandler', 'formatter': 'simple', 'filename': 'hydra_train.log'}}, 'root': {'level': 'INFO', 'handlers': ['console', 'file']}, 'disable_existing_loggers': False}}
+[2024-03-03 19:38:24,458][fairseq.tasks.sentence_prediction][INFO] - [input] dictionary: 50265 types
+[2024-03-03 19:38:24,474][fairseq.tasks.sentence_prediction][INFO] - [label] dictionary: 9 types
+[2024-03-03 19:38:25,882][fairseq_cli.train][INFO] - RobertaModel(
+  (encoder): RobertaEncoder(
+    (sentence_encoder): TransformerEncoder(
+      (dropout_module): FairseqDropout()
+      (embed_tokens): Embedding(50265, 768, padding_idx=1)
+      (embed_positions): LearnedPositionalEmbedding(514, 768, padding_idx=1)
+      (layernorm_embedding): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0-11): 12 x TransformerEncoderLayerBase(
+          (self_attn): MultiheadAttention(
+            (dropout_module): FairseqDropout()
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (self_attn_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+          (dropout_module): FairseqDropout()
+          (activation_dropout_module): FairseqDropout()
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (final_layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (lm_head): RobertaLMHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (layer_norm): FusedLayerNorm(torch.Size([768]), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (classification_heads): ModuleDict(
+    (sentence_classification_head): RobertaClassificationHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (dropout): Dropout(p=0.0, inplace=False)
+      (out_proj): Linear(in_features=768, out_features=2, bias=True)
+    )
+  )
+)
+[2024-03-03 19:38:25,883][fairseq_cli.train][INFO] - task: SentencePredictionTask
+[2024-03-03 19:38:25,884][fairseq_cli.train][INFO] - model: RobertaModel
+[2024-03-03 19:38:25,884][fairseq_cli.train][INFO] - criterion: SentencePredictionCriterion
+[2024-03-03 19:38:25,885][fairseq_cli.train][INFO] - num. shared model params: 125,288,795 (num. trained: 125,288,795)
+[2024-03-03 19:38:25,886][fairseq_cli.train][INFO] - num. expert model params: 0 (num. trained: 0)
+[2024-03-03 19:38:25,931][fairseq.data.data_utils][INFO] - loaded 872 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin/input0/valid
+[2024-03-03 19:38:25,961][fairseq.data.data_utils][INFO] - loaded 872 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin/label/valid
+[2024-03-03 19:38:25,962][fairseq.tasks.sentence_prediction][INFO] - Loaded valid with #samples: 872
+[2024-03-03 19:38:26,269][fairseq.trainer][INFO] - detected shared parameter: encoder.sentence_encoder.embed_tokens.weight <- encoder.lm_head.weight
+[2024-03-03 19:38:26,270][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-03 19:38:26,271][fairseq.utils][INFO] - rank   0: capabilities =  8.6  ; total memory = 16.000 GB ; name = NVIDIA GeForce RTX 3080 Ti Laptop GPU   
+[2024-03-03 19:38:26,271][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2024-03-03 19:38:26,272][fairseq_cli.train][INFO] - training on 1 devices (GPUs/TPUs)
+[2024-03-03 19:38:26,273][fairseq_cli.train][INFO] - max tokens per device = 4400 and max sentences per device = 32
+[2024-03-03 19:38:26,275][fairseq.trainer][INFO] - Preparing to load checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt
+[2024-03-03 19:38:33,275][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.weight
+[2024-03-03 19:38:33,277][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.dense.bias
+[2024-03-03 19:38:33,278][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.weight
+[2024-03-03 19:38:33,279][fairseq.models.roberta.model][INFO] - Overwriting classification_heads.sentence_classification_head.out_proj.bias
+[2024-03-03 19:38:33,370][fairseq.optim.adam][INFO] - using FusedAdam
+[2024-03-03 19:38:33,669][fairseq.trainer][INFO] - Loaded checkpoint /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/roberta.base/model.pt (epoch 1 @ 0 updates)
+[2024-03-03 19:38:33,670][fairseq.trainer][INFO] - loading train data for epoch 1
+[2024-03-03 19:38:33,708][fairseq.data.data_utils][INFO] - loaded 67,349 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin/input0/train
+[2024-03-03 19:38:33,750][fairseq.data.data_utils][INFO] - loaded 67,349 examples from: /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq_task2/SST-2-bin/label/train
+[2024-03-03 19:38:33,752][fairseq.tasks.sentence_prediction][INFO] - Loaded train with #samples: 67349
+[2024-03-03 19:38:33,753][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:38:33,754][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-03 19:38:33,755][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-03 19:38:33,756][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+[2024-03-03 19:38:33,890][fairseq_cli.train][INFO] - begin dry-run validation on "valid" subset
+[2024-03-03 19:38:33,891][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:38:33,892][fairseq.tasks.fairseq_task][INFO] - reuse_dataloader = True
+[2024-03-03 19:38:33,893][fairseq.tasks.fairseq_task][INFO] - rebuild_batches = False
+[2024-03-03 19:38:33,893][fairseq.tasks.fairseq_task][INFO] - creating new batches for epoch 1
+[2024-03-03 19:38:34,069][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 19:38:34,073][fairseq.trainer][INFO] - begin training epoch 1
+[2024-03-03 19:38:34,074][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 19:38:41,663][train_inner][INFO] - {"epoch": 1, "update": 0.095, "loss": "0.992", "nll_loss": "0.074", "accuracy": "56.2", "wps": "12045.3", "ups": "28.23", "wpb": "426.9", "bsz": "32", "num_updates": "200", "lr": "1.59236e-06", "gnorm": "0.955", "loss_scale": "8", "train_wall": "7", "gb_free": "13.8", "wall": "15"}
+[2024-03-03 19:38:48,595][train_inner][INFO] - {"epoch": 1, "update": 0.19, "loss": "0.992", "nll_loss": "0.074", "accuracy": "55.6", "wps": "12326", "ups": "28.85", "wpb": "427.2", "bsz": "32", "num_updates": "400", "lr": "3.18471e-06", "gnorm": "1.074", "loss_scale": "32", "train_wall": "7", "gb_free": "13.8", "wall": "22"}
+[2024-03-03 19:38:56,002][train_inner][INFO] - {"epoch": 1, "update": 0.285, "loss": "0.991", "nll_loss": "0.073", "accuracy": "56.2", "wps": "11697.3", "ups": "27.01", "wpb": "433.1", "bsz": "32", "num_updates": "600", "lr": "4.77707e-06", "gnorm": "1.072", "loss_scale": "64", "train_wall": "7", "gb_free": "13.8", "wall": "30"}
+[2024-03-03 19:39:03,254][train_inner][INFO] - {"epoch": 1, "update": 0.38, "loss": "0.994", "nll_loss": "0.075", "accuracy": "55.1", "wps": "11745.2", "ups": "27.58", "wpb": "425.8", "bsz": "31.9", "num_updates": "800", "lr": "6.36943e-06", "gnorm": "1.07", "loss_scale": "256", "train_wall": "7", "gb_free": "13.8", "wall": "37"}
+[2024-03-03 19:39:10,941][train_inner][INFO] - {"epoch": 1, "update": 0.475, "loss": "0.992", "nll_loss": "0.074", "accuracy": "56.1", "wps": "11139.6", "ups": "26.02", "wpb": "428.1", "bsz": "32", "num_updates": "1000", "lr": "7.96178e-06", "gnorm": "0.984", "loss_scale": "512", "train_wall": "7", "gb_free": "13.8", "wall": "45"}
+[2024-03-03 19:39:18,563][train_inner][INFO] - {"epoch": 1, "update": 0.57, "loss": "0.996", "nll_loss": "0.075", "accuracy": "54.2", "wps": "11193.9", "ups": "26.24", "wpb": "426.6", "bsz": "32", "num_updates": "1200", "lr": "9.55414e-06", "gnorm": "0.959", "loss_scale": "2048", "train_wall": "7", "gb_free": "13.8", "wall": "52"}
+[2024-03-03 19:39:26,044][train_inner][INFO] - {"epoch": 1, "update": 0.665, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.6", "wps": "11552.3", "ups": "26.74", "wpb": "432", "bsz": "32", "num_updates": "1400", "lr": "9.92683e-06", "gnorm": "1.066", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "60"}
+[2024-03-03 19:39:28,667][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:39:33,198][train_inner][INFO] - {"epoch": 1, "update": 0.761, "loss": "0.991", "nll_loss": "0.074", "accuracy": "56.9", "wps": "11903.4", "ups": "27.96", "wpb": "425.7", "bsz": "32", "num_updates": "1600", "lr": "9.82519e-06", "gnorm": "1.023", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "67"}
+[2024-03-03 19:39:36,212][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:39:40,666][train_inner][INFO] - {"epoch": 1, "update": 0.856, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.6", "wps": "11413.6", "ups": "26.78", "wpb": "426.1", "bsz": "32", "num_updates": "1800", "lr": "9.72356e-06", "gnorm": "0.989", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "74"}
+[2024-03-03 19:39:45,932][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:39:47,727][train_inner][INFO] - {"epoch": 1, "update": 0.952, "loss": "0.991", "nll_loss": "0.075", "accuracy": "56.4", "wps": "11985.3", "ups": "28.33", "wpb": "423.1", "bsz": "32", "num_updates": "2000", "lr": "9.62193e-06", "gnorm": "0.997", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "81"}
+[2024-03-03 19:39:50,588][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:39:51,326][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 19:39:51,327][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:39:51,879][valid][INFO] - {"epoch": 1, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "40427.1", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "2101"}
+[2024-03-03 19:39:51,882][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 1 @ 2101 updates
+[2024-03-03 19:39:51,884][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:39:55,453][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:40:54,569][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 1 @ 2101 updates, score 50.9) (writing took 62.68653563099997 seconds)
+[2024-03-03 19:40:54,570][fairseq_cli.train][INFO] - end of epoch 1 (average epoch stats below)
+[2024-03-03 19:40:54,572][train][INFO] - {"epoch": 1, "train_loss": "0.993", "train_nll_loss": "0.074", "train_accuracy": "55.8", "train_wps": "6413.5", "train_ups": "15", "train_wpb": "427.5", "train_bsz": "32", "train_num_updates": "2101", "train_lr": "9.57061e-06", "train_gnorm": "1.016", "train_loss_scale": "8192", "train_train_wall": "74", "train_gb_free": "13.8", "train_wall": "148"}
+[2024-03-03 19:40:54,574][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:40:54,578][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 19:40:54,581][fairseq.trainer][INFO] - begin training epoch 2
+[2024-03-03 19:40:54,582][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 19:40:55,255][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:40:58,425][train_inner][INFO] - {"epoch": 2, "update": 1.048, "loss": "0.992", "nll_loss": "0.074", "accuracy": "56.1", "wps": "1215.9", "ups": "2.83", "wpb": "429.8", "bsz": "32", "num_updates": "2200", "lr": "9.5203e-06", "gnorm": "1.049", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "152"}
+[2024-03-03 19:40:59,837][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:41:05,519][train_inner][INFO] - {"epoch": 2, "update": 1.143, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.6", "wps": "12015.7", "ups": "28.2", "wpb": "426.1", "bsz": "32", "num_updates": "2400", "lr": "9.41867e-06", "gnorm": "1.048", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "159"}
+[2024-03-03 19:41:09,588][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:41:11,715][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:41:13,380][train_inner][INFO] - {"epoch": 2, "update": 1.239, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.7", "wps": "10917.3", "ups": "25.45", "wpb": "429.1", "bsz": "32", "num_updates": "2600", "lr": "9.31704e-06", "gnorm": "0.875", "loss_scale": "4096", "train_wall": "8", "gb_free": "13.8", "wall": "167"}
+[2024-03-03 19:41:21,219][train_inner][INFO] - {"epoch": 2, "update": 1.334, "loss": "0.994", "nll_loss": "0.074", "accuracy": "54.6", "wps": "10924.8", "ups": "25.52", "wpb": "428.1", "bsz": "31.9", "num_updates": "2800", "lr": "9.21541e-06", "gnorm": "0.997", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "175"}
+[2024-03-03 19:41:21,678][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:41:22,772][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:41:29,505][train_inner][INFO] - {"epoch": 2, "update": 1.43, "loss": "0.992", "nll_loss": "0.074", "accuracy": "55.9", "wps": "10356.4", "ups": "24.14", "wpb": "429", "bsz": "32", "num_updates": "3000", "lr": "9.11378e-06", "gnorm": "1.042", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "183"}
+[2024-03-03 19:41:30,599][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:41:37,095][train_inner][INFO] - {"epoch": 2, "update": 1.525, "loss": "0.989", "nll_loss": "0.074", "accuracy": "57", "wps": "11296", "ups": "26.35", "wpb": "428.6", "bsz": "32", "num_updates": "3200", "lr": "9.01214e-06", "gnorm": "1.034", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "191"}
+[2024-03-03 19:41:37,611][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:41:44,591][train_inner][INFO] - {"epoch": 2, "update": 1.621, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.2", "wps": "11357.8", "ups": "26.68", "wpb": "425.6", "bsz": "32", "num_updates": "3400", "lr": "8.91051e-06", "gnorm": "0.993", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "198"}
+[2024-03-03 19:41:47,375][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:41:52,249][train_inner][INFO] - {"epoch": 2, "update": 1.716, "loss": "0.992", "nll_loss": "0.075", "accuracy": "55.9", "wps": "11119.1", "ups": "26.12", "wpb": "425.7", "bsz": "32", "num_updates": "3600", "lr": "8.80888e-06", "gnorm": "0.976", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "206"}
+[2024-03-03 19:41:52,335][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:41:57,504][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:41:59,768][train_inner][INFO] - {"epoch": 2, "update": 1.812, "loss": "0.994", "nll_loss": "0.074", "accuracy": "55.2", "wps": "11397.6", "ups": "26.6", "wpb": "428.5", "bsz": "32", "num_updates": "3800", "lr": "8.70725e-06", "gnorm": "0.968", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "213"}
+[2024-03-03 19:42:02,049][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:42:07,255][train_inner][INFO] - {"epoch": 2, "update": 1.908, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.8", "wps": "11460.2", "ups": "26.72", "wpb": "429", "bsz": "32", "num_updates": "4000", "lr": "8.60562e-06", "gnorm": "1.062", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "221"}
+[2024-03-03 19:42:11,800][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:42:14,468][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 19:42:14,470][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:42:15,046][valid][INFO] - {"epoch": 2, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "38879.2", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "4193", "valid_best_accuracy": "50.9"}
+[2024-03-03 19:42:15,049][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 2 @ 4193 updates
+[2024-03-03 19:42:15,050][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:42:18,826][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:43:18,440][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 2 @ 4193 updates, score 50.9) (writing took 63.39117828099984 seconds)
+[2024-03-03 19:43:18,441][fairseq_cli.train][INFO] - end of epoch 2 (average epoch stats below)
+[2024-03-03 19:43:18,443][train][INFO] - {"epoch": 2, "train_loss": "0.992", "train_nll_loss": "0.074", "train_accuracy": "55.7", "train_wps": "6215.4", "train_ups": "14.54", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "4193", "train_lr": "8.50755e-06", "train_gnorm": "1.008", "train_loss_scale": "8192", "train_train_wall": "77", "train_gb_free": "13.8", "train_wall": "292"}
+[2024-03-03 19:43:18,445][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:43:18,449][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 19:43:18,451][fairseq.trainer][INFO] - begin training epoch 3
+[2024-03-03 19:43:18,452][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 19:43:19,089][train_inner][INFO] - {"epoch": 3, "update": 2.003, "loss": "0.992", "nll_loss": "0.075", "accuracy": "55.7", "wps": "1179.6", "ups": "2.78", "wpb": "423.7", "bsz": "32", "num_updates": "4200", "lr": "8.50399e-06", "gnorm": "1.017", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "293"}
+[2024-03-03 19:43:21,247][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:43:24,033][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:43:26,346][train_inner][INFO] - {"epoch": 3, "update": 2.099, "loss": "0.991", "nll_loss": "0.074", "accuracy": "55.6", "wps": "11824.3", "ups": "27.56", "wpb": "429", "bsz": "32", "num_updates": "4400", "lr": "8.40236e-06", "gnorm": "0.899", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "300"}
+[2024-03-03 19:43:29,302][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:43:34,024][train_inner][INFO] - {"epoch": 3, "update": 2.195, "loss": "0.994", "nll_loss": "0.075", "accuracy": "55.1", "wps": "11056.4", "ups": "26.05", "wpb": "424.4", "bsz": "32", "num_updates": "4600", "lr": "8.30073e-06", "gnorm": "0.976", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "308"}
+[2024-03-03 19:43:34,400][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:43:41,551][train_inner][INFO] - {"epoch": 3, "update": 2.29, "loss": "0.992", "nll_loss": "0.074", "accuracy": "55.9", "wps": "11359.1", "ups": "26.57", "wpb": "427.5", "bsz": "32", "num_updates": "4800", "lr": "8.1991e-06", "gnorm": "1.076", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "315"}
+[2024-03-03 19:43:44,004][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:43:48,100][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:43:48,907][train_inner][INFO] - {"epoch": 3, "update": 2.386, "loss": "0.991", "nll_loss": "0.073", "accuracy": "56.4", "wps": "11750.1", "ups": "27.19", "wpb": "432.1", "bsz": "32", "num_updates": "5000", "lr": "8.09746e-06", "gnorm": "1.08", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "323"}
+[2024-03-03 19:43:56,192][train_inner][INFO] - {"epoch": 3, "update": 2.481, "loss": "0.993", "nll_loss": "0.075", "accuracy": "56", "wps": "11600.9", "ups": "27.46", "wpb": "422.5", "bsz": "31.9", "num_updates": "5200", "lr": "7.99583e-06", "gnorm": "1.001", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "330"}
+[2024-03-03 19:43:57,624][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:44:02,752][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:44:03,743][train_inner][INFO] - {"epoch": 3, "update": 2.577, "loss": "0.991", "nll_loss": "0.073", "accuracy": "56.6", "wps": "11427.8", "ups": "26.49", "wpb": "431.4", "bsz": "32", "num_updates": "5400", "lr": "7.8942e-06", "gnorm": "0.943", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "337"}
+[2024-03-03 19:44:07,526][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:44:11,160][train_inner][INFO] - {"epoch": 3, "update": 2.673, "loss": "0.995", "nll_loss": "0.074", "accuracy": "55.2", "wps": "11560.2", "ups": "26.97", "wpb": "428.7", "bsz": "32", "num_updates": "5600", "lr": "7.79257e-06", "gnorm": "0.993", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "345"}
+[2024-03-03 19:44:12,456][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:44:12,819][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:44:18,652][train_inner][INFO] - {"epoch": 3, "update": 2.769, "loss": "0.995", "nll_loss": "0.075", "accuracy": "55", "wps": "11258", "ups": "26.7", "wpb": "421.7", "bsz": "32", "num_updates": "5800", "lr": "7.69094e-06", "gnorm": "0.991", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "352"}
+[2024-03-03 19:44:22,588][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:44:26,427][train_inner][INFO] - {"epoch": 3, "update": 2.864, "loss": "0.991", "nll_loss": "0.074", "accuracy": "56", "wps": "10985.9", "ups": "25.73", "wpb": "427", "bsz": "32", "num_updates": "6000", "lr": "7.58931e-06", "gnorm": "1.034", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "360"}
+[2024-03-03 19:44:26,555][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:44:34,270][train_inner][INFO] - {"epoch": 3, "update": 2.96, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.3", "wps": "10948.5", "ups": "25.5", "wpb": "429.3", "bsz": "32", "num_updates": "6200", "lr": "7.48768e-06", "gnorm": "0.958", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "368"}
+[2024-03-03 19:44:36,618][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:44:37,472][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 19:44:37,473][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:44:38,071][valid][INFO] - {"epoch": 3, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "37132.1", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "6284", "valid_best_accuracy": "50.9"}
+[2024-03-03 19:44:38,074][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 3 @ 6284 updates
+[2024-03-03 19:44:38,075][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:44:42,051][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:45:42,763][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 3 @ 6284 updates, score 50.9) (writing took 64.6896738769999 seconds)
+[2024-03-03 19:45:42,764][fairseq_cli.train][INFO] - end of epoch 3 (average epoch stats below)
+[2024-03-03 19:45:42,766][train][INFO] - {"epoch": 3, "train_loss": "0.992", "train_nll_loss": "0.074", "train_accuracy": "55.7", "train_wps": "6193.5", "train_ups": "14.49", "train_wpb": "427.5", "train_bsz": "32", "train_num_updates": "6284", "train_lr": "7.44499e-06", "train_gnorm": "0.995", "train_loss_scale": "8192", "train_train_wall": "76", "train_gb_free": "13.8", "train_wall": "436"}
+[2024-03-03 19:45:42,768][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:45:42,771][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 19:45:42,774][fairseq.trainer][INFO] - begin training epoch 4
+[2024-03-03 19:45:42,775][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 19:45:46,893][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:45:47,280][train_inner][INFO] - {"epoch": 4, "update": 3.056, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.2", "wps": "1182.1", "ups": "2.74", "wpb": "431.5", "bsz": "32", "num_updates": "6400", "lr": "7.38605e-06", "gnorm": "0.968", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "441"}
+[2024-03-03 19:45:51,583][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:45:54,361][train_inner][INFO] - {"epoch": 4, "update": 3.151, "loss": "0.991", "nll_loss": "0.074", "accuracy": "56.1", "wps": "12069.9", "ups": "28.25", "wpb": "427.2", "bsz": "32", "num_updates": "6600", "lr": "7.28441e-06", "gnorm": "0.969", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "448"}
+[2024-03-03 19:45:56,185][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:45:58,376][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:46:01,501][train_inner][INFO] - {"epoch": 4, "update": 3.247, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.7", "wps": "12000.9", "ups": "28.02", "wpb": "428.4", "bsz": "32", "num_updates": "6800", "lr": "7.18278e-06", "gnorm": "1.061", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "455"}
+[2024-03-03 19:46:06,330][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:46:08,782][train_inner][INFO] - {"epoch": 4, "update": 3.343, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.9", "wps": "11756.5", "ups": "27.47", "wpb": "427.9", "bsz": "31.9", "num_updates": "7000", "lr": "7.08115e-06", "gnorm": "1.033", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "463"}
+[2024-03-03 19:46:11,810][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:46:16,043][train_inner][INFO] - {"epoch": 4, "update": 3.438, "loss": "0.991", "nll_loss": "0.075", "accuracy": "56.5", "wps": "11718.3", "ups": "27.55", "wpb": "425.4", "bsz": "32", "num_updates": "7200", "lr": "6.97952e-06", "gnorm": "1.039", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "470"}
+[2024-03-03 19:46:20,991][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:46:23,284][train_inner][INFO] - {"epoch": 4, "update": 3.533, "loss": "0.992", "nll_loss": "0.075", "accuracy": "55.9", "wps": "11736.9", "ups": "27.62", "wpb": "424.9", "bsz": "32", "num_updates": "7400", "lr": "6.87789e-06", "gnorm": "0.99", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "477"}
+[2024-03-03 19:46:30,508][train_inner][INFO] - {"epoch": 4, "update": 3.629, "loss": "0.993", "nll_loss": "0.074", "accuracy": "54.9", "wps": "11931.1", "ups": "27.69", "wpb": "430.9", "bsz": "32", "num_updates": "7600", "lr": "6.77626e-06", "gnorm": "0.909", "loss_scale": "16384", "train_wall": "7", "gb_free": "13.8", "wall": "484"}
+[2024-03-03 19:46:30,529][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:46:31,432][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:46:37,772][train_inner][INFO] - {"epoch": 4, "update": 3.724, "loss": "0.995", "nll_loss": "0.075", "accuracy": "54.3", "wps": "11710", "ups": "27.54", "wpb": "425.3", "bsz": "32", "num_updates": "7800", "lr": "6.67463e-06", "gnorm": "1.049", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "492"}
+[2024-03-03 19:46:40,956][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:46:45,039][train_inner][INFO] - {"epoch": 4, "update": 3.82, "loss": "0.992", "nll_loss": "0.074", "accuracy": "56.2", "wps": "11801.7", "ups": "27.53", "wpb": "428.7", "bsz": "32", "num_updates": "8000", "lr": "6.573e-06", "gnorm": "1.074", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "499"}
+[2024-03-03 19:46:45,612][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:46:50,275][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:46:52,322][train_inner][INFO] - {"epoch": 4, "update": 3.916, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.3", "wps": "11681.7", "ups": "27.47", "wpb": "425.3", "bsz": "32", "num_updates": "8200", "lr": "6.47137e-06", "gnorm": "0.918", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "506"}
+[2024-03-03 19:46:53,851][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:46:58,715][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 19:46:58,717][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:46:59,292][valid][INFO] - {"epoch": 4, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "38607.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "8376", "valid_best_accuracy": "50.9"}
+[2024-03-03 19:46:59,295][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 4 @ 8376 updates
+[2024-03-03 19:46:59,296][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:47:03,272][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:48:09,779][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 4 @ 8376 updates, score 50.9) (writing took 70.48427550999986 seconds)
+[2024-03-03 19:48:09,780][fairseq_cli.train][INFO] - end of epoch 4 (average epoch stats below)
+[2024-03-03 19:48:09,783][train][INFO] - {"epoch": 4, "train_loss": "0.992", "train_nll_loss": "0.074", "train_accuracy": "55.7", "train_wps": "6083.6", "train_ups": "14.23", "train_wpb": "427.5", "train_bsz": "32", "train_num_updates": "8376", "train_lr": "6.38193e-06", "train_gnorm": "0.998", "train_loss_scale": "8192", "train_train_wall": "73", "train_gb_free": "13.8", "train_wall": "584"}
+[2024-03-03 19:48:09,785][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:48:09,788][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 19:48:09,791][fairseq.trainer][INFO] - begin training epoch 5
+[2024-03-03 19:48:09,792][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 19:48:10,959][train_inner][INFO] - {"epoch": 5, "update": 4.011, "loss": "0.992", "nll_loss": "0.074", "accuracy": "56.1", "wps": "1085", "ups": "2.54", "wpb": "426.6", "bsz": "32", "num_updates": "8400", "lr": "6.36973e-06", "gnorm": "0.964", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "585"}
+[2024-03-03 19:48:14,733][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:48:17,325][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:48:18,520][train_inner][INFO] - {"epoch": 5, "update": 4.107, "loss": "0.991", "nll_loss": "0.074", "accuracy": "56.6", "wps": "11377.2", "ups": "26.45", "wpb": "430.1", "bsz": "32", "num_updates": "8600", "lr": "6.2681e-06", "gnorm": "1.034", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "592"}
+[2024-03-03 19:48:25,867][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:48:26,146][train_inner][INFO] - {"epoch": 5, "update": 4.203, "loss": "0.993", "nll_loss": "0.074", "accuracy": "54.9", "wps": "11284.3", "ups": "26.23", "wpb": "430.2", "bsz": "32", "num_updates": "8800", "lr": "6.16647e-06", "gnorm": "1.082", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "600"}
+[2024-03-03 19:48:31,571][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:48:33,913][train_inner][INFO] - {"epoch": 5, "update": 4.298, "loss": "0.99", "nll_loss": "0.075", "accuracy": "56.8", "wps": "10908.4", "ups": "25.75", "wpb": "423.6", "bsz": "32", "num_updates": "9000", "lr": "6.06484e-06", "gnorm": "1.094", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "608"}
+[2024-03-03 19:48:41,350][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:48:41,541][train_inner][INFO] - {"epoch": 5, "update": 4.394, "loss": "0.991", "nll_loss": "0.074", "accuracy": "56.4", "wps": "11246.3", "ups": "26.23", "wpb": "428.8", "bsz": "32", "num_updates": "9200", "lr": "5.96321e-06", "gnorm": "0.964", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "615"}
+[2024-03-03 19:48:45,883][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:48:49,314][train_inner][INFO] - {"epoch": 5, "update": 4.489, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.4", "wps": "11059.5", "ups": "25.73", "wpb": "429.8", "bsz": "32", "num_updates": "9400", "lr": "5.86158e-06", "gnorm": "0.957", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "623"}
+[2024-03-03 19:48:56,289][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:48:57,426][train_inner][INFO] - {"epoch": 5, "update": 4.585, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.3", "wps": "10538.9", "ups": "24.66", "wpb": "427.4", "bsz": "32", "num_updates": "9600", "lr": "5.75995e-06", "gnorm": "1.023", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "631"}
+[2024-03-03 19:49:02,263][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:49:06,085][train_inner][INFO] - {"epoch": 5, "update": 4.68, "loss": "0.991", "nll_loss": "0.075", "accuracy": "56.4", "wps": "9725.9", "ups": "23.1", "wpb": "421", "bsz": "32", "num_updates": "9800", "lr": "5.65832e-06", "gnorm": "1.027", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "640"}
+[2024-03-03 19:49:07,460][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:49:08,026][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:49:14,335][train_inner][INFO] - {"epoch": 5, "update": 4.776, "loss": "0.994", "nll_loss": "0.074", "accuracy": "55", "wps": "10456", "ups": "24.25", "wpb": "431.2", "bsz": "32", "num_updates": "10000", "lr": "5.55668e-06", "gnorm": "0.955", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "648"}
+[2024-03-03 19:49:18,271][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:49:22,160][train_inner][INFO] - {"epoch": 5, "update": 4.872, "loss": "0.995", "nll_loss": "0.074", "accuracy": "54.8", "wps": "11046.6", "ups": "25.56", "wpb": "432.1", "bsz": "31.9", "num_updates": "10200", "lr": "5.45505e-06", "gnorm": "0.897", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "656"}
+[2024-03-03 19:49:23,861][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:49:25,092][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:49:30,048][train_inner][INFO] - {"epoch": 5, "update": 4.968, "loss": "0.991", "nll_loss": "0.076", "accuracy": "55.9", "wps": "10631.7", "ups": "25.36", "wpb": "419.2", "bsz": "32", "num_updates": "10400", "lr": "5.35342e-06", "gnorm": "1.014", "loss_scale": "4096", "train_wall": "8", "gb_free": "13.8", "wall": "664"}
+[2024-03-03 19:49:32,619][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 19:49:32,620][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:49:33,763][valid][INFO] - {"epoch": 5, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "19049.4", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "10468", "valid_best_accuracy": "50.9"}
+[2024-03-03 19:49:33,770][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 5 @ 10468 updates
+[2024-03-03 19:49:33,773][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:49:38,330][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:50:43,708][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 5 @ 10468 updates, score 50.9) (writing took 69.93792072999986 seconds)
+[2024-03-03 19:50:43,709][fairseq_cli.train][INFO] - end of epoch 5 (average epoch stats below)
+[2024-03-03 19:50:43,712][train][INFO] - {"epoch": 5, "train_loss": "0.992", "train_nll_loss": "0.074", "train_accuracy": "55.7", "train_wps": "5809.2", "train_ups": "13.59", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "10468", "train_lr": "5.31887e-06", "train_gnorm": "1.005", "train_loss_scale": "8192", "train_train_wall": "80", "train_gb_free": "13.8", "train_wall": "737"}
+[2024-03-03 19:50:43,713][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:50:43,717][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 19:50:43,719][fairseq.trainer][INFO] - begin training epoch 6
+[2024-03-03 19:50:43,720][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 19:50:46,436][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:50:46,972][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:50:49,016][train_inner][INFO] - {"epoch": 6, "update": 5.064, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.3", "wps": "1077.7", "ups": "2.53", "wpb": "425.5", "bsz": "32", "num_updates": "10600", "lr": "5.25179e-06", "gnorm": "0.973", "loss_scale": "4096", "train_wall": "8", "gb_free": "13.8", "wall": "743"}
+[2024-03-03 19:50:52,327][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:50:56,553][train_inner][INFO] - {"epoch": 6, "update": 5.159, "loss": "0.992", "nll_loss": "0.074", "accuracy": "55.7", "wps": "11387.1", "ups": "26.54", "wpb": "429.1", "bsz": "32", "num_updates": "10800", "lr": "5.15016e-06", "gnorm": "1.027", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "750"}
+[2024-03-03 19:51:02,487][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:51:03,658][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:51:04,125][train_inner][INFO] - {"epoch": 6, "update": 5.255, "loss": "0.991", "nll_loss": "0.074", "accuracy": "56.2", "wps": "11276", "ups": "26.42", "wpb": "426.9", "bsz": "32", "num_updates": "11000", "lr": "5.04853e-06", "gnorm": "1.011", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "758"}
+[2024-03-03 19:51:11,784][train_inner][INFO] - {"epoch": 6, "update": 5.35, "loss": "0.996", "nll_loss": "0.075", "accuracy": "54.6", "wps": "11161.8", "ups": "26.12", "wpb": "427.4", "bsz": "32", "num_updates": "11200", "lr": "4.9469e-06", "gnorm": "1.007", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "766"}
+[2024-03-03 19:51:13,625][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:51:18,581][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:51:19,490][train_inner][INFO] - {"epoch": 6, "update": 5.446, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.3", "wps": "11171.1", "ups": "25.96", "wpb": "430.3", "bsz": "31.9", "num_updates": "11400", "lr": "4.84527e-06", "gnorm": "0.997", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "773"}
+[2024-03-03 19:51:22,383][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:51:27,197][train_inner][INFO] - {"epoch": 6, "update": 5.542, "loss": "0.992", "nll_loss": "0.075", "accuracy": "56.5", "wps": "10997", "ups": "25.95", "wpb": "423.7", "bsz": "32", "num_updates": "11600", "lr": "4.74364e-06", "gnorm": "0.996", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "781"}
+[2024-03-03 19:51:28,297][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:51:33,639][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:51:35,238][train_inner][INFO] - {"epoch": 6, "update": 5.638, "loss": "0.992", "nll_loss": "0.073", "accuracy": "56.2", "wps": "10769.6", "ups": "24.87", "wpb": "432.9", "bsz": "32", "num_updates": "11800", "lr": "4.642e-06", "gnorm": "1.002", "loss_scale": "4096", "train_wall": "8", "gb_free": "13.8", "wall": "789"}
+[2024-03-03 19:51:42,936][train_inner][INFO] - {"epoch": 6, "update": 5.733, "loss": "0.995", "nll_loss": "0.074", "accuracy": "55.1", "wps": "11163.1", "ups": "25.99", "wpb": "429.6", "bsz": "32", "num_updates": "12000", "lr": "4.54037e-06", "gnorm": "1.024", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "797"}
+[2024-03-03 19:51:43,779][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:51:44,734][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:51:50,688][train_inner][INFO] - {"epoch": 6, "update": 5.829, "loss": "0.992", "nll_loss": "0.074", "accuracy": "56.2", "wps": "11099.2", "ups": "25.8", "wpb": "430.1", "bsz": "32", "num_updates": "12200", "lr": "4.43874e-06", "gnorm": "0.98", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "804"}
+[2024-03-03 19:51:55,116][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:51:58,637][train_inner][INFO] - {"epoch": 6, "update": 5.924, "loss": "0.991", "nll_loss": "0.075", "accuracy": "56", "wps": "10634.4", "ups": "25.16", "wpb": "422.6", "bsz": "32", "num_updates": "12400", "lr": "4.33711e-06", "gnorm": "0.954", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "812"}
+[2024-03-03 19:52:00,309][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:52:05,020][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 19:52:05,022][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:52:05,714][valid][INFO] - {"epoch": 6, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "31982.3", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "12559", "valid_best_accuracy": "50.9"}
+[2024-03-03 19:52:05,718][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 6 @ 12559 updates
+[2024-03-03 19:52:05,720][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:52:10,174][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:53:10,581][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 6 @ 12559 updates, score 50.9) (writing took 64.86255692299983 seconds)
+[2024-03-03 19:53:10,582][fairseq_cli.train][INFO] - end of epoch 6 (average epoch stats below)
+[2024-03-03 19:53:10,585][train][INFO] - {"epoch": 6, "train_loss": "0.993", "train_nll_loss": "0.074", "train_accuracy": "55.7", "train_wps": "6085.7", "train_ups": "14.24", "train_wpb": "427.5", "train_bsz": "32", "train_num_updates": "12559", "train_lr": "4.25631e-06", "train_gnorm": "0.996", "train_loss_scale": "8192", "train_train_wall": "78", "train_gb_free": "13.8", "train_wall": "884"}
+[2024-03-03 19:53:10,586][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:53:10,589][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 19:53:10,592][fairseq.trainer][INFO] - begin training epoch 7
+[2024-03-03 19:53:10,593][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 19:53:11,378][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:53:12,310][train_inner][INFO] - {"epoch": 7, "update": 6.02, "loss": "0.992", "nll_loss": "0.075", "accuracy": "56", "wps": "1151.8", "ups": "2.71", "wpb": "424.3", "bsz": "32", "num_updates": "12600", "lr": "4.23548e-06", "gnorm": "0.982", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "886"}
+[2024-03-03 19:53:16,318][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:53:20,237][train_inner][INFO] - {"epoch": 7, "update": 6.115, "loss": "0.991", "nll_loss": "0.074", "accuracy": "56.1", "wps": "10757.1", "ups": "25.24", "wpb": "426.3", "bsz": "32", "num_updates": "12800", "lr": "4.13385e-06", "gnorm": "0.959", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "894"}
+[2024-03-03 19:53:21,913][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:53:27,143][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:53:28,066][train_inner][INFO] - {"epoch": 7, "update": 6.211, "loss": "0.994", "nll_loss": "0.075", "accuracy": "56", "wps": "10850", "ups": "25.55", "wpb": "424.7", "bsz": "32", "num_updates": "13000", "lr": "4.03222e-06", "gnorm": "0.955", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "902"}
+[2024-03-03 19:53:30,882][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:53:35,759][train_inner][INFO] - {"epoch": 7, "update": 6.307, "loss": "0.993", "nll_loss": "0.073", "accuracy": "55.4", "wps": "11253.8", "ups": "26", "wpb": "432.8", "bsz": "32", "num_updates": "13200", "lr": "3.93059e-06", "gnorm": "0.982", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "909"}
+[2024-03-03 19:53:36,695][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:53:43,578][train_inner][INFO] - {"epoch": 7, "update": 6.402, "loss": "0.994", "nll_loss": "0.075", "accuracy": "55.3", "wps": "10907", "ups": "25.58", "wpb": "426.4", "bsz": "32", "num_updates": "13400", "lr": "3.82895e-06", "gnorm": "0.985", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "917"}
+[2024-03-03 19:53:46,639][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:53:51,304][train_inner][INFO] - {"epoch": 7, "update": 6.498, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.3", "wps": "10986", "ups": "25.89", "wpb": "424.3", "bsz": "32", "num_updates": "13600", "lr": "3.72732e-06", "gnorm": "1.058", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "925"}
+[2024-03-03 19:53:51,713][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:53:56,883][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:53:59,342][train_inner][INFO] - {"epoch": 7, "update": 6.594, "loss": "0.992", "nll_loss": "0.074", "accuracy": "56.1", "wps": "10639.5", "ups": "24.88", "wpb": "427.6", "bsz": "32", "num_updates": "13800", "lr": "3.62569e-06", "gnorm": "1.031", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "933"}
+[2024-03-03 19:54:02,335][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:54:05,672][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:54:07,559][train_inner][INFO] - {"epoch": 7, "update": 6.69, "loss": "0.994", "nll_loss": "0.074", "accuracy": "55", "wps": "10517.8", "ups": "24.35", "wpb": "432", "bsz": "32", "num_updates": "14000", "lr": "3.52406e-06", "gnorm": "0.977", "loss_scale": "4096", "train_wall": "8", "gb_free": "13.8", "wall": "941"}
+[2024-03-03 19:54:15,648][train_inner][INFO] - {"epoch": 7, "update": 6.785, "loss": "0.99", "nll_loss": "0.074", "accuracy": "56.9", "wps": "10507.8", "ups": "24.73", "wpb": "424.9", "bsz": "31.9", "num_updates": "14200", "lr": "3.42243e-06", "gnorm": "0.993", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "949"}
+[2024-03-03 19:54:16,003][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:54:21,324][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:54:23,862][train_inner][INFO] - {"epoch": 7, "update": 6.881, "loss": "0.992", "nll_loss": "0.073", "accuracy": "55.5", "wps": "10584", "ups": "24.35", "wpb": "434.6", "bsz": "32", "num_updates": "14400", "lr": "3.3208e-06", "gnorm": "1.007", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "958"}
+[2024-03-03 19:54:27,079][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:54:32,013][train_inner][INFO] - {"epoch": 7, "update": 6.976, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.5", "wps": "10367.1", "ups": "24.54", "wpb": "422.4", "bsz": "32", "num_updates": "14600", "lr": "3.21917e-06", "gnorm": "0.989", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "966"}
+[2024-03-03 19:54:32,286][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:54:32,994][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:54:34,111][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 19:54:34,112][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:54:34,733][valid][INFO] - {"epoch": 7, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "36164.5", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "14648", "valid_best_accuracy": "50.9"}
+[2024-03-03 19:54:34,737][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 7 @ 14648 updates
+[2024-03-03 19:54:34,739][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:54:39,307][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:55:43,292][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 7 @ 14648 updates, score 50.9) (writing took 68.55522939599996 seconds)
+[2024-03-03 19:55:43,293][fairseq_cli.train][INFO] - end of epoch 7 (average epoch stats below)
+[2024-03-03 19:55:43,301][train][INFO] - {"epoch": 7, "train_loss": "0.992", "train_nll_loss": "0.074", "train_accuracy": "55.7", "train_wps": "5847.2", "train_ups": "13.68", "train_wpb": "427.5", "train_bsz": "32", "train_num_updates": "14648", "train_lr": "3.19478e-06", "train_gnorm": "0.99", "train_loss_scale": "4096", "train_train_wall": "80", "train_gb_free": "13.8", "train_wall": "1037"}
+[2024-03-03 19:55:43,303][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:55:43,306][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 19:55:43,308][fairseq.trainer][INFO] - begin training epoch 8
+[2024-03-03 19:55:43,309][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 19:55:48,990][train_inner][INFO] - {"epoch": 8, "update": 7.072, "loss": "0.992", "nll_loss": "0.075", "accuracy": "56.2", "wps": "1092.6", "ups": "2.6", "wpb": "420.5", "bsz": "31.9", "num_updates": "14800", "lr": "3.11754e-06", "gnorm": "0.973", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1043"}
+[2024-03-03 19:55:52,066][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:55:53,219][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:55:56,288][train_inner][INFO] - {"epoch": 8, "update": 7.168, "loss": "0.995", "nll_loss": "0.075", "accuracy": "54.4", "wps": "11633.8", "ups": "27.41", "wpb": "424.5", "bsz": "32", "num_updates": "15000", "lr": "3.01591e-06", "gnorm": "0.901", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1050"}
+[2024-03-03 19:55:58,032][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:56:03,746][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:56:04,011][train_inner][INFO] - {"epoch": 8, "update": 7.264, "loss": "0.991", "nll_loss": "0.075", "accuracy": "55.8", "wps": "10973.7", "ups": "25.9", "wpb": "423.7", "bsz": "32", "num_updates": "15200", "lr": "2.91427e-06", "gnorm": "1.016", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1058"}
+[2024-03-03 19:56:10,288][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:56:12,891][train_inner][INFO] - {"epoch": 8, "update": 7.36, "loss": "0.991", "nll_loss": "0.075", "accuracy": "55.9", "wps": "9585.2", "ups": "22.52", "wpb": "425.6", "bsz": "32", "num_updates": "15400", "lr": "2.81264e-06", "gnorm": "1.015", "loss_scale": "4096", "train_wall": "9", "gb_free": "13.8", "wall": "1067"}
+[2024-03-03 19:56:20,668][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:56:21,492][train_inner][INFO] - {"epoch": 8, "update": 7.455, "loss": "0.994", "nll_loss": "0.074", "accuracy": "55.2", "wps": "9973.4", "ups": "23.26", "wpb": "428.8", "bsz": "32", "num_updates": "15600", "lr": "2.71101e-06", "gnorm": "0.972", "loss_scale": "4096", "train_wall": "8", "gb_free": "13.8", "wall": "1075"}
+[2024-03-03 19:56:29,655][train_inner][INFO] - {"epoch": 8, "update": 7.55, "loss": "0.992", "nll_loss": "0.074", "accuracy": "56", "wps": "10479.3", "ups": "24.5", "wpb": "427.7", "bsz": "32", "num_updates": "15800", "lr": "2.60938e-06", "gnorm": "1.029", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "1083"}
+[2024-03-03 19:56:30,274][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:56:37,524][train_inner][INFO] - {"epoch": 8, "update": 7.646, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.4", "wps": "10761.5", "ups": "25.42", "wpb": "423.3", "bsz": "32", "num_updates": "16000", "lr": "2.50775e-06", "gnorm": "0.991", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "1091"}
+[2024-03-03 19:56:40,470][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:56:45,203][train_inner][INFO] - {"epoch": 8, "update": 7.741, "loss": "0.993", "nll_loss": "0.073", "accuracy": "55.7", "wps": "11302.5", "ups": "26.05", "wpb": "433.9", "bsz": "32", "num_updates": "16200", "lr": "2.40612e-06", "gnorm": "0.947", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1099"}
+[2024-03-03 19:56:45,503][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:56:46,236][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:56:52,894][train_inner][INFO] - {"epoch": 8, "update": 7.837, "loss": "0.992", "nll_loss": "0.073", "accuracy": "56.2", "wps": "11230.7", "ups": "26.01", "wpb": "431.8", "bsz": "32", "num_updates": "16400", "lr": "2.30449e-06", "gnorm": "0.995", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1107"}
+[2024-03-03 19:56:56,329][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:57:00,783][train_inner][INFO] - {"epoch": 8, "update": 7.933, "loss": "0.994", "nll_loss": "0.074", "accuracy": "55.8", "wps": "10963.8", "ups": "25.36", "wpb": "432.4", "bsz": "32", "num_updates": "16600", "lr": "2.20286e-06", "gnorm": "0.981", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "1115"}
+[2024-03-03 19:57:01,527][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:57:03,201][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:57:06,134][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 19:57:06,136][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:57:06,724][valid][INFO] - {"epoch": 8, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "38143.2", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "16740", "valid_best_accuracy": "50.9"}
+[2024-03-03 19:57:06,727][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 8 @ 16740 updates
+[2024-03-03 19:57:06,728][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:57:10,601][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:58:14,429][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 8 @ 16740 updates, score 50.9) (writing took 67.70247625800039 seconds)
+[2024-03-03 19:58:14,430][fairseq_cli.train][INFO] - end of epoch 8 (average epoch stats below)
+[2024-03-03 19:58:14,432][train][INFO] - {"epoch": 8, "train_loss": "0.992", "train_nll_loss": "0.074", "train_accuracy": "55.7", "train_wps": "5917.2", "train_ups": "13.84", "train_wpb": "427.5", "train_bsz": "32", "train_num_updates": "16740", "train_lr": "2.13171e-06", "train_gnorm": "0.988", "train_loss_scale": "4096", "train_train_wall": "80", "train_gb_free": "13.8", "train_wall": "1188"}
+[2024-03-03 19:58:14,434][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:58:14,438][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 19:58:14,440][fairseq.trainer][INFO] - begin training epoch 9
+[2024-03-03 19:58:14,441][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 19:58:16,920][train_inner][INFO] - {"epoch": 9, "update": 8.029, "loss": "0.991", "nll_loss": "0.073", "accuracy": "56.2", "wps": "1137.4", "ups": "2.63", "wpb": "433", "bsz": "32", "num_updates": "16800", "lr": "2.10122e-06", "gnorm": "1.051", "loss_scale": "8192", "train_wall": "8", "gb_free": "13.8", "wall": "1191"}
+[2024-03-03 19:58:21,412][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:58:24,256][train_inner][INFO] - {"epoch": 9, "update": 8.124, "loss": "0.992", "nll_loss": "0.075", "accuracy": "56.2", "wps": "11588", "ups": "27.27", "wpb": "425", "bsz": "32", "num_updates": "17000", "lr": "1.99959e-06", "gnorm": "1.003", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1198"}
+[2024-03-03 19:58:26,247][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:58:31,138][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:58:31,663][train_inner][INFO] - {"epoch": 9, "update": 8.22, "loss": "0.992", "nll_loss": "0.075", "accuracy": "55.9", "wps": "11357.1", "ups": "27.01", "wpb": "420.5", "bsz": "32", "num_updates": "17200", "lr": "1.89796e-06", "gnorm": "0.92", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1205"}
+[2024-03-03 19:58:32,507][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:58:38,971][train_inner][INFO] - {"epoch": 9, "update": 8.315, "loss": "0.99", "nll_loss": "0.074", "accuracy": "56.8", "wps": "11732.4", "ups": "27.37", "wpb": "428.7", "bsz": "32", "num_updates": "17400", "lr": "1.79633e-06", "gnorm": "1.032", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1213"}
+[2024-03-03 19:58:41,776][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:58:44,621][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:58:46,119][train_inner][INFO] - {"epoch": 9, "update": 8.411, "loss": "0.992", "nll_loss": "0.074", "accuracy": "55.9", "wps": "12010.1", "ups": "27.98", "wpb": "429.2", "bsz": "32", "num_updates": "17600", "lr": "1.6947e-06", "gnorm": "0.936", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1220"}
+[2024-03-03 19:58:50,216][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:58:53,210][train_inner][INFO] - {"epoch": 9, "update": 8.507, "loss": "0.992", "nll_loss": "0.074", "accuracy": "55.8", "wps": "12103.7", "ups": "28.21", "wpb": "429.1", "bsz": "32", "num_updates": "17800", "lr": "1.59307e-06", "gnorm": "0.94", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1227"}
+[2024-03-03 19:58:59,333][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:59:00,362][train_inner][INFO] - {"epoch": 9, "update": 8.602, "loss": "0.994", "nll_loss": "0.075", "accuracy": "55.5", "wps": "11923.5", "ups": "27.97", "wpb": "426.3", "bsz": "32", "num_updates": "18000", "lr": "1.49144e-06", "gnorm": "1.07", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1234"}
+[2024-03-03 19:59:04,007][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:59:04,208][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:59:07,594][train_inner][INFO] - {"epoch": 9, "update": 8.698, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.3", "wps": "11698.1", "ups": "27.66", "wpb": "422.9", "bsz": "31.9", "num_updates": "18200", "lr": "1.38981e-06", "gnorm": "1.022", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1241"}
+[2024-03-03 19:59:13,543][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:59:14,818][train_inner][INFO] - {"epoch": 9, "update": 8.794, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.5", "wps": "11869.8", "ups": "27.69", "wpb": "428.7", "bsz": "32", "num_updates": "18400", "lr": "1.28818e-06", "gnorm": "1.041", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1249"}
+[2024-03-03 19:59:18,554][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:59:22,063][train_inner][INFO] - {"epoch": 9, "update": 8.889, "loss": "0.994", "nll_loss": "0.074", "accuracy": "54.8", "wps": "11902.5", "ups": "27.61", "wpb": "431.1", "bsz": "32", "num_updates": "18600", "lr": "1.18654e-06", "gnorm": "0.912", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1256"}
+[2024-03-03 19:59:23,282][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 19:59:27,043][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 19:59:29,417][train_inner][INFO] - {"epoch": 9, "update": 8.985, "loss": "0.991", "nll_loss": "0.075", "accuracy": "56.1", "wps": "11571.6", "ups": "27.2", "wpb": "425.4", "bsz": "32", "num_updates": "18800", "lr": "1.08491e-06", "gnorm": "1.008", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1263"}
+[2024-03-03 19:59:30,535][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 19:59:30,537][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 19:59:31,099][valid][INFO] - {"epoch": 9, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "39622.7", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "18831", "valid_best_accuracy": "50.9"}
+[2024-03-03 19:59:31,104][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 9 @ 18831 updates
+[2024-03-03 19:59:31,105][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 19:59:34,867][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 20:00:31,663][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 9 @ 18831 updates, score 50.9) (writing took 60.5595560239999 seconds)
+[2024-03-03 20:00:31,664][fairseq_cli.train][INFO] - end of epoch 9 (average epoch stats below)
+[2024-03-03 20:00:31,667][train][INFO] - {"epoch": 9, "train_loss": "0.992", "train_nll_loss": "0.074", "train_accuracy": "55.7", "train_wps": "6511.6", "train_ups": "15.24", "train_wpb": "427.4", "train_bsz": "32", "train_num_updates": "18831", "train_lr": "1.06916e-06", "train_gnorm": "0.992", "train_loss_scale": "4096", "train_train_wall": "73", "train_gb_free": "13.8", "train_wall": "1325"}
+[2024-03-03 20:00:31,668][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 20:00:31,671][fairseq.data.iterators][INFO] - grouped total_num_itrs = 2105
+[2024-03-03 20:00:31,674][fairseq.trainer][INFO] - begin training epoch 10
+[2024-03-03 20:00:31,674][fairseq_cli.train][INFO] - Start iterating over samples
+[2024-03-03 20:00:34,128][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 20:00:38,282][train_inner][INFO] - {"epoch": 10, "update": 9.081, "loss": "0.993", "nll_loss": "0.073", "accuracy": "55.9", "wps": "1261.2", "ups": "2.9", "wpb": "434.2", "bsz": "32", "num_updates": "19000", "lr": "9.83282e-07", "gnorm": "1.005", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1332"}
+[2024-03-03 20:00:43,643][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 20:00:45,558][train_inner][INFO] - {"epoch": 10, "update": 9.176, "loss": "0.991", "nll_loss": "0.075", "accuracy": "56", "wps": "11682.6", "ups": "27.49", "wpb": "425", "bsz": "32", "num_updates": "19200", "lr": "8.8165e-07", "gnorm": "0.964", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1339"}
+[2024-03-03 20:00:48,389][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 20:00:49,558][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 20:00:52,783][train_inner][INFO] - {"epoch": 10, "update": 9.272, "loss": "0.993", "nll_loss": "0.074", "accuracy": "55.5", "wps": "11943.7", "ups": "27.68", "wpb": "431.4", "bsz": "32", "num_updates": "19400", "lr": "7.80019e-07", "gnorm": "1.018", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1347"}
+[2024-03-03 20:00:59,439][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 20:00:59,975][train_inner][INFO] - {"epoch": 10, "update": 9.368, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.5", "wps": "11713.5", "ups": "27.81", "wpb": "421.1", "bsz": "32", "num_updates": "19600", "lr": "6.78388e-07", "gnorm": "0.975", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1354"}
+[2024-03-03 20:01:04,034][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 20:01:07,125][train_inner][INFO] - {"epoch": 10, "update": 9.463, "loss": "0.991", "nll_loss": "0.074", "accuracy": "56.6", "wps": "11970.5", "ups": "27.98", "wpb": "427.9", "bsz": "32", "num_updates": "19800", "lr": "5.76757e-07", "gnorm": "0.974", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1361"}
+[2024-03-03 20:01:08,628][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 20:01:12,516][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 20:01:14,355][train_inner][INFO] - {"epoch": 10, "update": 9.559, "loss": "0.993", "nll_loss": "0.075", "accuracy": "55.6", "wps": "11743.9", "ups": "27.67", "wpb": "424.5", "bsz": "32", "num_updates": "20000", "lr": "4.75126e-07", "gnorm": "0.969", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1368"}
+[2024-03-03 20:01:21,531][train_inner][INFO] - {"epoch": 10, "update": 9.654, "loss": "0.994", "nll_loss": "0.074", "accuracy": "55.2", "wps": "11950", "ups": "27.88", "wpb": "428.7", "bsz": "32", "num_updates": "20200", "lr": "3.73495e-07", "gnorm": "1.102", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1375"}
+[2024-03-03 20:01:21,798][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 20:01:26,211][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 20:01:29,122][train_inner][INFO] - {"epoch": 10, "update": 9.75, "loss": "0.992", "nll_loss": "0.074", "accuracy": "55.6", "wps": "11328", "ups": "26.35", "wpb": "429.9", "bsz": "32", "num_updates": "20400", "lr": "2.71863e-07", "gnorm": "0.975", "loss_scale": "4096", "train_wall": "7", "gb_free": "13.8", "wall": "1383"}
+[2024-03-03 20:01:36,332][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8192.0
+[2024-03-03 20:01:36,624][train_inner][INFO] - {"epoch": 10, "update": 9.846, "loss": "0.992", "nll_loss": "0.075", "accuracy": "55.6", "wps": "11342.9", "ups": "26.66", "wpb": "425.4", "bsz": "32", "num_updates": "20600", "lr": "1.70232e-07", "gnorm": "0.893", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1390"}
+[2024-03-03 20:01:38,087][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 20:01:43,945][train_inner][INFO] - {"epoch": 10, "update": 9.941, "loss": "0.995", "nll_loss": "0.075", "accuracy": "54.9", "wps": "11634.6", "ups": "27.32", "wpb": "425.8", "bsz": "32", "num_updates": "20800", "lr": "6.8601e-08", "gnorm": "1.041", "loss_scale": "8192", "train_wall": "7", "gb_free": "13.8", "wall": "1398"}
+[2024-03-03 20:01:45,029][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4096.0
+[2024-03-03 20:01:48,588][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2024-03-03 20:01:48,590][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 20:01:49,192][valid][INFO] - {"epoch": 10, "valid_loss": "1.001", "valid_nll_loss": "0.04", "valid_accuracy": "50.9", "valid_wps": "37320.2", "valid_wpb": "778.9", "valid_bsz": "31.1", "valid_num_updates": "20923", "valid_best_accuracy": "50.9"}
+[2024-03-03 20:01:49,195][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 10 @ 20923 updates
+[2024-03-03 20:01:49,196][fairseq.trainer][INFO] - Saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 20:01:54,623][fairseq.trainer][INFO] - Finished saving checkpoint to /mnt/c/Users/yifei/OneDrive/桌面/CS8803EML/eml-hw2/fairseq/outputs/2024-03-03/19-38-23/checkpoints/checkpoint_best.pt
+[2024-03-03 20:02:53,070][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 10 @ 20923 updates, score 50.9) (writing took 63.87501542400014 seconds)
+[2024-03-03 20:02:53,071][fairseq_cli.train][INFO] - end of epoch 10 (average epoch stats below)
+[2024-03-03 20:02:53,074][train][INFO] - {"epoch": 10, "train_loss": "0.993", "train_nll_loss": "0.074", "train_accuracy": "55.7", "train_wps": "6321.2", "train_ups": "14.79", "train_wpb": "427.3", "train_bsz": "32", "train_num_updates": "20923", "train_lr": "6.09787e-09", "train_gnorm": "0.991", "train_loss_scale": "4096", "train_train_wall": "74", "train_gb_free": "13.8", "train_wall": "1467"}
+[2024-03-03 20:02:53,076][fairseq.tasks.fairseq_task][INFO] - can_reuse_epoch_itr = True
+[2024-03-03 20:02:53,079][fairseq_cli.train][INFO] - done training in 1459.0 seconds
